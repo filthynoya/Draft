@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+}
+
+#sidebar {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+main {
+    margin-left: 25%;
+    margin-top: 1.5rem;
+}
+
+.sidebar-contant {
+    margin-left: 4.5rem;
+    margin-top: 3.5rem;
+}
+
+.brand {
+    margin-bottom: 3.5rem;
+}
+
+.brand a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.brand a:hover {
+    text-shadow: 1px 1px #E23E57;
+}
+
+.brand h6 {
+    font-size: 40px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-bottom: 0.75rem;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+}
+
+.menu ul li a:hover {
+    text-shadow: 1px 1px #E23E57;
+}
+
+.posts {
+    width: 55%;
+    margin-right: 10%;
+}
+
+.post img {
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.post {
+    margin-bottom: 1.5rem;
+}
+
+.post h6 {
+    margin-top: 0.75rem;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.post a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.post-contant {
+    background: #F7F9F9;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 1.5rem;
+}
+
+.catalog h6 {
+    font-size: 30px;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.catalog ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.catalog ul li {
+    margin-bottom: 0.75rem;
+}
+
+.catalog ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+}
+
+.catalog ul li a:hover {
+    text-shadow: 1px 1px #E23E57;
+}
