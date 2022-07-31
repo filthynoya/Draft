@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+.body{
+  background-color: rgb(219,226,226) ;
+  height: 1200vh;
+   
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.row{
+ 
+  background: white;
+  border-radius: 15px;
+}
+.container{
+  width: 20%;
+}
+.gradient-custom-2 {
+  background: rgb(14,96,58);
+  background: linear-gradient(302deg, rgba(14,96,58,1) 0%, rgba(26,147,74,1) 37%, rgba(0,212,255,1) 100%);
+}
+  
+@media (min-width: 768px) {
+  .gradient-form {
+  height: 100vh !important;
+  }
+}
+.form-check {
+  display: block;
+  min-height: 0.5rem;
+  padding-left: 0.5em;
+  margin-bottom: -1rem;
+  margin-top: 1.10rem;
+}
+.btn1{
+  margin-top: 6px;
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 200px;
+  font-weight: bold;
+  color: white;
+  border-radius: 27px;
+  
+}
+.social{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.Form .mt-1 {
+  margin-top: 5.25rem!important;
+}
+.Form .mb-5 {
+  margin-bottom: 1rem!important;
+}
+.icon{
+  margin-top: 43px;
+}
+
+.boxes input{
+  border-width: 0 0 2px;
+  border-color: black;  
+  border-radius: 0;
+}
+
+.form-row>.col, .form-row>[class*=col-] {
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-top: 8px;
+  
+}
+.form-row .img-fluid {
+  max-width: 100%;
+  height: 400px;
+}
+.fa {
+    
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.6;
+  }
+ 
