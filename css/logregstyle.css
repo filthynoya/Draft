@@ -6,16 +6,21 @@
     font-family: "Poppins",sans-serif;
 }
 .body{
-  background-color: rgb(219,226,226) ;
+  background-color: rgb(7, 7, 7) ;
   height: 1200vh;
-   
+  
 }
+.gradient-custom-2 {
+  background: rgb(0,0,0);
+  background: linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+}
+
 .divider:after,
 .divider:before {
 content: "";
 flex: 1;
 height: 1px;
-background: #eee;
+background: rgb(141, 180, 162);
 }
 .row{
  
@@ -25,10 +30,7 @@ background: #eee;
 .container{
   width: 20%;
 }
-.gradient-custom-2 {
-  background: rgb(14,96,58);
-  background: linear-gradient(302deg, rgba(14,96,58,1) 0%, rgba(26,147,74,1) 37%, rgba(0,212,255,1) 100%);
-}
+
   
 @media (min-width: 768px) {
   .gradient-form {

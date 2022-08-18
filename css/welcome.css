@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+.body{
+  background-color: rgb(219,226,226) ;
+  height: 1200vh;
+   
+}
+.gradient-custom-2 {
+    background: rgb(0,0,0);
+    background:  linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+  }
+    
+@media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    
+ }
+ @media  (max-width: 1024px){
+    .feature-img{
+        display: none;
+    }
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+   
+    
+    position: relative;
+}
+.btn1{
+    margin-top: 6px;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 180px;
+    font-weight: bold;
+    color: white;
+    border-radius: 27px;
+    transition: 0.5s;
+
+}
+.msg-container{
+    width: 600px;
+    height: 280px;
+    position: absolute;
+    left: 10%;
+    top: 57%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+#slider{
+    display: inline-flex;
+    transition: 0.5s;
+}
+.msg-col{
+    width: 600px;
+    height: 280px;
+    
+}
+
+.msg-col h1{
+    font-size: 60px;
+    font-weight: 100;
+    margin: 10px 0;
+    color: #222;
+
+}
+.msg-col p{
+    
+    color: #333;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+
+
+.feature-img{
+    width: 420px;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    transition: 5s;
+
+}
+
+.controller{
+    width: 1px;
+    height: 100px;
+    display: block;
+    background: rgb(160, 198, 180); 
+    position: absolute;
+    top: 55%;
+    right: 50px;
+    transform: translateY(-50%);
+}
+#line1,#line2{
+    height: 50px;
+    width: 4px;
+    cursor: pointer;
+    transform: translateX(-50%);
+    
+    
+}
+#active{
+    width: 5px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(14,96,58);
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    transition: 0.5s;
+
+
+}
