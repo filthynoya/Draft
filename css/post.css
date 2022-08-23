@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btn1 {
+    background: rgb(0,0,0);
+    background: linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: white;
+    border-radius: 27px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+}
+
+.c-container {
+    width: 55%;
+    margin: auto;
+}
+
+nav a:hover {
+    text-shadow: 1px 1px #e33f58;
+}
+
+nav ul li {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.comment-textarea{
+    height: 5.5em;
+    width: 100%;
+    resize: none;
+    padding: 0.5em;
+}
+
+.author-comment-img {
+    width: 50px;
+}
+
+.author-comment-name {
+    margin-top: 0.75em;
+}
+
+#title {
+    margin-top: 11.5em;
+}
+
+.sub-heading {
+    margin-top: 1em;
+}
+
+#post-img {
+    margin-top: 5em;
+}
+
+#post {
+    margin-top: 5em;
+}
+
+#comments {
+    margin-top: 5em;
+}
+
+.display-comments {
+    margin-top: 3em;
+}
+
+.single-comment {
+    margin-bottom: 1em
+}
+
+.comment-author {
+    margin-bottom: 1em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.sub-heading span {
+    margin-right: 1em;
+}

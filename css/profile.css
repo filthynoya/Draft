@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+}
+
+.c-container {
+    width: 55%;
+    margin: auto;
+}
+
+nav a:hover {
+    text-shadow: 1px 1px #e33f58;
+}
+
+nav ul li {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.post img {
+    width: 100%;
+}
+
+.post {
+    margin-bottom: 2rem;
+}
+
+.post h6 {
+    margin-top: 0.75rem;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.post a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.post-contant {
+    background: #F7F9F9;
+    padding: 1.5rem;
+}
+
+#author-info {
+    margin-top: 5em;
+}
+
+.author-img {
+    margin-right: 2em;
+}
+
+.author-img img {
+    width: 170px;
+}
+
+.name {
+    margin-top: 2em;
+}
+
+.name span {
+    font-size: 30px;
+}
+
+#author-posts {
+    margin-top: 5em;
+}
+
+.edit {
+    margin-left: 35em;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+.edit:hover {
+    text-decoration: underline;
+}

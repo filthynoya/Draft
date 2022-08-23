@@ -74,8 +74,6 @@ main {
 
 .post img {
     width: 100%;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
 }
 
 .post {
@@ -95,8 +93,6 @@ main {
 
 .post-contant {
     background: #F7F9F9;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
     padding: 1.5rem;
 }
 
