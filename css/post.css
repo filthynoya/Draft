@@ -28,14 +28,46 @@ body {
     margin: auto;
 }
 
-nav a:hover {
-    text-shadow: 1px 1px #e33f58;
+header {
+    border-bottom: 1px solid #ededed;
+    margin-top: 1em;
 }
 
-nav ul li {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+.logo span {
+    font-size: 30px;
 }
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    padding: 0.5em;
+    font-size: 15px;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover {
+    text-shadow: 1px 1px #e33f58;
+    color: black;
+}
+
+.slider-author-img img {
+    width: 50px;
+}
+
+.slider-author-name {
+    margin-top: 0.2em;
+    margin-left: 0.5em;
+    font-size: 25px;
+}
+
 
 .comment-textarea{
     height: 5.5em;
@@ -84,12 +116,12 @@ nav ul li {
     margin-bottom: 1em;
 }
 
-footer {
-    text-align: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
+.comment-author span {
+    margin-left: 1em;
 }
 
-.sub-heading span {
-    margin-right: 1em;
+footer {
+    margin-top: 3em;
+    text-align: center;
+    margin-bottom: 3em;
 }

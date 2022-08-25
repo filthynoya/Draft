@@ -13,27 +13,28 @@
         <title>Post Title</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <header>
             <div class="container">
-                <a class="navbar-brand" href="#"><i class="fa-solid fa-bookmark"></i> Draft</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Add Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Edit Profile</a>
-                        </li>
-                    </ul>
-              </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="logo text-lg-start text-center">
+                            <span><a href="">Draft</a></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav>
+                            <ul>
+                                <li><a href="">Home</a></li>
+                                <li><a href="">Catalog</a></li>
+                                <li><a href="">Add Post</a></li>
+                                <li><a href="">View Profile</a></li>
+                                <li><a href="">Log Out</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </header>
 
         <section id="title">
             <div class="c-container">
@@ -42,8 +43,14 @@
                         <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis corrupti quis praesentium</h1>
                     </div>
                     <div class="sub-heading">
-                        <span class="date">23 September, 2016</span>
-                        <span class="author">Ayon Raihan</span>
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="slider-author-img">
+                                <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
+                            </div>
+                            <div class="slider-author-name">
+                                <span>Ayon Raihan</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,7 +84,7 @@
                     <div class="display-comments">
                         <div class="single-comment d-flex flex-column">
                             <div class="comment-author d-flex flex-row">
-                                <img src="img/sample-avatar.png" alt="" class="author-comment-img">
+                                <img src="img/sample-avatar.jpg" alt="" class="author-comment-img rounded-circle">
                                 <span class="author-comment-name">Ayon Raihan</span>
                             </div>
                             <div class="comment-body">
@@ -86,7 +93,7 @@
                         </div>
                         <div class="single-comment d-flex flex-column">
                             <div class="comment-author d-flex flex-row">
-                                <img src="img/sample-avatar.png" alt="" class="author-comment-img">
+                                <img src="img/sample-avatar.jpg" alt="" class="author-comment-img rounded-circle">
                                 <span class="author-comment-name">Siddiqua Mumu</span>
                             </div>
                             <div class="comment-body">
@@ -101,10 +108,9 @@
             </div>
         </section>
 
-
         <footer>
             <div class="container">
-                <span>&copy; Draft 2022</span>
+                <span>Copyright ©2022 All rights reserved</span>
             </div>
         </footer>
 
