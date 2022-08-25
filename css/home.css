@@ -9,115 +9,120 @@ body {
     font-family: 'Poppins', sans-serif; 
 }
 
-#sidebar {
-    height: 100%;
-    width: 25%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
+header {
+    border-bottom: 1px solid #ededed;
+    margin-top: 1em;
 }
 
-main {
-    margin-left: 25%;
-    margin-top: 1.5rem;
+.logo span {
+    font-size: 30px;
 }
 
-.sidebar-contant {
-    margin-left: 4.5rem;
-    margin-top: 3.5rem;
-}
-
-.brand {
-    margin-bottom: 3.5rem;
-}
-
-.brand a {
-    text-decoration: none;
-    color: #000000;
-}
-
-.brand a:hover {
-    text-shadow: 1px 1px #E23E57;
-}
-
-.brand h6 {
-    font-size: 40px;
-}
-
-.menu ul {
+header nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.menu ul li {
-    margin-bottom: 0.75rem;
+header nav ul li {
+    padding: 0.5em;
+    font-size: 15px;
 }
 
-.menu ul li a {
+header a {
     text-decoration: none;
-    color: #000000;
-    font-size: 20px;
+    color: black;
 }
 
-.menu ul li a:hover {
+header a:hover {
     text-shadow: 1px 1px #e33f58;
+    color: black;
+}
+
+.post-slider {
+    margin-top: 3em;
+}
+
+.trending-title h1 {
+    font-weight: bolder;
+    margin-bottom: 2em;
+}
+
+.slider-item-img {
+    margin-right: 1em;
+}
+
+.slider-item-img img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.slider-author-img img {
+    width: 50px;
+}
+
+.slider-item-content span {
+    margin-bottom: 1em;
+}
+
+.slider-item-content h1 {
+    margin-bottom: 0.5em;
+}
+
+.slider-item-content p {
+    margin-bottom: 1em;
+}
+
+.slider-author-name {
+    margin-top: 0.8em;
+    margin-left: 0.5em;
+}
+
+.slider button {
+    background-color: black;
 }
 
 .posts {
-    width: 55%;
-    margin-right: 10%;
+    margin-top: 5em;
 }
 
-.post img {
+.post-item-img img {
     width: 100%;
+    border-radius: 10px;
 }
 
-.post {
-    margin-bottom: 1.5rem;
+.post-item-content span {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-.post h6 {
-    margin-top: 0.75rem;
-    font-size: 25px;
-    text-decoration: underline;
+.post-item-content h6 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 0.5em;
 }
 
-.post a {
-    text-decoration: none;
-    color: #000000;
+.post-author-img img {
+    width: 50px;
 }
 
-.post-contant {
-    background: #F7F9F9;
-    padding: 1.5rem;
+.post-author-name {
+    margin-top: 0.75em;
+    margin-left: 0.5em;
 }
 
-.catalog h6 {
-    font-size: 30px;
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
+.post-item {
+    margin-bottom: 2em;
 }
 
-.catalog ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+@media (min-width: 992px) {
+    .post-item-img img {
+        width: 350px;
+    }
 }
 
-.catalog ul li {
-    margin-bottom: 0.75rem;
-}
-
-.catalog ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 20px;
-}
-
-.catalog ul li a:hover {
-    text-shadow: 1px 1px #E23E57;
+footer {
+    margin-top: 3em;
+    text-align: center;
+    margin-bottom: 3em;
 }
