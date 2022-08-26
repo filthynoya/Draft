@@ -13,92 +13,108 @@
         <title>Edit Profile</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <header>
             <div class="container">
-                <a class="navbar-brand" href="#"><i class="fa-solid fa-bookmark"></i> Draft</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Add Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Edit Profile</a>
-                        </li>
-                    </ul>
-              </div>
-            </div>
-        </nav>
-
-        <section class="Form">
-            <div class="c-container">
-                <div class="d-flex flex-column">
-                    <form class="mx-1 mx-md-3">
-                        <div class="form-row">
-                            <div class="col-12 d-flex flex-row boxes">
-                                <i class="fa fa-user-o icon"></i>
-                                <input type="name" placeholder="Your Name" class="form-control my-2 p-4 " required>
-                            </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="logo text-lg-start text-center">
+                            <span><a href="">Draft</a></span>
                         </div>
-                        <div class="form-row">
-                            <div class="col-12 d-flex flex-row boxes">
-                
-                                <i class="fa fa-envelope icon"></i>
-                                <input type="email" placeholder="Email address" class="form-control my-2 p-4 " required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-12 d-flex flex-row boxes">
-                                <i class="fa fa-key icon"></i>
-                                <input type="password" placeholder="Old Password" class="form-control my-2 p-4" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-12 d-flex flex-row boxes">
-                                <i class="fa fa-key icon"></i>
-                                <input type="password" placeholder="New Password" class="form-control my-2 p-4" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-12 d-flex flex-row boxes">
-                                <i class="fa fa-lock icon"></i>
-                                <input type="password" placeholder="Repeat your password" class="form-control my-2 p-4" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-12 d-flex flex-row boxes justify-content-center">
-                                <img src="img/sample-avatar.png" alt="">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-12 d-flex flex-row c-box">
-                                <i class="fa fa-user icons"></i>
-                                <input class="form-control" type="file" id="formFile">
-                            </div>
-                        </div>
-                        <div class="form-row mt-5">
-                            <div class="col-12">
-                                <div class="d-flex flex-row align-items-center justify-content-center">
-                                    <button type="button"class="btn1 gradient-custom-2 mb-2 mt-0">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav>
+                            <ul>
+                                <li><a href="">Home</a></li>
+                                <li><a href="">Catalog</a></li>
+                                <li><a href="">Add Post</a></li>
+                                <li><a href="">View Profile</a></li>
+                                <li><a href="">Log Out</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </section>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="sidebar">
+                            <ul>
+                                <li onclick="changeDisplay ('b1', 'b2', 'b3')">Basic Information</li>
+                                <li onclick="changeDisplay ('b2', 'b1', 'b3')">Change Password</li>
+                                <li onclick="changeDisplay ('b3', 'b2', 'b1')">Delete Profile</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="basic-info" id="b1">
+                            <form action="">
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">Full Name</label>
+                                    <input type="text" name="" id="">
+                                </div>
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">Email</label>
+                                    <input type="email" name="" id="" disabled>
+                                    <span><i>Email cannot be changed</i></span>
+                                </div>
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">Date of Birth</label>
+                                    <input type="date" name="" id="">
+                                </div>
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">About Yourself</label>
+                                    <textarea name="" id="" maxlength="250"></textarea>
+                                </div>
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">Avater</label>
+                                    <input type="file" name="" id="">
+                                    <img src="img/sample-avatar.jpg" alt="">
+                                </div>
+                                <input type="button" value="Submit">
+                            </form>
+                        </div>
+                        <div class="change-pass" id="b2">
+                            <form action="">
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">Old Password</label>
+                                    <input type="password" name="" id="">
+                                </div>
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">New Password</label>
+                                    <input type="password" name="" id="">
+                                </div>
+                                <div class="form-field d-flex flex-column">
+                                    <label for="">Confirm Password</label>
+                                    <input type="password" name="" id="">
+                                </div>
+                                <input type="button" value="Submit">
+                                <div class="d-lg-block d-none hhh"></div>
+                            </form>
+                        </div>
+                        <div class="delete-profile d-flex flex-column">
+                            <div class="delete-pro" id="b3">
+                                <div class="form-field d-flex flex-column">
+                                    <span>Are you Sure? This process cannot be undone.</span>
+                                    <input type="button" value="Submit" class="c-btn">
+                                </div>
+                                <div class="d-lg-block d-none hhh"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
         <footer>
             <div class="container">
-                <span>&copy; Draft 2022</span>
+                <span>Copyright ©2022 All rights reserved</span>
             </div>
         </footer>
 
+        <script src="js/editprofile.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

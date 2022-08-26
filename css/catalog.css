@@ -39,13 +39,8 @@ header a:hover {
     color: black;
 }
 
-.post-slider {
-    margin-top: 3em;
-}
-
-.trending-title h1 {
-    font-weight: bolder;
-    margin-bottom: 2em;
+.c-slider-btn-div {
+    position: relative;
 }
 
 .slider-item-img {
@@ -78,46 +73,16 @@ header a:hover {
     margin-left: 0.5em;
 }
 
-.slider button {
-    background-color: black;
-}
-
-.posts {
+.slider {
     margin-top: 5em;
 }
 
-.post-item-img img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.post-item-content span {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.post-item-content h6 {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 0.5em;
-}
-
-.post-author-img img {
-    width: 50px;
-}
-
-.post-author-name {
-    margin-top: 0.75em;
-    margin-left: 0.5em;
-}
-
-.post-item {
+.slider-item {
     margin-bottom: 2em;
 }
 
-.c-slider-btn-div {
-    position: relative;
-    margin-top: 2em;
+.slider-title {
+    margin-bottom: 2em;
 }
 
 footer {
