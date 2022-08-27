@@ -10,92 +10,162 @@
 
         <script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
 
-        <title>Post Title</title>
+        <title>Profile</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <header>
             <div class="container">
-                <a class="navbar-brand" href="#"><i class="fa-solid fa-bookmark"></i> Draft</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Add Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Edit Profile</a>
-                        </li>
-                    </ul>
-              </div>
-            </div>
-        </nav>
-
-        <section id="author-info">
-            <div class="c-container">
-                <div class="d-flex flex-row">
-                    <div class="author-img">
-                        <img src="img/sample-avatar.png" alt="">
-                    </div>
-                    <div class="author-names d-flex flex-column">
-                        <div class="name">
-                            <span>Ayon Raihan</span>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="logo text-lg-start text-center">
+                            <span><a href="">Draft</a></span>
                         </div>
-                        <div class="email">
-                            <span>ayonraihan1156@gmail.com</span>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav>
+                            <ul>
+                                <li><a href="">Home</a></li>
+                                <li><a href="">Catalog</a></li>
+                                <li><a href="">Add Post</a></li>
+                                <li><a href="">View Profile</a></li>
+                                <li><a href="">Log Out</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="profile">
+            <div class="container">
+                <div class="d-flex flex-lg-row flex-column">
+                    <div class="author-img text-lg-start text-center my-lg-0 my-5">
+                        <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
+                    </div>
+                    <div class="author-info text-lg-start text-center ms-lg-5 ms-0">
+                        <div class="d-flex flex-column">
+                            <div class="author-name">
+                                <span>Ayon Raihan</span>
+                            </div>
+                            <div class="author-email">
+                                <span>ayonraihan1156@gmail.com</span>
+                            </div>
+                            <div class="author-date">
+                                <span>12/4/1999</span>
+                            </div>
+                            <div class="author-about">
+                                <p>Now cometh the age of the stars. A thousand year voyage under the wisdom of the Moon</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="author-posts">
-            <div class="c-container">
-                <div class="d-flex flex-row justify-content-center">
-                    <div class="d-flex flex-column posts">
-                        <div class="post d-flex flex-column">
-                            <a href="#" class="edit">Edit</a>
-                            <a href="#">
-                                <img src="img/sample_post_pic.jpg" alt="">
-                                <div class="post-contant">
-                                    <h6>Lorem ipsum dolor sit amet</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt ex sed tortor sollicitudin</p>
+        <section class="posts">
+            <div class="container">
+                <div class="posts-heading">
+                    <h1>author's posts</h1>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="post-item">
+                                <div class="d-flex flex-column">
+                                    <div class="post-item-img">
+                                        <img src="img/sample_post_pic.jpg"  alt="">
+                                    </div>
+                                    <div class="post-item-content">
+                                        <div class="d-flex flex-column">
+                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
+                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                        <div class="post d-flex flex-column">
-                            <a href="#" class="edit">Edit</a>
-                            <a href="#">
-                                <img src="img/sample_post_pic.jpg" alt="">
-                                <div class="post-contant">
-                                    <h6>Lorem ipsum dolor sit amet</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt ex sed tortor sollicitudin</p>
+                        <div class="col-lg-4">
+                            <div class="post-item">
+                                <div class="d-flex flex-column">
+                                    <div class="post-item-img">
+                                        <img src="img/sample_post_pic.jpg"  alt="">
+                                    </div>
+                                    <div class="post-item-content">
+                                        <div class="d-flex flex-column">
+                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
+                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                        <div class="post d-flex flex-column">
-                            <a href="#" class="edit">Edit</a>
-                            <a href="#">
-                                <img src="img/sample_post_pic.jpg" alt="">
-                                <div class="post-contant">
-                                    <h6>Lorem ipsum dolor sit amet</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt ex sed tortor sollicitudin</p>
+                        <div class="col-lg-4">
+                            <div class="post-item">
+                                <div class="d-flex flex-column">
+                                    <div class="post-item-img">
+                                        <img src="img/sample_post_pic.jpg"  alt="">
+                                    </div>
+                                    <div class="post-item-content">
+                                        <div class="d-flex flex-column">
+                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
+                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                        <div class="post d-flex flex-column">
-                            <a href="#" class="edit">Edit</a>
-                            <a href="#">
-                                <img src="img/sample_post_pic.jpg" alt="">
-                                <div class="post-contant">
-                                    <h6>Lorem ipsum dolor sit amet</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt ex sed tortor sollicitudin</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="post-item">
+                                <div class="d-flex flex-column">
+                                    <div class="post-item-img">
+                                        <img src="img/sample_post_pic.jpg"  alt="">
+                                    </div>
+                                    <div class="post-item-content">
+                                        <div class="d-flex flex-column">
+                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
+                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="post-item">
+                                <div class="d-flex flex-column">
+                                    <div class="post-item-img">
+                                        <img src="img/sample_post_pic.jpg"  alt="">
+                                    </div>
+                                    <div class="post-item-content">
+                                        <div class="d-flex flex-column">
+                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
+                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="post-item">
+                                <div class="d-flex flex-column">
+                                    <div class="post-item-img">
+                                        <img src="img/sample_post_pic.jpg"  alt="">
+                                    </div>
+                                    <div class="post-item-content">
+                                        <div class="d-flex flex-column">
+                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
+                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +174,7 @@
 
         <footer>
             <div class="container">
-                <span>&copy; Draft 2022</span>
+                <span>Copyright ©2022 All rights reserved</span>
             </div>
         </footer>
 

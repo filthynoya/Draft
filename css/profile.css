@@ -9,80 +9,105 @@ body {
     font-family: 'Poppins', sans-serif; 
 }
 
-.c-container {
-    width: 55%;
-    margin: auto;
+header {
+    border-bottom: 1px solid #ededed;
+    margin-top: 1em;
 }
 
-nav a:hover {
-    text-shadow: 1px 1px #e33f58;
-}
-
-nav ul li {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-}
-
-footer {
-    text-align: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-.post img {
-    width: 100%;
-}
-
-.post {
-    margin-bottom: 2rem;
-}
-
-.post h6 {
-    margin-top: 0.75rem;
-    font-size: 25px;
-    text-decoration: underline;
-}
-
-.post a {
-    text-decoration: none;
-    color: #000000;
-}
-
-.post-contant {
-    background: #F7F9F9;
-    padding: 1.5rem;
-}
-
-#author-info {
-    margin-top: 5em;
-}
-
-.author-img {
-    margin-right: 2em;
-}
-
-.author-img img {
-    width: 170px;
-}
-
-.name {
-    margin-top: 2em;
-}
-
-.name span {
+.logo span {
     font-size: 30px;
 }
 
-#author-posts {
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    padding: 0.5em;
+    font-size: 15px;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover {
+    text-shadow: 1px 1px #e33f58;
+    color: black;
+}
+
+.profile {
+    margin-top: 3em;
+}
+
+.author-img img {
+    width: 300px;
+}
+
+.author-info {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.author-name {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 0.5em;
+}
+
+.author-email {
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 0.5em;
+}
+
+.author-date {
+    font-size: 15px;
+    margin-bottom: 0.5em;
+}
+
+.author-about {
+    font-size: 13px;
+}
+
+.posts {
     margin-top: 5em;
 }
 
-.edit {
-    margin-left: 35em;
-    font-size: 20px;
+.post-item-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.post-item-content span {
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
-.edit:hover {
-    text-decoration: underline;
+.post-item-content h6 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 0.5em;
+}
+
+.post-item {
+    margin-bottom: 2em;
+}
+
+.posts-heading {
+    text-align: center;
+}
+
+.posts-heading h1 {
+    font-weight: bolder;
+    margin-bottom: 3em;
+}
+
+footer {
+    margin-top: 3em;
+    text-align: center;
+    margin-bottom: 3em;
 }
