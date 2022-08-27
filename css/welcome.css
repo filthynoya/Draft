@@ -7,7 +7,7 @@
 }
 .body{
   background-color: rgb(219,226,226) ;
-  height: 1200vh;
+  height: 100vh;
    
 }
 .gradient-custom-2 {
@@ -27,15 +27,60 @@
     }
 }
 
-.container{
+header nav{
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(84, 52, 76, 0.621) ;
+    position: fixed;
+    padding-top: 15px;
+    
+}
+header{
+    height: 100vh;
+    background: url("/img/back-image_2.png");
+    background-size: cover;
+    background-position: center center;
+   
+   
+    
+    
+}
+header ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+header .logo span {
+    font-size: 35px;
+}
+header ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+    padding: 0.5em;
+    font-size: 18px;
+}
+header a {
+   
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+header a:hover {
+    text-shadow: 1px 1px #7b5768bb;
+    color: rgb(255, 255, 255);
+}
+
+/*.container{
     width: 100%;
     min-height: 100vh;
     background-position: center;
     background-size: cover;
-   
-    
     position: relative;
-}
+    background-image: url("/img/back-image.png");
+}*/
 .btn1{
     margin-top: 6px;
     border: none;
@@ -68,9 +113,9 @@
 }
 
 .msg-col h1{
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 100;
-    margin: 10px 0;
+    margin: 15px 0;
     color: #222;
 
 }
@@ -89,6 +134,7 @@
     bottom: 0;
     right: 10%;
     transition: 5s;
+    
 
 }
 
@@ -121,4 +167,55 @@
     transition: 0.5s;
 
 
+}
+
+.post-slider {
+    margin-top: 3em;
+}
+
+.trending-title h1 {
+    font-weight: bolder;
+    margin-bottom: 2em;
+}
+
+.slider-item-img {
+    margin-right: 1em;
+}
+
+.slider-item-img img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.slider-author-img img {
+    width: 50px;
+}
+
+.slider-item-content span {
+    margin-bottom: 1em;
+}
+
+.slider-item-content h1 {
+    margin-bottom: 0.5em;
+}
+
+.slider-item-content p {
+    margin-bottom: 1em;
+}
+
+.slider-author-name {
+    margin-top: 0.8em;
+    margin-left: 0.5em;
+}
+
+.slider button {
+    background-color: black;
+}
+footer {
+    margin-top: 2em;
+    padding-top: 2em;
+    text-align: center;
+    padding-bottom: 2em;
+    color: aliceblue;
+    background-color: rgba(84, 52, 76, 0.621)  ;
 }

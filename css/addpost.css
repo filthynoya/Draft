@@ -5,7 +5,292 @@
     box-sizing: border-box;
     font-family: "Poppins",sans-serif;
     font-weight: 10%;
+    background: rgba(18, 18, 18, 0.77);
 }
+body{
+    overflow: hidden;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+    background:url(/img/back-image_2.png);
+    background-size: cover;
+    background-position: center center;
+}
+section::before{
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    transform: translate(-200px,-180px);
+   
+}
+.container{
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+    background: rgba(255, 255,255, 0.1);
+    box-shadow: 0 25px 45px  rgba(0,0,0, 0.1);
+    border: 1px solid  rgba(255, 255,255,0.25);
+    border-right: 1px solid rgba(255, 255,255, 0.1);
+    border-bottom:1px solid rgba(255, 255,255, 0.1) ;
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+}
+.container::before{
+    contain: '';
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  rgba(255, 255, 255, 0.05);
+    transform: skewX(-15deg);
+}
+.container h2{
+    width: 100%;
+    text-align: center;
+    color: azure;
+    font-size: 36px;
+    margin-bottom: 20px;
+
+}
+.container .row100{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(out-fit,minmax(250px,1fr));
+}
+.container .row100 .col{
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 20px;
+
+}
+.container .row100 .col .inputbox{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: azure;
+
+}
+.container .row100 .col .inputbox input,
+.container .row100 .col .inputbox textarea{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 0 10px;
+    z-index: 1;
+    color: rgb(98, 93, 93);
+}
+.container .row100 .col .inputbox .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding:  0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+.container .row100 .col .inputbox input:focus + .text,
+.container .row100 .col .inputbox input:valid + .text,
+.container .row100 .col .inputbox textarea:focus + .text,
+.container .row100 .col .inputbox textarea:valid + .text
+{
+    top: -35px;
+    left: -10px;
+
+}
+.container .row100 .col .inputbox .line{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.container .row100 .col .inputbox input:focus ~ .line,
+.container .row100 .col .inputbox input:valid ~ .line{
+    height: 100%;
+}
+.container .row100 .col .inputbox.textarea{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+.container .row100 .col .inputbox textarea:focus ~ .line,
+.container .row100 .col .inputbox textarea:valid ~ .line{
+    height: 100%;
+}
+
+
+.container .wrapper{
+    position: relative;
+    height: 300px;
+    width: 100%;
+
+    
+    border-radius: 10px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    overflow: hidden;
+}
+.wrapper.active{
+    border: none;
+}
+.wrapper .image{
+    position: absolute;
+    height: 80%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.wrapper .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+   
+}
+
+.wrapper .icon{
+    font-size: 100px;
+    color: #0e0d0f;
+    align-items: center;
+    justify-content: center ;
+
+}
+.wrapper .text{
+    font-size: 20px;
+    font-weight: 500;
+    color:rgb(21, 85, 55);
+
+}
+.wrapper #cancel-btn{
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    top: 10px;
+    cursor: pointer;
+    color: #9658fe;
+    display: none;
+}
+.wrapper.active:hover #cancel-btn{
+    display: block;
+}
+.wrapper #cancel-btn:hover{
+    color: #fff;
+
+}
+.wrapper .file-name{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 18px;
+    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+    display: none;
+}
+.wrapper.active:hover .file-name{
+    display: block;
+}
+.container #custom-btn{
+    margin-top: 10px;
+    margin-left: 195px;
+    width: 34%;
+    height: 40px;
+    display: block;
+    border: none;
+    outline: none;
+    background: linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+    border-radius: 10px;
+    color: #fff;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+.btn1{
+    margin-top: -80px;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    color: white;
+    border-radius: 27px;
+    
+}
+/*.container textarea{
+    position: relative;
+   
+    width: 100%;
+    height: 55px;
+    padding: 15px;
+    outline: none;
+    resize: none;
+    font-size: 15px;
+    margin-top: -25px;
+    margin-bottom: -5px;
+    border-radius: 3px;
+    border-color: rgb(144, 137, 137);
+
+}*/
+textarea:is(:focus, :valid){
+    border-width: 1px;
+    padding: 14px;
+    border-color: rgb(144, 137, 137);
+}
+
+
+
+
+
+
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.gradient-custom-2 {
+    background: rgb(0,0,0);
+    background:  linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+}
+/*
 img{
    border-style: none!important;
 }
@@ -25,7 +310,7 @@ html,body{
     height: 300px;
     width: 100%;
 
-    /*border: 2px dashed #c2cdda;*/
+    
     border-radius: 10px;
     background: #fff;
     display: flex;
@@ -203,3 +488,4 @@ background: #eee;
 
 }
     
+*/
