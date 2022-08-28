@@ -219,3 +219,8 @@ footer {
     color: aliceblue;
     background-color: rgba(84, 52, 76, 0.621)  ;
 }
+
+.c-slider-btn-div {
+    position: relative!important;
+    margin-top: 2em;
+}

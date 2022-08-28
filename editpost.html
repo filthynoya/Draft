@@ -18,30 +18,33 @@
     <title>Edit|Post</title>
 </head>
 <body>
-    <section class="h-100 h-custom" style="background-color: #000000;">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-lg-8 justify-content-center align-items-cente ">
-                    <div class="card rounded-3">
+    <section>
+        <div class="container">
                 
-                        <div class="card-body p-2 p-md-5">
-                            <div>
-                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Edit Post</h3>
-                                <div class="d-md-flex justify-content-md-end">
-                                    <button class="btn1 gradient-custom-2" type="button">Post</button>
-                                
-                                </div>
-                            </div>
-                            <div class="msg col-lg-12 mb-4">
-                                <input type="text" name="first_name" placeholder="Title" required>
-                               
-                            </div>
-                            <div class="msg col-lg-12">
-                                <textarea  placeholder="Wright someting here...." required></textarea>
-      
-                            </div>
-                            <form class="wrapper px-md-2 text-center">
-                                
+                    <div>
+                        <h2 class="col-lg-3 mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Edit Post</h2>
+                        <div class=" d-md-flex justify-content-md-end">
+                            <button class="btn1 gradient-custom-2" type="button">Save</button>
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="row100">
+                        <div class="col">
+                            <input type="text" name="first_name" placeholder="Title" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row100">
+                        <div class="col">
+                            <textarea  placeholder="Wright someting here...." required></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="row100">
+                        <div class="col">
+                            <form class="wrapper  px-md-2 text-center">
+                                        
                                 <div class="image">
                                     <img class="img-fluid" src=" " alt="">
                                 </div>
@@ -54,65 +57,66 @@
                                 <div id="cancel-btn"><i class="fa fa-times"></i></div>
                                 <div class="file-name">File name here</div>
                 
-                               <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
+                            <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
                 
-                            </form>
-                           
+                            </form> 
                             <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
                             <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
-                        </div>
-                        <script>
-
-                            const textarea= document.querySelector("textarea");
-
-                            const wrapper= document.querySelector(".wrapper");
-                            const fileName= document.querySelector(".file-name");
-                            const cancelBtn= document.querySelector("#cancel-btn");
-                            const defaultBtn= document.querySelector("#default-btn");
-                            const customBtn= document.querySelector("#custom-btn");
-                            const img= document.querySelector("img");
 
 
-
-                            let regExp=/[0-9a-zA-Z\^\&\'\@\{\}\[\]\, \$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
-
-                            textarea.addEventListener("keyup", e =>{
-                                textarea.style.height="55px";
-                                let scHeight = e.target.scrollHeight;
-                                textarea.style.height=`${scHeight}px`;
-                            });
-
-                            function defaultBtnActive(){
-                                defaultBtn.click();
-                            }
-                            defaultBtn.addEventListener("change",function(){
-                                const file=this.files[0];
-                                if(file){
-                                    const reader= new FileReader();
-                                    reader.onload=function(){
-                                        const result=reader.result;
-                                        img.src=result;
-                                        wrapper.classList.add("active");
-                                    }
-                                    cancelBtn.addEventListener("click",function(){
-                                        img.src=" ";
-                                        wrapper.classList.remove("active");
-                                    });
-                                    reader.readAsDataURL(file);
-                                }
-                                if(this.value){
-                                    let valueStore=this.value.match(regExp);
-                                    fileName.textContent=valueStore;
-                                }
-
-                            });
-
-                        </script>
                     </div>
-                </div>
             </div>
+                <script>
+                    
+                    const textarea= document.querySelector("textarea");
+
+                    const wrapper= document.querySelector(".wrapper");
+                    const fileName= document.querySelector(".file-name");
+                    const cancelBtn= document.querySelector("#cancel-btn");
+                    const defaultBtn= document.querySelector("#default-btn");
+                    const customBtn= document.querySelector("#custom-btn");
+                    const img= document.querySelector("img");
+
+
+
+                    let regExp=/[0-9a-zA-Z\^\&\'\@\{\}\[\]\, \$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+                    textarea.addEventListener("keyup", e =>{
+                        textarea.style.height="55px";
+                        let scHeight = e.target.scrollHeight;
+                        textarea.style.height=`${scHeight}px`;
+                    });
+
+                    function defaultBtnActive(){
+                        defaultBtn.click();
+                    }
+                    defaultBtn.addEventListener("change",function(){
+                        const file=this.files[0];
+                        if(file){
+                            const reader= new FileReader();
+                            reader.onload=function(){
+                                const result=reader.result;
+                                img.src=result;
+                                wrapper.classList.add("active");
+                            }
+                            cancelBtn.addEventListener("click",function(){
+                                img.src=" ";
+                                wrapper.classList.remove("active");
+                            });
+                            reader.readAsDataURL(file);
+                        }
+                        if(this.value){
+                            let valueStore=this.value.match(regExp);
+                            fileName.textContent=valueStore;
+                        }
+
+                    });
+
+                                
+                </script>
         </div>
-      </section>
+      
+    </section>
 
 
 

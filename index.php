@@ -1,8 +1,19 @@
+<?php
+    session_start();
+    
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+        header("location: home.php");
+        exit;
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,39 +24,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-     crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 <body>
     <img class="feature-img" src="img/landing2.jpeg">
     <header>
-    <nav class="fixed-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 mt-1">
-                    <div class="logo text-lg-start text-center">
-                        <span><a href=""><img src="img/logo.png" alt=""> Draft</a></span>
+        <nav class="fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo text-lg-start text-center">
+                            <span><a href=""><img src="img/logo.png" alt=""> Draft</a></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        
+                            <ul>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="">Contact</a></li>
+                                <li><a href="login.php">Log in</a></li>
+                            </ul>
+                    
                     </div>
                 </div>
-                <div class="col-lg-5 mb-6">
-                    
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Log in</a></li>
-                        </ul>
-                   
-                </div>
             </div>
-        </div>
-        
-    </nav>
+            
+        </nav>
     <!--
         
     <nav>
@@ -144,7 +149,7 @@
                 <h1>Trending</h1>
             </div>
             <div class="slider">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleSlidesOnly" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="slider-item">
@@ -184,9 +189,9 @@
                                             <div class="d-flex flex-row justify-content-lg-start justify-content-center">
                                                 <div class="slider-author-img">
                                                     <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
+                                                    </div>
                                                 <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
+                                                   <span>Ayon Raihan</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -218,6 +223,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="carousel-indicators c-slider-btn-div">
+                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"></button>
                     </div>
                 </div>
             </div>
@@ -264,11 +274,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
       
-   <!-- -->
-    
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-      <!-- -->
+
 </body>
 </html>

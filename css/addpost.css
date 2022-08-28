@@ -5,12 +5,13 @@
     box-sizing: border-box;
     font-family: "Poppins",sans-serif;
     font-weight: 10%;
-    background: rgba(18, 18, 18, 0.77);
-}
-body{
-    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
 }
 
+.create{
+    
+    margin-bottom: -36px;
+}
 section{
     display: flex;
     justify-content: center;
@@ -22,18 +23,18 @@ section{
     background-size: cover;
     background-position: center center;
 }
-section::before{
-    content: '';
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    transform: translate(-200px,-180px);
-   
-}
+
 .container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+   
+
     position: relative;
     z-index: 1000;
-    width: 100%;
+   
     max-width: 1000px;
     padding: 50px;
     background: rgba(255, 255,255, 0.1);
@@ -49,18 +50,19 @@ section::before{
     contain: '';
     position:absolute;
     top: 0;
-    left: 0;
+    left: -40%;
     width: 100%;
     height: 100%;
     background:  rgba(255, 255, 255, 0.05);
+    pointer-events: none;
     transform: skewX(-15deg);
 }
 .container h2{
     width: 100%;
-    text-align: center;
-    color: azure;
+    margin-top: -30px;
+    color: rgb(100, 74, 89);
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: -80px;
 
 }
 .container .row100{
@@ -73,246 +75,17 @@ section::before{
     position: relative;
     width: 100%;
     padding: 0 10px;
-    margin: 30px 0 20px;
-
-}
-.container .row100 .col .inputbox{
-    position: relative;
-    width: 100%;
-    height: 40px;
-    color: azure;
-
-}
-.container .row100 .col .inputbox input,
-.container .row100 .col .inputbox textarea{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    box-shadow: none;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    padding: 0 10px;
-    z-index: 1;
-    color: rgb(98, 93, 93);
-}
-.container .row100 .col .inputbox .text{
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: 40px;
-    font-size: 18px;
-    padding:  0 10px;
-    display: block;
-    transition: 0.5s;
-    pointer-events: none;
-
-}
-.container .row100 .col .inputbox input:focus + .text,
-.container .row100 .col .inputbox input:valid + .text,
-.container .row100 .col .inputbox textarea:focus + .text,
-.container .row100 .col .inputbox textarea:valid + .text
-{
-    top: -35px;
-    left: -10px;
-
-}
-.container .row100 .col .inputbox .line{
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    transition: 0.5s;
-    border-radius: 2px;
-    pointer-events: none;
-}
-
-.container .row100 .col .inputbox input:focus ~ .line,
-.container .row100 .col .inputbox input:valid ~ .line{
-    height: 100%;
-}
-.container .row100 .col .inputbox.textarea{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    padding: 10px 0;
-}
-.container .row100 .col .inputbox textarea:focus ~ .line,
-.container .row100 .col .inputbox textarea:valid ~ .line{
-    height: 100%;
-}
-
-
-.container .wrapper{
-    position: relative;
-    height: 300px;
-    width: 100%;
-
+    margin: 20px 0 10px;
     
-    border-radius: 10px;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center ;
-    overflow: hidden;
-}
-.wrapper.active{
-    border: none;
-}
-.wrapper .image{
-    position: absolute;
-    height: 80%;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.wrapper .image img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-   
-}
-
-.wrapper .icon{
-    font-size: 100px;
-    color: #0e0d0f;
-    align-items: center;
-    justify-content: center ;
-
-}
-.wrapper .text{
-    font-size: 20px;
-    font-weight: 500;
-    color:rgb(21, 85, 55);
-
-}
-.wrapper #cancel-btn{
-    position: absolute;
-    right: 15px;
-    font-size: 20px;
-    top: 10px;
-    cursor: pointer;
-    color: #9658fe;
-    display: none;
-}
-.wrapper.active:hover #cancel-btn{
-    display: block;
-}
-.wrapper #cancel-btn:hover{
-    color: #fff;
-
-}
-.wrapper .file-name{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    color: #fff;
-    padding: 8px 0;
-    font-size: 18px;
-    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
-    display: none;
-}
-.wrapper.active:hover .file-name{
-    display: block;
-}
-.container #custom-btn{
-    margin-top: 10px;
-    margin-left: 195px;
-    width: 34%;
-    height: 40px;
-    display: block;
-    border: none;
-    outline: none;
-    background: linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
-    border-radius: 10px;
-    color: #fff;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-
-.btn1{
-    margin-top: -80px;
-    border: none;
-    outline: none;
-    height: 40px;
-    width: 100px;
-    font-weight: bold;
-    color: white;
-    border-radius: 27px;
-    
-}
-/*.container textarea{
-    position: relative;
-   
-    width: 100%;
-    height: 55px;
-    padding: 15px;
-    outline: none;
-    resize: none;
-    font-size: 15px;
-    margin-top: -25px;
-    margin-bottom: -5px;
-    border-radius: 3px;
-    border-color: rgb(144, 137, 137);
-
-}*/
-textarea:is(:focus, :valid){
-    border-width: 1px;
-    padding: 14px;
-    border-color: rgb(144, 137, 137);
-}
-
-
-
-
-
-
-
-.divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
-}
-.gradient-custom-2 {
-    background: rgb(0,0,0);
-    background:  linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
-}
-/*
-img{
-   border-style: none!important;
-}
-html,body{
-    background-color: #0a0a0a ;
-    
-    place-items: center;
-    text-align: center;
-    width: 100%;
-}
-.container{
-    height: 550px;
-    width: 800px;
 }
 .container .wrapper{
     position: relative;
-    height: 300px;
+    height: 316px;
     width: 100%;
-
-    
+    margin-top: -10px;
+   
     border-radius: 10px;
-    background: #fff;
+    background: rgba(102, 77, 98, 0.152);
     display: flex;
     align-items: center;
     justify-content: center ;
@@ -328,7 +101,7 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    background: transparent;
 }
 
 .wrapper .image img{
@@ -340,12 +113,13 @@ html,body{
 
 .wrapper .icon{
     font-size: 100px;
-    color: #0e0d0f;
+    color: rgba(88, 65, 78, 0.784);
 }
 .wrapper .text{
+    text-align: center;
     font-size: 20px;
     font-weight: 500;
-    color:rgb(21, 85, 55);
+    color:rgba(88, 65, 78, 0.784);
 
 }
 .wrapper #cancel-btn{
@@ -354,7 +128,7 @@ html,body{
     font-size: 20px;
     top: 10px;
     cursor: pointer;
-    color: #9658fe;
+    color: rgb(100, 74, 89);
     display: none;
 }
 .wrapper.active:hover #cancel-btn{
@@ -371,24 +145,24 @@ html,body{
     color: #fff;
     padding: 8px 0;
     font-size: 18px;
-    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+    background: linear-gradient(135deg,#7b5965 0%,#4a2936 100%);
     display: none;
 }
 .wrapper.active:hover .file-name{
     display: block;
 }
 .container #custom-btn{
-    margin-top: 10px;
-    margin-left: 195px;
-    width: 34%;
-    height: 40px;
+    margin-top: 7px;
+    
+    width: 20%;
+    height: 39px;
     display: block;
     border: none;
     outline: none;
-    background: linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+    background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 73%);
     border-radius: 10px;
     color: #fff;
-    justify-content: center;
+    margin-bottom: -54px;
     font-size: 15px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -432,13 +206,13 @@ input:is(:focus, :valid){
     position: relative;
    
     width: 100%;
-    height: 55px;
+    min-height: 150px;
     padding: 15px;
     outline: none;
     resize: none;
     font-size: 15px;
     margin-top: -25px;
-    margin-bottom: -5px;
+    margin-bottom: -6px;
     border-radius: 3px;
     border-color: rgb(144, 137, 137);
 
@@ -465,8 +239,8 @@ height: 1px;
 background: #eee;
 }
 .gradient-custom-2 {
-    background: rgb(0,0,0);
-    background:  linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+    background: rgb(75,28,64);
+    background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 73%);
 }
     
 @media (min-width: 768px) {
@@ -487,5 +261,3 @@ background: #eee;
     }
 
 }
-    
-*/

@@ -1,3 +1,53 @@
+<?php
+  session_start();
+  
+  if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+      header("location: home.php");
+      exit;
+  }
+
+  include 'server/db.php';
+
+  $email = $password = "";
+  $error = 0;
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim_data ($_POST["email"]);
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $error_msg = "Incorrect Email";
+      $error++;
+    }
+
+    $password = trim_data ($_POST["passkey"]);
+
+    if ($error == 0) {
+      $sql = "SELECT email, passkey FROM users WHERE email = '$email'";
+      $result_set = $conn->query($sql);
+
+      if ($result_set->num_rows > 0) {
+        while($row = $result_set->fetch_assoc()) {
+          if (strcmp ($password, $row["passkey"]) == 0) {
+            session_start();
+                            
+            $_SESSION["loggedin"] = true;
+            $_SESSION["id"] = $id;
+            $_SESSION["email"] = $email;
+
+            header("location: home.php");
+            exit;
+          } else {
+            $error_msg = "Wrong Password.";
+            $error++;
+          }
+        }
+      } else {
+        $error_msg = "User don't exist.";
+        $error++;
+      }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,38 +60,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--social icon-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-     crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
+    
     <title>Login & Register</title>
 </head>
 <body>
   <section class="Form" style="background-color: rgb(0, 0, 0)">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <?php
+          if ($error != 0) {
+            echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
+            <i class="fa-solid fa-triangle-exclamation me-3"></i>
+            <div>' . $error_msg . '</div>
+            </div>';
+          }
+        ?>
+        <div class="col-lg-6 d-flex align-items-center justify-content-center mt-lg-0 mt-5">
           <img src="img/signin-image.jpg" class="img-fluid" style="height: 400px;" alt="">
         </div>
         <div class="col-lg-6">
           <p class="h1 fw-bold mb-4 mx-1 mx-md-3 mt-1">Sign in</p>
-          <form >
+          <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="form-row">
               <div class="col-lg-8 d-flex flex-row boxes">
 
                 <i class="fa fa-user icon"></i>
-                <input type="email" placeholder="Email address or Username" class="form-control my-2 p-4 " required>
+                <input name="email" type="email" placeholder="Email address or Username" class="form-control my-2 p-4 " required>
               </div>
             </div>
             <div class="form-row">
               <div class="col-lg-8 d-flex flex-row boxes">
                 <i class="fa fa-lock icon"></i>
-                <input type="password" placeholder="******" class="form-control my-2 p-4" required>
+                <input name="passkey" type="password" placeholder="******" class="form-control my-2 p-4" required>
               </div>
             </div>
 
@@ -56,7 +111,7 @@
             <div class="form-row">
               <div class="col-lg-8">
                 <div class="d-flex flex-row align-items-center justify-content-center">
-                  <button type="button"class="btn1 gradient-custom-2 mt-3 mb-4"> Sign in</button>
+                  <button type="submit"class="btn1 gradient-custom-2 mt-3 mb-4">Sign in</button>
                 </div>
               </div>
             </div>
@@ -87,7 +142,7 @@
 
                 <div class="text-center pt-2 mb-5 pb-4">
               
-                  <a class="text-muted fw-bold text-body" href="regisration.html">Create an account</a>
+                  <a class="text-muted fw-bold text-body" href="registration.php">Create an account</a>
                   
                 </div>
             </div>
@@ -105,11 +160,5 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     
-  <!---->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-      <!---->
-
 </body>
 </html>

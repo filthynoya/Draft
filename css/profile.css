@@ -11,11 +11,21 @@ body {
 
 header {
     border-bottom: 1px solid #ededed;
-    margin-top: 1em;
+    padding-top: 1em;
+    background-color: rgba(131, 99, 120, 0.836) ;
 }
-
+.logo {
+    padding-bottom: 10px;
+   
+}
 .logo span {
     font-size: 30px;
+    padding-bottom: 1em;
+}
+header img, svg {
+    
+        vertical-align: middle;
+        width: 40px;
 }
 
 header nav ul {
@@ -31,7 +41,7 @@ header nav ul li {
 
 header a {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 header a:hover {
@@ -40,7 +50,7 @@ header a:hover {
 }
 
 .profile {
-    margin-top: 3em;
+    margin-top: 8em;
 }
 
 .author-img img {
@@ -107,7 +117,10 @@ header a:hover {
 }
 
 footer {
-    margin-top: 3em;
+    margin-top: 2em;
+    padding-top: 2em;
     text-align: center;
-    margin-bottom: 3em;
+    padding-bottom: 2em;
+    color: aliceblue;
+    background-color: rgba(84, 52, 76, 0.621)  ;
 }

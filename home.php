@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -14,12 +22,12 @@
         <title>Draft | Home</title>
     </head>
     <body>
-        <header>
+        <header class="fixed-top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="logo text-lg-start text-center">
-                            <span><a href="">Draft</a></span>
+                        <span><a href=""><img src="img/logo.png" alt=""><a href="">Draft</a></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -29,7 +37,7 @@
                                 <li><a href="">Catalog</a></li>
                                 <li><a href="">Add Post</a></li>
                                 <li><a href="">View Profile</a></li>
-                                <li><a href="">Log Out</a></li>
+                                <li><a href="server/logout.php">Log Out</a></li>
                             </ul>
                         </nav>
                     </div>

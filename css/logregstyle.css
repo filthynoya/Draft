@@ -11,8 +11,8 @@
   
 }
 .gradient-custom-2 {
-  background: rgb(0,0,0);
-  background: linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+  background: rgb(75,28,64);
+  background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 56%);
 }
 
 .divider:after,
