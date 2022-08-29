@@ -65,18 +65,18 @@
             <div class="container">
                 <div class="d-flex flex-lg-row flex-column">
                     <div class="author-img text-lg-start text-center my-lg-0 my-5">
-                        <img src="<?php if ($location == NULL) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" class="rounded-circle" alt="">
+                        <img src="<?php if ($location == NULL || strcmp ($location, "") == 0) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" class="rounded-circle" alt="">
                     </div>
                     <div class="author-info text-lg-start text-center ms-lg-5 ms-0">
                         <div class="d-flex flex-column">
                             <div class="author-name">
-                                <span><?php echo $name ?></span>
+                                <span><?php echo $name; ?></span>
                             </div>
                             <div class="author-email">
-                                <span><?php echo $email ?></span>
+                                <span><?php echo $email; ?></span>
                             </div>
                             <div class="author-date">
-                                <span><?php echo $doj ?></span>
+                                <span><?php echo $doj; ?></span>
                             </div>
                             <div class="author-about">
                                 <p><i><?php 

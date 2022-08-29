@@ -146,7 +146,7 @@
     <section class="post-slider">
         <div class="container">
             <div class="trending-title text-center">
-                <h1>Trending</h1>
+                <h1>Posts you will be missed..</h1>
             </div>
             <div class="slider">
                 <div id="carouselExampleSlidesOnly" class="carousel carousel-dark slide" data-bs-ride="carousel">

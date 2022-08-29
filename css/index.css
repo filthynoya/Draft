@@ -12,7 +12,7 @@
 }
 .gradient-custom-2 {
     background: rgb(0,0,0);
-    background:  linear-gradient(203deg, rgba(0,0,0,1) 66%, rgba(226,62,87,1) 100%);
+    background:   linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 56%);
   }
     
 @media (min-width: 768px) {
@@ -170,7 +170,7 @@ header a:hover {
 }
 
 .post-slider {
-    margin-top: 3em;
+    margin-top: 5em;
 }
 
 .trending-title h1 {

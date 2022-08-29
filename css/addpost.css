@@ -19,7 +19,7 @@ section{
     min-height: 100vh;
     padding: 20px;
     width: 100%;
-    background:url(/img/back-image_2.png);
+    background:url('../img/back-image_2.png');
     background-size: cover;
     background-position: center center;
 }
@@ -181,7 +181,32 @@ section{
     color: white;
     border-radius: 27px;
     
+
   }
+.btn2{
+    
+        margin-top: 15px;
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 100px;
+        font-weight: bold;
+        color: white;
+        border-radius: 9px;
+        margin-bottom: -54px;
+    
+}
+
+.btn2 a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn2 a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .container input{
     position: relative;
    

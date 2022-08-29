@@ -62,6 +62,10 @@
                     </form> 
                     <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
                     <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+                    <div class=" d-md-flex justify-content-md-end">
+                    <button class="btn2 gradient-custom-2" type="button"><a href="home.php">Back</a></button>
+                
+                </div>
 
 
                 </div>
