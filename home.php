@@ -33,10 +33,10 @@
                     <div class="col-lg-6">
                         <nav>
                             <ul>
-                                <li><a href="">Home</a></li>
-                                <li><a href="">Catalog</a></li>
-                                <li><a href="">Add Post</a></li>
-                                <li><a href="">View Profile</a></li>
+                                <li><a href="home.php">Home</a></li>
+                                <li><a href="catalog.php">Catalog</a></li>
+                                <li><a href="addpost.php">Add Post</a></li>
+                                <li><a href="profile.php">View Profile</a></li>
                                 <li><a href="server/logout.php">Log Out</a></li>
                             </ul>
                         </nav>

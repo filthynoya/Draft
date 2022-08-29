@@ -1,3 +1,28 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
+
+    include 'server/db.php'; 
+
+    $email = $_SESSION["email"];
+
+    $sql = "SELECT * FROM users INNER JOIN users_pic ON users.userid = users_pic.userid WHERE email = '$email'";
+
+    $result_set = $conn->query($sql);
+
+    if ($result_set->num_rows > 0) {
+        while ($row = $result_set->fetch_assoc ()) {
+            $name = $row["fullname"];
+            $doj = $row["dateofreg"];
+            $about = $row["about"];
+            $location = $row["location"];
+        }
+    }
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -24,11 +49,11 @@
                     <div class="col-lg-6">
                         <nav>
                             <ul>
-                                <li><a href="">Home</a></li>
-                                <li><a href="">Catalog</a></li>
-                                <li><a href="">Add Post</a></li>
-                                <li><a href="">View Profile</a></li>
-                                <li><a href="">Log Out</a></li>
+                                <li><a href="home.php">Home</a></li>
+                                <li><a href="catalog.php">Catalog</a></li>
+                                <li><a href="addpost.php">Add Post</a></li>
+                                <li><a href="editprofile.php">Edit Profile</a></li>
+                                <li><a href="server/logout.php">Log Out</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -40,21 +65,27 @@
             <div class="container">
                 <div class="d-flex flex-lg-row flex-column">
                     <div class="author-img text-lg-start text-center my-lg-0 my-5">
-                        <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
+                        <img src="<?php if ($location == NULL) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" class="rounded-circle" alt="">
                     </div>
                     <div class="author-info text-lg-start text-center ms-lg-5 ms-0">
                         <div class="d-flex flex-column">
                             <div class="author-name">
-                                <span>Ayon Raihan</span>
+                                <span><?php echo $name ?></span>
                             </div>
                             <div class="author-email">
-                                <span>ayonraihan1156@gmail.com</span>
+                                <span><?php echo $email ?></span>
                             </div>
                             <div class="author-date">
-                                <span>12/4/1999</span>
+                                <span><?php echo $doj ?></span>
                             </div>
                             <div class="author-about">
-                                <p>Now cometh the age of the stars. A thousand year voyage under the wisdom of the Moon</p>
+                                <p><i><?php 
+                                    if ($about == NULL) {
+                                        echo 'Seems like user is a bit shy..';
+                                    } else {
+                                        echo $about;
+                                    }
+                                ?></i></p>
                             </div>
                         </div>
                     </div>
