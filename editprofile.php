@@ -44,6 +44,10 @@
             $folder = "uploads/".$filename; 
             move_uploaded_file($tempname, $folder);
 
+            if (strcmp ($folder, "uploads/") == 0) {
+                $folder = $location;
+            }
+
             $sql = "UPDATE users_pic SET location='$folder' where userid=$id";
             $conn->query($sql);
             $location = $folder;
@@ -155,7 +159,7 @@
                                 </div>
                                 <div class="form-field d-flex flex-column">
                                     <label for="">Avater</label>
-                                    <input id="imgupload" accept="image/*" type="file" name="propic" id="">
+                                    <input id="imgupload" accept="image/*" type="file" name="propic">
                                     <img id="propicimg" src="<?php if ($location == NULL) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" alt="">
                                 </div>
                                 <input type="submit" value="Submit">
