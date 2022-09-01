@@ -159,7 +159,7 @@
                                 </div>
                                 <div class="form-field d-flex flex-column">
                                     <label for="">Avater</label>
-                                    <input id="imgupload" accept="image/*" type="file" name="propic">
+                                    <input id="imgupload" onchange="update_img()" accept="image/*" type="file" name="propic">
                                     <img id="propicimg" src="<?php if ($location == NULL) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" alt="">
                                 </div>
                                 <input type="submit" value="Submit">
