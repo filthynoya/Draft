@@ -44,10 +44,13 @@
         }
 
         if ($error == 0) {
-            $sql = "INSERT INTO users (fullname, email, dateofreg, passkey, dateofbirth, activated, about) VALUES ('$fullname', '$email', CURDATE(), '$pass', NULL, 0, NULL)";
+            $vkey = md5 (time().$username);
+
+            $sql = "INSERT INTO users (fullname, email, dateofreg, passkey, dateofbirth, activated, about, vkey) VALUES ('$fullname', '$email', CURDATE(), '$pass', NULL, 0, NULL, '$vkey')";
             
             if ($conn->query($sql) === TRUE) {
-                //Success
+                $sql = "INSERT INTO users_pic (userid, location) values ((SELECT MAX(userid) FROM users), NULL)";
+                $conn->query($sql);
                 header("location: login.php");
             } else {
                 $error_msg = "User Does not Exist.";
@@ -83,6 +86,11 @@
                         echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
                             <i class="fa-solid fa-triangle-exclamation me-3"></i>
                             <div>' . $error_msg . '</div>
+                        </div>';
+                    } else {
+                        echo '<div class="alert alert-success d-flex align-items-center" role="alert">
+                            <i class="fa-solid fa-triangle-exclamation me-3"></i>
+                            <div>Info Updated Successfully.</div>
                         </div>';
                     }
                 ?>
@@ -123,7 +131,7 @@
                             <div class="col-lg-10 d-flex flex-row  d-flex justify-content-around  mb-5">
                             <!-- Checkbox -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked require/>
                                 <label class="form-check-label" for="form1Example3">I agree all statements in <a href="#!">Terms of service</a></label>
                             </div>
                             

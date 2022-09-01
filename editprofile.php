@@ -8,14 +8,18 @@
 
     include 'server/db.php'; 
 
+    $user_verified = 0;
+    $sent_email = 0;
+
     $email = $_SESSION["email"];
 
-    $sql = "SELECT * FROM users INNER JOIN users_pic ON users.userid = users_pic.userid WHERE email = '$email'";
+    $sql = "SELECT * FROM users LEFT JOIN users_pic ON users.userid = users_pic.userid WHERE email = '$email'";
 
     $result_set = $conn->query($sql);
 
     $error = 0;
     $errorMsg = "";
+    $success = 0;
 
     if ($result_set->num_rows > 0) {
         while ($row = $result_set->fetch_assoc ()) {
@@ -26,6 +30,8 @@
             $passkey = $row["passkey"];
             $dob = $row["dateofbirth"];
             $location = $row["location"];
+            $user_verified = $row["activated"];
+            $vkey = $row["vkey"];
         }
     }
 
@@ -35,24 +41,33 @@
             $dob = $_POST["dob"];
             $about = $_POST["about"];
 
-            $sql = "UPDATE users SET fullname='$name', dateofbirth='$dob', about='$about' WHERE email='$email'";
-
-            $conn->query($sql);
-
-            $filename = $_FILES["propic"]["name"];
-            $tempname = $_FILES["propic"]["tmp_name"];
-            $folder = "uploads/".$filename; 
-            move_uploaded_file($tempname, $folder);
-
-            if (strcmp ($folder, "uploads/") == 0) {
-                $folder = $location;
+            if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+                $errorMsg = "Only White Space and Alphabets Allowed.";
+                $error++;
             }
 
-            $sql = "UPDATE users_pic SET location='$folder' where userid=$id";
-            $conn->query($sql);
-            $location = $folder;
+            $sql = "UPDATE users SET fullname='$name', dateofbirth='$dob', about='$about' WHERE email='$email'";
+
+            if ($error == 0) {
+                $conn->query($sql);
+
+                $filename = $_FILES["propic"]["name"];
+                $tempname = $_FILES["propic"]["tmp_name"];
+                $folder = "uploads/".$filename; 
+                move_uploaded_file($tempname, $folder);
+
+                if (strcmp ($folder, "uploads/") == 0) {
+                    $folder = $location;
+                }
+
+                $sql = "UPDATE users_pic SET location='$folder' where userid=$id";
+                $conn->query($sql);
+                $location = $folder;
+
+                $success = 1;
+            }
         }
-        if ($_POST["page_form"] == 2) {
+        else if ($_POST["page_form"] == 2) {
             $opass = $_POST["opass"];
             $npass = $_POST["npass"];
             $nnpass = $_POST["nnpass"];
@@ -63,6 +78,8 @@
                         $sql = "UPDATE users SET passkey='$npass' WHERE email='$email'";
 
                         $conn->query($sql);
+
+                        $success = 1;
                     } else {
                         $error++;
                         $errorMsg = "Password too short.";
@@ -75,6 +92,31 @@
                 $error++;
                 $errorMsg = "Wrong Password.";
             }
+        } else if ($_POST["page_form"] == 3) {
+            $to = $email;
+            $subject = "Email Verification";
+            $msg = "<a href='http://localhost/Draft/server/verify.php?vkey=$vkey'>Activate Your Account.</a>";
+            $header = "From: drafted8080@outlook.com \r\n";
+            $header .= "MIME-Version: 1.0" . "\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8"."\r\n";
+
+            if (mail ($to, $subject, $msg, $header)) {
+                $sent_email = 1;
+            } else {
+                $error = 1;
+                $errorMsg = "Error.";
+            }
+        } else if ($_POST["page_form"] == 4) {
+            $sql = "DELETE FROM users_pic WHERE userid=$id";
+
+            $conn->query($sql);
+
+            $sql = "DELETE FROM users WHERE userid=$id";
+
+            $conn->query($sql);
+
+            header("location: server/logout.php");
+            exit;
         }
     }
 ?>
@@ -122,9 +164,10 @@
                     <div class="col-3">
                         <div class="sidebar">
                             <ul>
-                                <li onclick="changeDisplay ('b1', 'b2', 'b3')">Basic Information</li>
-                                <li onclick="changeDisplay ('b2', 'b1', 'b3')">Change Password</li>
-                                <li onclick="changeDisplay ('b3', 'b2', 'b1')">Delete Profile</li>
+                                <li onclick="changeDisplay ('b1', 'b2', 'b3', 'b4')">Basic Information</li>
+                                <li onclick="changeDisplay ('b2', 'b1', 'b3', 'b4')">Change Password</li>
+                                <?php if (strcmp ($user_verified, "0") == 0) {echo '<li onclick="changeDisplay ('."'b3'".', '."'b1'".', '."'b2'".', '."'b4'".')">Email Verification</li>';} ?>
+                                <li onclick="changeDisplay ('b4', 'b2', 'b1', 'b3')">Delete Profile</li>
                             </ul>
                         </div>
                     </div>
@@ -134,6 +177,16 @@
                                 echo '<div class="alert alert-danger d-flex align-items-center" role="alert">
                                     <i class="fa-solid fa-triangle-exclamation me-3"></i>
                                     <div>' . $errorMsg . '</div>
+                                </div>';
+                            } else if ($success != 0) {
+                                echo '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <i class="fa-solid fa-triangle-exclamation me-3"></i>
+                                    <div>Info Updated.</div>
+                                </div>';
+                            } else if ($sent_email != 0) {
+                                echo '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <i class="fa-solid fa-triangle-exclamation me-3"></i>
+                                    <div>Email sent.</div>
                                 </div>';
                             }
                         ?>
@@ -184,12 +237,27 @@
                                 <div class="d-lg-block d-none hhh"></div>
                             </form>
                         </div>
-                        <div class="delete-profile d-flex flex-column">
-                            <div class="delete-pro" id="b3">
-                                <div class="form-field d-flex flex-column">
-                                    <span>Are you Sure? This process cannot be undone.</span>
-                                    <input type="button" value="Submit" class="c-btn">
-                                </div>
+                        <div class="email-profile" id="b3">
+                            <div class="email-pro">
+                                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+                                    <div class="form-field d-flex flex-column">
+                                        <span>Your email is not verified. Click submit to send a verification mail.</span>
+                                        <input type="hidden" name="page_form" value="3">
+                                        <input type="submit" value="Submit" class="c-btn">
+                                    </div>
+                                </form>
+                                <div class="d-lg-block d-none hhh"></div>
+                            </div>
+                        </div>
+                        <div class="delete-profile" id="b4">
+                            <div class="delete-pro">
+                                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+                                    <div class="form-field d-flex flex-column">
+                                        <span>Are you Sure? This process cannot be undone.</span>
+                                        <input type="hidden" name="page_form" value="4">
+                                        <input type="submit" value="Submit" class="c-btn">
+                                    </div>
+                                </form>
                                 <div class="d-lg-block d-none hhh"></div>
                             </div>
                         </div>

@@ -10,7 +10,7 @@
 
     $email = $_SESSION["email"];
 
-    $sql = "SELECT * FROM users INNER JOIN users_pic ON users.userid = users_pic.userid WHERE email = '$email'";
+    $sql = "SELECT * FROM users LEFT JOIN users_pic ON users.userid = users_pic.userid WHERE email = '$email'";
 
     $result_set = $conn->query($sql);
 
@@ -65,7 +65,7 @@
             <div class="container">
                 <div class="d-flex flex-lg-row flex-column">
                     <div class="author-img text-lg-start text-center my-lg-0 my-5">
-                        <img src="<?php if ($location == NULL || strcmp ($location, "") == 0) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" class="rounded-circle" alt="">
+                        <img src="<?php if ($location === NULL || strcmp ($location, "") === 0) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" class="rounded-circle" alt="">
                     </div>
                     <div class="author-info text-lg-start text-center ms-lg-5 ms-0">
                         <div class="d-flex flex-column">
