@@ -87,11 +87,6 @@
                             <i class="fa-solid fa-triangle-exclamation me-3"></i>
                             <div>' . $error_msg . '</div>
                         </div>';
-                    } else {
-                        echo '<div class="alert alert-success d-flex align-items-center" role="alert">
-                            <i class="fa-solid fa-triangle-exclamation me-3"></i>
-                            <div>Info Updated Successfully.</div>
-                        </div>';
                     }
                 ?>
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
