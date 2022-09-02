@@ -9,8 +9,8 @@
 }
 
 .create{
-    
-    margin-bottom: -56px;
+    margin-bottom: -60px;
+    margin-top: 8px;
 }
 section{
     display: flex;
@@ -81,7 +81,7 @@ section{
 }
 .container .wrapper{
     position: relative;
-    height: 320px;
+    height: 290px;
     width: 60%;
     margin: auto;
    
@@ -214,7 +214,7 @@ input:is(:focus, :valid){
     outline: none;
     resize: none;
     font-size: 15px;
-    margin-top: -30px;
+    margin-top: -29px;
     margin-bottom: -47px;
     border-radius: 3px;
     border-color: rgb(144, 137, 137);
@@ -308,6 +308,6 @@ text-decoration: none;
     resize: none;
     font-size: 13px;
     margin-top: -35px;
-    margin-bottom:-15px ;
+    margin-bottom:-13px ;
     
 }
