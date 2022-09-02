@@ -22,7 +22,7 @@
         <div class="container">
             
             <div class="create">
-                <h2 class="col-lg-3 pb-md-0 mb-md-5 px-md-2">Create Post</h2>
+                <h2 class="lead pb-md-0 mb-md-5 px-md-2">Create Post</h2>
                 <div class=" d-md-flex justify-content-md-end">
                     <button class="btn1 gradient-custom-2" type="button">Post</button>
                 
@@ -34,7 +34,16 @@
                     <input type="text" name="first_name" placeholder="Title" required>
                 </div>
             </div>
-            
+            <div class="row100">
+                <div class="col">
+                    <select class="form-select selectpicker show-tick" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </div>
+            </div>
             <div class="row100">
                 <div class="col">
                     <textarea  placeholder="Wright someting here...." required></textarea>
@@ -43,7 +52,7 @@
            
             <div class="row100">
                 <div class="col">
-                    <form class="wrapper  px-md-2 text-center">
+                    <form class="wrapper text-center">
                                 
                         <div class="image">
                             <img class="img-fluid" src=" " alt="">
@@ -61,9 +70,9 @@
         
                     </form> 
                     <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
-                    <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+                    <button onclick="defaultBtnActive()" class="align-items-center justify-content-center" id="custom-btn">Choose a file</button>
                     <div class=" d-md-flex justify-content-md-end">
-                    <button class="btn2 gradient-custom-2" type="button"><a href="home.php">Back</a></button>
+                    <a href="home.php"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>
                 
                 </div>
 

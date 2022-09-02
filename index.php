@@ -28,7 +28,7 @@
 
 </head>
 <body>
-    <img class="feature-img" src="img/landing2.jpeg">
+    <img class="feature-img" src="./img/landing2.jpeg">
     <header>
         <nav class="fixed-top">
             <div class="container">

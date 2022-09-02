@@ -10,7 +10,7 @@
 
 .create{
     
-    margin-bottom: -36px;
+    margin-bottom: -56px;
 }
 section{
     display: flex;
@@ -19,24 +19,25 @@ section{
     min-height: 100vh;
     padding: 20px;
     width: 100%;
-    background:url('../img/back-image_2.png');
+    background:url(../img/back-image_2.png);
     background-size: cover;
     background-position: center center;
 }
 
 .container{
-    width: 100%;
+    
+    width: 70% !important;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-   
-
+  
+    
     position: relative;
     z-index: 1000;
    
     max-width: 1000px;
-    padding: 50px;
+   
     background: rgba(255, 255,255, 0.1);
     box-shadow: 0 25px 45px  rgba(0,0,0, 0.1);
     border: 1px solid  rgba(255, 255,255,0.25);
@@ -59,10 +60,10 @@ section{
 }
 .container h2{
     width: 100%;
-    margin-top: -30px;
+    
     color: rgb(100, 74, 89);
     font-size: 36px;
-    margin-bottom: -80px;
+    margin-bottom: 20px;
 
 }
 .container .row100{
@@ -75,14 +76,14 @@ section{
     position: relative;
     width: 100%;
     padding: 0 10px;
-    margin: 20px 0 10px;
+    margin: 30px 0 20px;
     
 }
 .container .wrapper{
     position: relative;
-    height: 316px;
-    width: 100%;
-    margin-top: -10px;
+    height: 320px;
+    width: 60%;
+    margin: auto;
    
     border-radius: 10px;
     background: rgba(102, 77, 98, 0.152);
@@ -152,72 +153,49 @@ section{
     display: block;
 }
 .container #custom-btn{
-    margin-top: 7px;
-    
-    width: 20%;
-    height: 39px;
+    margin-top: 10px;
+    width: 35%;
+    height: 40px;
     display: block;
     border: none;
     outline: none;
-    background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 73%);
+    background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 56%);
     border-radius: 10px;
     color: #fff;
-    margin-bottom: -54px;
     font-size: 15px;
     font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 .btn1{
-    margin-top: -80px;
+    margin-top: -90px;
     border: none;
     outline: none;
     height: 40px;
     width: 100px;
     font-weight: bold;
     color: white;
-    border-radius: 27px;
+    border-radius: 10px;
+    margin-bottom: 10px;
     
-
   }
-.btn2{
-    
-        margin-top: 15px;
-        border: none;
-        outline: none;
-        height: 40px;
-        width: 100px;
-        font-weight: bold;
-        color: white;
-        border-radius: 9px;
-        margin-bottom: -54px;
-    
-}
-
-.btn2 a {
-    color: white;
-    text-decoration: none;
-}
-
-.btn2 a:hover {
-    color: white;
-    text-decoration: none;
-}
-
 .container input{
     position: relative;
    
     width: 100%;
-    height: 50px;
+    height: 40px;
     padding: 15px;
     outline: none;
     resize: none;
     font-size: 15px;
     margin-top: -20px;
-    margin-bottom:10px ;
+    margin-bottom:-15px ;
     border-radius: 3px;
     border-width: 1px;
     border-color: rgb(144, 137, 137);
@@ -231,13 +209,13 @@ input:is(:focus, :valid){
     position: relative;
    
     width: 100%;
-    min-height: 150px;
+    min-height: 130px;
     padding: 15px;
     outline: none;
     resize: none;
     font-size: 15px;
-    margin-top: -25px;
-    margin-bottom: -6px;
+    margin-top: -30px;
+    margin-bottom: -47px;
     border-radius: 3px;
     border-color: rgb(144, 137, 137);
 
@@ -264,8 +242,8 @@ height: 1px;
 background: #eee;
 }
 .gradient-custom-2 {
-    background: rgb(75,28,64);
-    background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 73%);
+    background: rgb(0,0,0);
+    background:   linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 56%);
 }
     
 @media (min-width: 768px) {
@@ -282,7 +260,54 @@ background: #eee;
 }
 @media  (min-width: 480px){
     .btn1{
-        margin-bottom:40px ;
+        margin-bottom:50px ;
     }
 
+}
+
+
+.icon-back{
+    margin-top: -80px;
+    border: none;
+    outline: none;
+    
+    font-weight: bold;
+  
+    margin-bottom: -54px;
+    font-size: 20px;
+}
+
+.icon-back a {
+
+color: white;
+text-decoration: none;
+}
+
+.icon-back a:hover {
+color: white;
+text-decoration: none;
+}
+.container .form-select {
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    
+    line-height: 1.5;
+    color: #212529;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: rgb(144, 137, 137);
+    position: relative;
+   
+   
+    height: 48px;
+    padding: 15px;
+    outline: none;
+    resize: none;
+    font-size: 13px;
+    margin-top: -35px;
+    margin-bottom:-15px ;
+    
 }

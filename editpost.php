@@ -21,50 +21,63 @@
     <section>
         <div class="container">
                 
-                    <div>
-                        <h2 class="col-lg-3 mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Edit Post</h2>
-                        <div class=" d-md-flex justify-content-md-end">
-                            <button class="btn1 gradient-custom-2" type="button">Save</button>
-                        
-                        </div>
-                    </div>
-                    
-                    <div class="row100">
-                        <div class="col">
-                            <input type="text" name="first_name" placeholder="Title" required>
-                        </div>
-                    </div>
-                    
-                    <div class="row100">
-                        <div class="col">
-                            <textarea  placeholder="Wright someting here...." required></textarea>
-                        </div>
-                    </div>
+        <div class="create">
+                <h2 class="lead pb-md-0 mb-md-5 px-md-2">Edit Post</h2>
+                <div class=" d-md-flex justify-content-md-end">
+                    <button class="btn1 gradient-custom-2" type="button">Save</button>
                 
-                    <div class="row100">
-                        <div class="col">
-                            <form class="wrapper  px-md-2 text-center">
-                                        
-                                <div class="image">
-                                    <img class="img-fluid" src=" " alt="">
-                                </div>
-                                <div class="conten">
-                                    <div class="icon">
-                                        <i class="fa fa-cloud-upload"></i>
-                                    </div>
-                                    <div class="text">No file chosen,yet!</div>
-                                </div>
-                                <div id="cancel-btn"><i class="fa fa-times"></i></div>
-                                <div class="file-name">File name here</div>
+                </div>
+            </div>
+            
+            <div class="row100">
+                <div class="col">
+                    <input type="text" name="first_name" placeholder="Title" required>
+                </div>
+            </div>
+            <div class="row100">
+                <div class="col">
+                    <select class="form-select selectpicker show-tick" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </div>
+            </div>
+            <div class="row100">
+                <div class="col">
+                    <textarea  placeholder="Wright someting here...." required></textarea>
+                </div>
+            </div>
+           
+            <div class="row100">
+                <div class="col">
+                    <form class="wrapper text-center">
+                                
+                        <div class="image">
+                            <img class="img-fluid" src=" " alt="">
+                        </div>
+                        <div class="conten">
+                            <div class="icon">
+                                <i class="fa fa-cloud-upload"></i>
+                            </div>
+                            <div class="text">No file chosen,yet!</div>
+                        </div>
+                        <div id="cancel-btn"><i class="fa fa-times"></i></div>
+                        <div class="file-name">File name here</div>
+        
+                       <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
+        
+                    </form> 
+                    <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
+                    <button onclick="defaultBtnActive()" class="align-items-center justify-content-center" id="custom-btn">Choose a file</button>
+                    <div class=" d-md-flex justify-content-md-end">
+                        <a href="home.php"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>
                 
-                            <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
-                
-                            </form> 
-                            <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
-                            <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+                </div>
 
 
-                    </div>
+                </div>
             </div>
                 <script>
                     
