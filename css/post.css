@@ -129,6 +129,17 @@ header a:hover {
     margin-left: 1em;
 }
 
+.edit-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.edit-btn a:hover {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
 footer {
     margin-top: 2em;
     padding-top: 2em;

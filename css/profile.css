@@ -90,6 +90,17 @@ header a:hover {
 .post-item-img img {
     width: 100%;
     border-radius: 10px;
+    height: 200px;
+}
+
+.post-title {
+    text-decoration: none;
+    color: #000;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+    color: #000;
 }
 
 .post-item-content span {

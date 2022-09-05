@@ -22,7 +22,7 @@
     $password = trim_data ($_POST["passkey"]);
 
     if ($error == 0) {
-      $sql = "SELECT email, passkey FROM users WHERE email = '$email'";
+      $sql = "SELECT userid, email, passkey FROM users WHERE email = '$email'";
       $result_set = $conn->query($sql);
 
       if ($result_set->num_rows > 0) {
@@ -31,7 +31,7 @@
             session_start();
                             
             $_SESSION["loggedin"] = true;
-            $_SESSION["id"] = $id;
+            $_SESSION["id"] = $row['userid'];
             $_SESSION["email"] = $email;
 
             header("location: home.php");

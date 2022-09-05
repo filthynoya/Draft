@@ -67,6 +67,7 @@ header a:hover {
 .slider-item-img img {
     width: 350px;
     border-radius: 10px;
+    height: 250px;
 }
 
 .slider-author-img img {
@@ -101,6 +102,7 @@ header a:hover {
 .post-item-img img {
     width: 100%;
     border-radius: 10px;
+    height: 200px;
 }
 
 .post-item-content span {
@@ -131,6 +133,17 @@ header a:hover {
     position: relative;
     margin-top: 2em;
 }
+
+.post-title {
+    text-decoration: none;
+    color: #000;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
 /*--------------------------------footer-------------------------------*/
 body{
     background: #eef8ff;

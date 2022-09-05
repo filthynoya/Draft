@@ -5,6 +5,29 @@
         header("location: login.php");
         exit;
     }
+
+    include './server/db.php';
+
+    $sql = "select * from post inner join users on post.userid=users.userid inner join users_pic on users_pic.userid=post.userid inner join catalog on catalog.catalogid=post.catalogid order by post.visitcnt desc limit 3";
+
+    $trending = $conn->query ($sql);
+
+    $tpost1 = $trending->fetch_assoc();
+    $tpost2 = $trending->fetch_assoc();
+    $tpost3 = $trending->fetch_assoc();
+
+    $sql = "select * from post inner join users on post.userid=users.userid inner join users_pic on users_pic.userid=post.userid inner join catalog on catalog.catalogid=post.catalogid limit 6";
+
+    $posts = $conn->query ($sql);
+
+    $post_row = array();
+
+    while ($row = $posts->fetch_assoc()) {
+        array_push ($post_row, $row);
+    }
+
+    $post_cnt = count ($post_row);
+    $itr = 0;
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,19 +80,25 @@
                                 <div class="slider-item">
                                     <div class="d-flex flex-lg-row flex-column">
                                         <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                            <img src="img/sample_post_pic_sq.jpg" alt="">
+                                            <img src="<?php echo $tpost1['postimg'] ?>" alt="">
                                         </div>
                                         <div class="slider-item-content">
                                             <div class="d-flex flex-column">
-                                                <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                                <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                                <span><b><?php echo $tpost1['catalogname'] ?></b> - <?php echo $tpost1['uploaddate'] ?></span>
+                                                <h1><a class="post-title" href="post.php?postid=<?php echo $tpost1['postid'] ?>"><?php echo $tpost1['posttitle'] ?></a></h1>
+                                                <p>
+                                                    <?php
+                                                        for ($i = 0, $k = strlen($tpost1['postbody']); $i < $k && $i < 200; $i++) {
+                                                            echo $tpost1['postbody'][$i];
+                                                        } 
+                                                    ?>...
+                                                </p>
                                                 <div class="d-flex flex-row justify-content-lg-start justify-content-center">
                                                     <div class="slider-author-img">
-                                                        <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
+                                                        <img src="<?php echo $tpost1['location'] ?>" class="rounded-circle" alt="">
                                                     </div>
                                                     <div class="slider-author-name">
-                                                        <span>Ayon Raihan</span>
+                                                        <span><?php echo $tpost1['fullname'] ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,22 +107,28 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="slider-item">
+                            <div class="slider-item">
                                     <div class="d-flex flex-lg-row flex-column">
                                         <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                            <img src="img/sample_post_pic_sq.jpg" alt="">
+                                            <img src="<?php echo $tpost2['postimg'] ?>" alt="">
                                         </div>
                                         <div class="slider-item-content">
                                             <div class="d-flex flex-column">
-                                                <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                                <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                                <span><b><?php echo $tpost2['catalogname'] ?></b> - <?php echo $tpost2['uploaddate'] ?></span>
+                                                <h1><a class="post-title" href="post.php?postid=<?php echo $tpost2['postid'] ?>"><?php echo $tpost2['posttitle'] ?></a></h1>
+                                                <p>
+                                                <?php
+                                                    for ($i = 0, $k = strlen($tpost2['postbody']); $i < $k && $i < 200; $i++) {
+                                                        echo $tpost2['postbody'][$i];
+                                                    } 
+                                                ?>...
+                                                </p>
                                                 <div class="d-flex flex-row justify-content-lg-start justify-content-center">
                                                     <div class="slider-author-img">
-                                                        <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
+                                                        <img src="<?php echo $tpost2['location'] ?>" class="rounded-circle" alt="">
                                                     </div>
                                                     <div class="slider-author-name">
-                                                        <span>Ayon Raihan</span>
+                                                        <span><?php echo $tpost2['fullname'] ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,22 +137,28 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="slider-item">
+                            <div class="slider-item">
                                     <div class="d-flex flex-lg-row flex-column">
                                         <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                            <img src="img/sample_post_pic_sq.jpg" alt="">
+                                            <img src="<?php echo $tpost3['postimg'] ?>" alt="">
                                         </div>
                                         <div class="slider-item-content">
                                             <div class="d-flex flex-column">
-                                                <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                                <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                                <span><b><?php echo $tpost3['catalogname'] ?></b> - <?php echo $tpost3['uploaddate'] ?></span>
+                                                <h1><a class="post-title" href="post.php?postid=<?php echo $tpost3['postid'] ?>"><?php echo $tpost3['posttitle'] ?></a></h1>
+                                                <p>
+                                                <?php
+                                                    for ($i = 0, $k = strlen($tpost3['postbody']); $i < $k && $i < 200; $i++) {
+                                                        echo $tpost3['postbody'][$i];
+                                                    } 
+                                                ?>...
+                                                </p>
                                                 <div class="d-flex flex-row justify-content-lg-start justify-content-center">
                                                     <div class="slider-author-img">
-                                                        <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
+                                                        <img src="<?php echo $tpost3['location'] ?>" class="rounded-circle" alt="">
                                                     </div>
                                                     <div class="slider-author-name">
-                                                        <span>Ayon Raihan</span>
+                                                        <span><?php echo $tpost3['fullname'] ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,152 +180,72 @@
         <section class="posts">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="post-item">
-                            <div class="d-flex flex-column">
-                                <div class="post-item-img">
-                                    <img src="img/sample_post_pic.jpg"  alt="">
-                                </div>
-                                <div class="post-item-content">
-                                    <div class="d-flex flex-column">
-                                        <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                        <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                            <div class="post-author-img">
-                                                <img src="img/sample-avatar.jpg"  class="rounded-circle" alt="">
+                    <?php
+                        while ($itr < $post_cnt && $itr < 3) {
+                            echo '<div class="col-lg-4">
+                                    <div class="post-item">
+                                        <div class="d-flex flex-column">
+                                            <div class="post-item-img">
+                                                <img src="'.$post_row[$itr]['postimg'].'"  alt="">
                                             </div>
-                                            <div class="post-author-name">
-                                                <span>Ayon Raihan</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="post-item">
-                            <div class="d-flex flex-column">
-                                <div class="post-item-img">
-                                    <img src="img/sample_post_pic.jpg"  alt="">
-                                </div>
-                                <div class="post-item-content">
-                                    <div class="d-flex flex-column">
-                                        <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                        <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                            <div class="post-author-img">
-                                                <img src="img/sample-avatar.jpg"  class="rounded-circle" alt="">
-                                            </div>
-                                            <div class="post-author-name">
-                                                <span>Ayon Raihan</span>
+                                            <div class="post-item-content">
+                                                <div class="d-flex flex-column">
+                                                    <span><b>'.$post_row[$itr]['catalogname'].'</b> - '.$post_row[$itr]['uploaddate'].'</span>
+                                                    <h6><a class="post-title" href="post.php?postid='.$post_row[$itr]['postid'].'" >'.$post_row[$itr]['posttitle'].'</a></h6>
+                                                    <p>'
+                                                    . substr ($post_row[$itr]['postbody'], 0, 200) .
+                                                    '...</p>
+                                                    <div class="d-flex flex-row justify-content-lg-start justify-content-center">
+                                                        <div class="post-author-img">
+                                                            <img src="'.$post_row[$itr]['location'].'"  class="rounded-circle" alt="">
+                                                        </div>
+                                                        <div class="post-author-name">
+                                                            <span>'.$post_row[$itr]['fullname'].'</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="post-item">
-                            <div class="d-flex flex-column">
-                                <div class="post-item-img">
-                                    <img src="img/sample_post_pic.jpg"  alt="">
-                                </div>
-                                <div class="post-item-content">
-                                    <div class="d-flex flex-column">
-                                        <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                        <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                            <div class="post-author-img">
-                                                <img src="img/sample-avatar.jpg"  class="rounded-circle" alt="">
-                                            </div>
-                                            <div class="post-author-name">
-                                                <span>Ayon Raihan</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </div>';
+                            
+                            $itr++;
+                        }
+                    ?>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="post-item">
-                            <div class="d-flex flex-column">
-                                <div class="post-item-img">
-                                    <img src="img/sample_post_pic.jpg"  alt="">
-                                </div>
-                                <div class="post-item-content">
-                                    <div class="d-flex flex-column">
-                                        <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                        <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                            <div class="post-author-img">
-                                                <img src="img/sample-avatar.jpg"  class="rounded-circle" alt="">
+                <?php
+                        while ($itr < $post_cnt && $itr < 6) {
+                            echo '<div class="col-lg-4">
+                                    <div class="post-item">
+                                        <div class="d-flex flex-column">
+                                            <div class="post-item-img">
+                                                <img src="'.$post_row[$itr]['postimg'].'"  alt="">
                                             </div>
-                                            <div class="post-author-name">
-                                                <span>Ayon Raihan</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="post-item">
-                            <div class="d-flex flex-column">
-                                <div class="post-item-img">
-                                    <img src="img/sample_post_pic.jpg"  alt="">
-                                </div>
-                                <div class="post-item-content">
-                                    <div class="d-flex flex-column">
-                                        <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                        <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                            <div class="post-author-img">
-                                                <img src="img/sample-avatar.jpg"  class="rounded-circle" alt="">
-                                            </div>
-                                            <div class="post-author-name">
-                                                <span>Ayon Raihan</span>
+                                            <div class="post-item-content">
+                                                <div class="d-flex flex-column">
+                                                    <span><b>'.$post_row[$itr]['catalogname'].'</b> - '.$post_row[$itr]['uploaddate'].'</span>
+                                                    <h6><a class="post-title" href="post.php?postid='.$post_row[$itr]['postid'].'" >'.$post_row[$itr]['posttitle'].'</a></h6>
+                                                    <p>'
+                                                    . substr ($post_row[$itr]['postbody'], 0, 200) .
+                                                    '...</p>
+                                                    <div class="d-flex flex-row justify-content-lg-start justify-content-center">
+                                                        <div class="post-author-img">
+                                                            <img src="'.$post_row[$itr]['location'].'"  class="rounded-circle" alt="">
+                                                        </div>
+                                                        <div class="post-author-name">
+                                                            <span>'.$post_row[$itr]['fullname'].'</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="post-item">
-                            <div class="d-flex flex-column">
-                                <div class="post-item-img">
-                                    <img src="img/sample_post_pic.jpg"  alt="">
-                                </div>
-                                <div class="post-item-content">
-                                    <div class="d-flex flex-column">
-                                        <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                        <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                            <div class="post-author-img">
-                                                <img src="img/sample-avatar.jpg"  class="rounded-circle" alt="">
-                                            </div>
-                                            <div class="post-author-name">
-                                                <span>Ayon Raihan</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </div>';
+                            
+                            $itr++;
+                        }
+                    ?>
                 </div>
             </div>
         </section>

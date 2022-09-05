@@ -9,6 +9,7 @@
     include 'server/db.php'; 
 
     $email = $_SESSION["email"];
+    $id = $_SESSION['id'];
 
     $sql = "SELECT * FROM users LEFT JOIN users_pic ON users.userid = users_pic.userid WHERE email = '$email'";
 
@@ -22,6 +23,19 @@
             $location = $row["location"];
         }
     }
+
+    $sql = "select * from post inner join users on post.userid=users.userid inner join users_pic on users_pic.userid=post.userid inner join catalog on catalog.catalogid=post.catalogid where post.userid = $id";
+
+    $posts = $conn->query ($sql);
+
+    $post_row = array();
+
+    while ($row = $posts->fetch_assoc()) {
+        array_push ($post_row, $row);
+    }
+
+    $post_cnt = count ($post_row);
+    $itr = 0;
 ?>
 <!doctype html>
 <html lang="en">
@@ -100,104 +114,56 @@
                 </div>
                 <div class="row">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="post-item">
-                                <div class="d-flex flex-column">
-                                    <div class="post-item-img">
-                                        <img src="img/sample_post_pic.jpg"  alt="">
-                                    </div>
-                                    <div class="post-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        <?php
+                            while ($itr < $post_cnt && $itr < 3) {
+                                echo '<div class="col-lg-4">
+                                        <div class="post-item">
+                                            <div class="d-flex flex-column">
+                                                <div class="post-item-img">
+                                                    <img src="'.$post_row[$itr]['postimg'].'"  alt="">
+                                                </div>
+                                                <div class="post-item-content">
+                                                    <div class="d-flex flex-column">
+                                                        <span><b>'.$post_row[$itr]['catalogname'].'</b> - '.$post_row[$itr]['uploaddate'].'</span>
+                                                        <h6><a class="post-title" href="post.php?postid='.$post_row[$itr]['postid'].'" >'.$post_row[$itr]['posttitle'].'</a></h6>
+                                                        <p>'
+                                                        . substr ($post_row[$itr]['postbody'], 0, 200) .
+                                                        '...</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="post-item">
-                                <div class="d-flex flex-column">
-                                    <div class="post-item-img">
-                                        <img src="img/sample_post_pic.jpg"  alt="">
-                                    </div>
-                                    <div class="post-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="post-item">
-                                <div class="d-flex flex-column">
-                                    <div class="post-item-img">
-                                        <img src="img/sample_post_pic.jpg"  alt="">
-                                    </div>
-                                    <div class="post-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    </div>';
+                                
+                                $itr++;
+                            }
+                        ?>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="post-item">
-                                <div class="d-flex flex-column">
-                                    <div class="post-item-img">
-                                        <img src="img/sample_post_pic.jpg"  alt="">
-                                    </div>
-                                    <div class="post-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        <?php
+                            while ($itr < $post_cnt && $itr < 6) {
+                                echo '<div class="col-lg-4">
+                                        <div class="post-item">
+                                            <div class="d-flex flex-column">
+                                                <div class="post-item-img">
+                                                    <img src="'.$post_row[$itr]['postimg'].'"  alt="">
+                                                </div>
+                                                <div class="post-item-content">
+                                                    <div class="d-flex flex-column">
+                                                        <span><b>'.$post_row[$itr]['catalogname'].'</b> - '.$post_row[$itr]['uploaddate'].'</span>
+                                                        <h6><a class="post-title" href="post.php?postid='.$post_row[$itr]['postid'].'" >'.$post_row[$itr]['posttitle'].'</a></h6>
+                                                        <p>'
+                                                        . substr ($post_row[$itr]['postbody'], 0, 200) .
+                                                        '...</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="post-item">
-                                <div class="d-flex flex-column">
-                                    <div class="post-item-img">
-                                        <img src="img/sample_post_pic.jpg"  alt="">
-                                    </div>
-                                    <div class="post-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="post-item">
-                                <div class="d-flex flex-column">
-                                    <div class="post-item-img">
-                                        <img src="img/sample_post_pic.jpg"  alt="">
-                                    </div>
-                                    <div class="post-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h6>Your most unhappy customers are your greatest source of learning.</h6>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    </div>';
+                                
+                                $itr++;
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
