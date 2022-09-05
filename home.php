@@ -98,7 +98,7 @@
                                                         <img src="<?php echo $tpost1['location'] ?>" class="rounded-circle" alt="">
                                                     </div>
                                                     <div class="slider-author-name">
-                                                        <span><?php echo $tpost1['fullname'] ?></span>
+                                                        <span><a href="profile.php?userid=<?php echo $tpost1['userid'] ?>" ><?php echo $tpost1['fullname'] ?></a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,7 +128,7 @@
                                                         <img src="<?php echo $tpost2['location'] ?>" class="rounded-circle" alt="">
                                                     </div>
                                                     <div class="slider-author-name">
-                                                        <span><?php echo $tpost2['fullname'] ?></span>
+                                                        <span><a href="profile.php?userid=<?php echo $tpost2['userid'] ?>" ><?php echo $tpost2['fullname'] ?></a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -158,7 +158,7 @@
                                                         <img src="<?php echo $tpost3['location'] ?>" class="rounded-circle" alt="">
                                                     </div>
                                                     <div class="slider-author-name">
-                                                        <span><?php echo $tpost3['fullname'] ?></span>
+                                                        <span><a href="profile.php?userid=<?php echo $tpost3['userid'] ?>" ><?php echo $tpost3['fullname'] ?></a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -200,7 +200,7 @@
                                                             <img src="'.$post_row[$itr]['location'].'"  class="rounded-circle" alt="">
                                                         </div>
                                                         <div class="post-author-name">
-                                                            <span>'.$post_row[$itr]['fullname'].'</span>
+                                                            <span><a href="profile.php?userid='.$post_row[$itr]['userid'].'">'.$post_row[$itr]['fullname'].'</a></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -234,7 +234,7 @@
                                                             <img src="'.$post_row[$itr]['location'].'"  class="rounded-circle" alt="">
                                                         </div>
                                                         <div class="post-author-name">
-                                                            <span>'.$post_row[$itr]['fullname'].'</span>
+                                                            <span><a href="profile.php?userid='.$post_row[$itr]['userid'].'">'.$post_row[$itr]['fullname'].'</a></span>
                                                         </div>
                                                     </div>
                                                 </div>

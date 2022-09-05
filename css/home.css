@@ -144,6 +144,26 @@ header a:hover {
     color: #000;
 }
 
+.slider-author-name span a {
+    text-decoration: none;
+    color: black;
+}
+
+.slider-author-name span a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.post-author-name span a {
+    text-decoration: none;
+    color: black;
+}
+
+.post-author-name span a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
 /*--------------------------------footer-------------------------------*/
 body{
     background: #eef8ff;

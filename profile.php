@@ -11,7 +11,13 @@
     $email = $_SESSION["email"];
     $id = $_SESSION['id'];
 
-    $sql = "SELECT * FROM users LEFT JOIN users_pic ON users.userid = users_pic.userid WHERE email = '$email'";
+    $profile_id = $id;
+
+    if (isset ($_GET['userid'])) {
+        $profile_id = $_GET['userid'];
+    }
+
+    $sql = "SELECT * FROM users LEFT JOIN users_pic ON users.userid = users_pic.userid WHERE users.userid = $profile_id";
 
     $result_set = $conn->query($sql);
 
@@ -21,10 +27,11 @@
             $doj = $row["dateofreg"];
             $about = $row["about"];
             $location = $row["location"];
+            $email = $row["email"];
         }
     }
 
-    $sql = "select * from post inner join users on post.userid=users.userid inner join users_pic on users_pic.userid=post.userid inner join catalog on catalog.catalogid=post.catalogid where post.userid = $id";
+    $sql = "select * from post inner join users on post.userid=users.userid inner join users_pic on users_pic.userid=post.userid inner join catalog on catalog.catalogid=post.catalogid where post.userid = $profile_id";
 
     $posts = $conn->query ($sql);
 
@@ -66,7 +73,13 @@
                                 <li><a href="home.php">Home</a></li>
                                 <li><a href="catalog.php">Catalog</a></li>
                                 <li><a href="addpost.php">Add Post</a></li>
-                                <li><a href="editprofile.php">Edit Profile</a></li>
+                                <?php
+                                    if ($profile_id == $id) {
+                                        echo '<li><a href="editprofile.php">Edit Profile</a></li>';
+                                    } else {
+                                        echo '<li><a href="profile.php">View Profile</a></li>';
+                                    }
+                                ?>
                                 <li><a href="server/logout.php">Log Out</a></li>
                             </ul>
                         </nav>
