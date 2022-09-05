@@ -107,7 +107,7 @@
                                 <img src="<?php echo $author_img; ?>" class="rounded-circle" alt="">
                             </div>
                             <div class="slider-author-name">
-                                <span><?php echo $author_name; ?></span>
+                                <span><a href="profile.php?userid=<?php echo $postuserid; ?>"><?php echo $author_name; ?></a></span>
                             </div>
                         </div>
                         <div class="d-flex flex-row justify-content-center">
@@ -179,9 +179,16 @@
                             }
                         ?>
                     </div>
-                    <div class="report">
-                        <button class="btn1">Report</button>
-                    </div>
+
+                    <?php
+                        if ($postuserid != $id) {
+                            echo '
+                                <div class="d-flex flex-row justify-content-center report edit-btn">
+                                    <a class="btn1" href="report.php?postid='.$postid.'">Report</a>
+                                </div>
+                            ';
+                        }
+                    ?>
                 </div>
             </div>
         </section>

@@ -140,6 +140,16 @@ header a:hover {
     cursor: pointer;
 }
 
+.slider-author-name a {
+    text-decoration: none;
+    color: black;
+}
+
+.slider-author-name a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
 footer {
     margin-top: 2em;
     padding-top: 2em;
