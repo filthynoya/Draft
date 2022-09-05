@@ -26,6 +26,17 @@
 
     $postid = $_GET['postid'];
 
+    $sql = "select * from post inner join catalog on post.catalogid=catalog.catalogid where post.postid=$postid";
+
+    $res = $conn->query ($sql);
+
+    $row = $res->fetch_assoc ();
+
+    $title = $row['posttitle'];
+    $body = $row['postbody'];
+    $img = $row['postimg'];
+    $cata = $row['catalogid'];
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $title = $_POST['title'];
         $body = $_POST['body'];
@@ -39,14 +50,16 @@
         move_uploaded_file($tempname, $folder);
 
         if (strcmp ($filename, "") == 0) {
-            $error = 1;
+            $folder = $img;
         }
 
         if ($error == 0) {
-            $sql = "INSERT INTO post (posttitle, postbody, uploaddate, userid, catalogid, visitcnt, postimg) values ('$title', '$body', CURDATE(), '$userid', '$catalog', '0', '$folder')";
+            $sql = "UPDATE post SET posttitle='$title', postbody='$body', uploaddate=CURDATE(), catalogid=$catalog, postimg='$folder' WHERE postid=$postid";
 
             $conn->query($sql);
             $success = 1;
+
+            $img = $folder;
         }
     }
 ?>
@@ -72,7 +85,7 @@
 <body>
     <section>
         <div class="container">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?postid=$postid";?>" enctype="multipart/form-data">
                 <div class="create">
                     <h2 class="lead pb-md-0 mb-md-5 px-md-2">Edit Post</h2>
                     <div class=" d-md-flex justify-content-md-end">
@@ -83,18 +96,24 @@
             
                 <div class="row100">
                     <div class="col">
-                        <input type="text" name="title" placeholder="Title" required>
+                        <input type="text" name="title" placeholder="Title" required value="<?php echo $title ?>">
                     </div>
                 </div>
                 <div class="row100">
                     <div class="col">
                         <select name="catalogs" class="form-select selectpicker show-tick" aria-label="Default select example">
                             <?php
-                                while ($row = $result->fetch_assoc ()) {
-                                    $id = $row['catalogid'];
-                                    $name = $row['catalogname'];
+                                while ($rows = $result->fetch_assoc ()) {
+                                    $id = $rows['catalogid'];
+                                    $name = $rows['catalogname'];
 
-                                    echo '<option value="'.$id.'">'.$name.'</option>';
+                                    //echo '<option value="'.$id.'">'.$name.'</option>';
+
+                                    if ($id == $cata) {
+                                        echo '<option selected value="'.$id.'">'.$name.'</option>';
+                                    } else {
+                                        echo '<option value="'.$id.'">'.$name.'</option>';
+                                    }
                                 }
                             ?>
                         </select>
@@ -102,7 +121,7 @@
                 </div>
                 <div class="row100">
                     <div class="col">
-                        <textarea name="body" placeholder="Write someting here...." required></textarea>
+                        <textarea name="body" placeholder="Write someting here...." required><?php echo $body ?></textarea>
                     </div>
                 </div>
            
@@ -111,7 +130,7 @@
                         <div class="wrapper text-center">
                                     
                             <div class="image">
-                                <img class="img-fluid" src=" " alt="">
+                                <img class="img-fluid" src="<?php echo $img ?>" alt="">
                             </div>
                             <div class="conten">
                                 <div class="icon">

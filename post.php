@@ -41,7 +41,7 @@
 
     $postuserid = $row['userid'];
 
-    $sql = "select * from comments inner join post on comments.postid = post.postid inner join users on comments.userid = users.userid inner join users_pic on users_pic.userid = comments.userid";
+    $sql = "select * from comments inner join post on comments.postid = post.postid inner join users on comments.userid = users.userid inner join users_pic on users_pic.userid = comments.userid where comments.postid=$postid";
 
     $res = $conn->query ($sql);
 
@@ -81,11 +81,11 @@
                     <div class="col-lg-6">
                         <nav>
                             <ul>
-                                <li><a href="">Home</a></li>
-                                <li><a href="">Catalog</a></li>
-                                <li><a href="">Add Post</a></li>
-                                <li><a href="">View Profile</a></li>
-                                <li><a href="">Log Out</a></li>
+                                <li><a href="home.php">Home</a></li>
+                                <li><a href="catalog.php">Catalog</a></li>
+                                <li><a href="addpost.php">Add Post</a></li>
+                                <li><a href="profile.php">View Profile</a></li>
+                                <li><a href="./server/logout.php">Log Out</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -123,7 +123,7 @@
         </section>
 
         <section id="post-img">
-            <div class="container">
+            <div class="container text-center">
                 <img src="<?php echo $img; ?>" class="img-fluid" alt="">
             </div>
         </section>
