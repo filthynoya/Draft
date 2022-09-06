@@ -137,85 +137,6 @@ header a:hover {
 .c-container {
     width: 70%;
     margin: auto;
-<<<<<<< HEAD
-=======
-}
-
-/*---------------------------------------
-  FOOTER              
------------------------------------------*/
-
-footer {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-  
-  footer h4 {
-    padding-top: 12px;
-  }
-  
-  footer a {
-    color: #757575;
-  }
-  
-  footer .copyright-text {
-    padding-top: 42px;
-    margin-bottom: -90px;
-    text-align: center;
-  }
-  
-  
-  /*---------------------------------------
-    SOCIAL ICON             
-  -----------------------------------------*/
-  
-  .social-icon {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-  
-  .social-icon li {
-    display: inline-block;
-    list-style: none;
-  }
-  
-  .social-icon li a {
-    border-radius: 100%;
-    color: #292929;
-    cursor: pointer;
-    font-size: 18px;
-    text-decoration: none;
-    -webkit-transition: all ease-in-out 0.3s;
-    transition: all ease-in-out 0.3s;
-    text-align: center;
-    position: relative;
-    margin: 4px 8px 0 8px;
-  }
-  
-  .social-icon li a:hover {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-  
-
-
-.section-btn {
-    margin: 30px 0 0 0;
-    padding: 0;
-}
-  
-.section-btn a,
-.section-btn button {
-    line-height: 45px;
-    border: none;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    perspective: 1000px;
-    color: #ffffff;
-    font-weight: normal;
-    margin-bottom: 20px;
 }
 
 .s-container{
@@ -288,5 +209,5 @@ footer {
 }
 #select p{
   margin-bottom: 0;
->>>>>>> frontend
+
 }
