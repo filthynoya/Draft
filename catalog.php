@@ -38,13 +38,35 @@
                 </div>
             </div>
         </header>
+<!--_-----------catalog search----------_-->
+        <div class="s-container">
+            <div class="search-bar" id="myDropdown">
+                <div id="select">
+                    <p id="selectText">Catalog</p>
+                    <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                    <ul id="list">
+                        <li class="options">Default</li>
+                        <li class="options">1</li>
+                        <li class="options">2</li>
+                        <li class="options">sd</li>
+                        <li class="options">sumaiya</li>
+                        <li class="options">3</li>
+                        <li class="options">14</li>
+                        <li class="options">mumu</li>
+                        <li class="options">24</li>
+                        <li class="options">ayon</li>
+                    </ul>
+                </div>
+                <input type="text" id="inputfield" placeholder="Search in catalog" onkeyup="filterFunction()">
+            </div>
+        </div>
 
         <section class="slider">
             <div class="c-container">
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="10000">
-                            <div class="slider-title text-center">
+                            <div class="slider-title text-Start">
                                 <h1>#Catalog 1</h1>
                             </div>
                             <div class="slider-item">
@@ -115,7 +137,7 @@
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
-                            <div class="slider-title text-center">
+                            <div class="slider-title text-Start">
                                 <h1>#Catalog 2</h1>
                             </div>
                             <div class="slider-item">
@@ -186,7 +208,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="slider-title text-center">
+                            <div class="slider-title text-Start">
                                 <h1>#Catalog 3</h1>
                             </div>
                             <div class="slider-item">
@@ -479,7 +501,41 @@
      
  
  </script>
-        
+        <script>
+            let select= document.getElementById("select");
+            let list= document.getElementById("list");
+            let selectText= document.getElementById("selectText");
+            let inputfield= document.getElementById("inputfield");
+            
+            let options= document.getElementsByClassName("options");
+          
+
+            select.onclick=function(){
+                list.classList.toggle("open");
+            }
+            for(option of options){
+                option.onclick = function(){
+                    selectText.innerHTML = this.innerHTML;
+                    inputfield.placeholder = "Search in "+ selectText.innerHTML;
+                }
+            }
+
+            function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("inputfield");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByClassName("options");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+                } else {
+                a[i].style.display = "none";
+                }
+            }
+}
+        </script>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/modernizr.custom.js"></script>
