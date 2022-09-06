@@ -1,3 +1,16 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["adminloggedin"]) || $_SESSION["adminloggedin"] !== true){
+        header("location: ../login.php");
+        exit;
+    }
+
+    $adminid = $_SESSION['adminid'];
+
+    include 'server/db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

@@ -1,10 +1,12 @@
 <?php include "includes/header.php"; 
-include './server/db.php';
+
+$cataid = $_GET['catalogid'];
+
 if(isset($_POST['category_add']))
 {
-    $name=$_POST['name'];
+    $name = $_POST['name'];
 
-    $sql= "INSERT INTO catalog (catalogname) VALUES('$name')";
+    $sql= "UPDATE catalog set catalogname='$name' where catalogid=$cataid";
     //$querry_run= mysqli_quer($conn,$querry);
     $conn->query($sql);
 
@@ -22,11 +24,11 @@ if(isset($_POST['category_add']))
 
 
 ?>
-<div class="container">
+<div class="container my-3">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card_header">
+                <div class="card-header">
                     <h4>Edit Category
                         <a href="dashboard.php" class="btn btn-danger justify-content-md-end float-end">Back</a>
 
@@ -47,7 +49,7 @@ if(isset($_POST['category_add']))
 
         
 
-                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?catalogid=$cataid";?>" method="POST">
                                 <div class="form-group">
                                     <label for="">Category Name</label>
                                     <input name="name" type="text" placeholder="Your Name" value="<?php echo $row['catalogname']?>" class="form-control my-2 p-4 " required>

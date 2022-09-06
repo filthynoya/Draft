@@ -4562,6 +4562,10 @@ textarea.form-control-lg {
   padding: 1rem 1rem;
 }
 
+.fix-height-dash {
+  height: 120px;
+}
+
 .card-title {
   margin-bottom: 0.5rem;
 }

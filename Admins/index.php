@@ -1,20 +1,11 @@
-<?php 
-include ('includes/header.php');
-include('includes/nav.php')
+<?php
+    session_start();
+
+    if(!isset($_SESSION["adminloggedin"]) || $_SESSION["adminloggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
+
+    header("location: admin/index.php");
+    exit;
 ?>
-
-<div class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3>hi</h3>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<?php 
-include ('includes/footer.php');
-?>
-

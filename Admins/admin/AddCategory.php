@@ -1,5 +1,4 @@
 <?php include "includes/header.php"; 
-include './server/db.php';
 
 if(isset($_POST['category_add']))
 {
@@ -23,11 +22,11 @@ if(isset($_POST['category_add']))
 
 
 ?>
-<div class="container">
+<div class="container my-3">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card_header">
+                <div class="card-header">
                     <h4>Add Category
                         <a href="dashboard.php" class="btn btn-danger justify-content-md-end float-end">Back</a>
 

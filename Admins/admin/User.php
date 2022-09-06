@@ -1,20 +1,21 @@
 <?php include "includes/header.php"; 
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $post_postid = $_GET['catalogid'];
+        $post_postid = $_GET['userid'];
 
-        $sql = "DELETE from comments where postid in (select postid from post where catalogid=$post_postid)";
-
-        $conn->query ($sql);
-
-        $sql = "DELETE from report where postid in (select postid from post where catalogid=$post_postid)";
+        $sql = "DELETE from comments where userid=$post_postid";
 
         $conn->query ($sql);
 
-        $sql = "DELETE from post where catalogid=$post_postid";
+        $sql = "DELETE from users_pic where userid=$post_postid";
 
         $conn->query ($sql);
 
-        $sql = "DELETE from catalog where catalogid=$post_postid";
+        $sql = "DELETE from post where userid=$post_postid";
+
+        $conn->query ($sql);
+
+        $sql = "DELETE from users where userid=$post_postid";
 
         $conn->query ($sql);
     }
@@ -25,10 +26,7 @@
     <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Category
-                        <a href="AddCategory.php" class="btn btn-primary float-end">Add Category</a>
-
-                    </h4> 
+                    <h4>Users</h4> 
                 </div>
                 <div class="card-body">
                    
@@ -37,14 +35,15 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Category Name</th>
-                                <th>Edit</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Verified</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $sql="SELECT * FROM catalog";
+                            $sql="SELECT userid, fullname, email, activated FROM users";
                             $sql_run=mysqli_query($conn,$sql);
 
                             if(mysqli_num_rows($sql_run) > 0)
@@ -53,14 +52,13 @@
                                 {
                             ?>
                             <tr>
-                                <?php $postid = $item['catalogid']; ?>
-                                <td><?= $item['catalogid']?></td>
-                                <td><?= $item['catalogname']?></td>              
+                                <?php $postid = $item['userid']; ?>
+                                <td><?= $item['userid']?></td>
+                                <td><?= $item['fullname']?></td>
+                                <td><?= $item['email']?></td>
+                                <td><?= $item['activated']?></td>         
                                 <td>
-                                    <a href="categoryedit.php?catalogid=<?= $item['catalogid']?> " class="btn btn-info">Edit</a>                       
-                                </td>
-                                <td>
-                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?catalogid=$postid";?>">
+                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?userid=$postid";?>">
                                         <button type="submit" class="btn btn-md btn-danger">Delete</button>
                                     </form>
                                 </td>
