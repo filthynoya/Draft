@@ -8,10 +8,7 @@
     background: rgba(255, 255, 255, 0);
 }
 
-.create{
-    margin-bottom: -60px;
-    margin-top: 8px;
-}
+
 section{
     display: flex;
     justify-content: center;
@@ -63,7 +60,7 @@ section{
     
     color: rgb(100, 74, 89);
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: -20px;
 
 }
 .container .row100{
@@ -159,8 +156,8 @@ section{
     display: block;
     border: none;
     outline: none;
-    background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 56%);
-    border-radius: 10px;
+    background: rgba(181, 101, 136, 0.821);
+    border-radius: 1px;
     color: #fff;
     font-size: 15px;
     font-weight: 300;
@@ -173,7 +170,7 @@ section{
 }
 
 
-.btn1{
+/*.btn1{
     margin-top: -90px;
     border: none;
     outline: none;
@@ -184,7 +181,7 @@ section{
     border-radius: 10px;
     margin-bottom: 10px;
     
-  }
+  }*/
 .container input{
     position: relative;
    
@@ -252,16 +249,20 @@ background: #eee;
    
     }
     
+    
+    
 }
 @media (min-width: 1025px) {
     .h-custom {
     height: 100vh !important;
     }
+    
+  
 }
+
 @media  (min-width: 480px){
-    .btn1{
-        margin-bottom:50px ;
-    }
+    
+  
 
 }
 
@@ -310,4 +311,102 @@ text-decoration: none;
     margin-top: -35px;
     margin-bottom:-13px ;
     
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background: #252525;
+  }
+
+
+
+
+
+
+
+
+
+
+
+.section-btn {
+    margin: 0 0 0 0;
+    padding: 0;
+  }
+  
+  .section-btn a,
+  .section-btn button {
+    line-height: 35px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    color: #ffffff;
+    font-weight: normal;
+    
+}
+  
+.section-btn a span,
+.section-btn button span {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    padding: 0 25px;
+    background: rgba(181, 101, 136, 0.821);
+    border-radius: 1px;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+  
+.csstransforms3d .section-btn a span::before,
+.csstransforms3d .section-btn button span::before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    border-radius: 1px;
+    color: #ffffff;
+    padding: 0 25px;
+    content: attr(data-hover);
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    transition: background 0.3s;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+}
+  
+.section-btn a:hover span,
+.section-btn a:focus span,
+  
+.section-btn button:hover span,
+.section-btn button:focus span {
+    -webkit-transform: rotateX(90deg) translateY(-22px);
+    -moz-transform: rotateX(90deg) translateY(-22px);
+    transform: rotateX(90deg) translateY(-22px);
+}
+  
+.csstransforms3d .section-btn a:hover span::before,
+.csstransforms3d .section-btn a:focus span::before,
+  
+.csstransforms3d .section-btn button:hover span::before,
+.csstransforms3d .section-btn button:hover span::before {
+    background: #000000;  
 }

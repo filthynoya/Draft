@@ -1,0 +1,221 @@
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700');
+
+
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 50px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 40px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+h4 {
+  color: #505050;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+p {
+  color: #757575;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0.5px;
+}
+
+/*---------------------------------------
+  BUTTONS               
+-----------------------------------------*/
+
+
+  
+.section-btn a span,
+.section-btn button span {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    padding: 0 25px;
+    background: rgba(181, 101, 136, 0.821);
+    border-radius: 1px;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+  
+.csstransforms3d .section-btn a span::before,
+.csstransforms3d .section-btn button span::before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    border-radius: 1px;
+    color: #ffffff;
+    padding: 0 25px;
+    content: attr(data-hover);
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    transition: background 0.3s;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+}
+  
+.section-btn a:hover span,
+.section-btn a:focus span,
+  
+.section-btn button:hover span,
+.section-btn button:focus span {
+    -webkit-transform: rotateX(90deg) translateY(-22px);
+    -moz-transform: rotateX(90deg) translateY(-22px);
+    transform: rotateX(90deg) translateY(-22px);
+}
+  
+.csstransforms3d .section-btn a:hover span::before,
+.csstransforms3d .section-btn a:focus span::before,
+  
+.csstransforms3d .section-btn button:hover span::before,
+.csstransforms3d .section-btn button:hover span::before {
+    background: #000000;  
+}
+  
+::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background: #252525;
+}
+  
+
+  
+/*---------------------------------------
+  FOOTER              
+-----------------------------------------*/
+footer {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+footer h4 {
+  padding-top: 12px;
+}
+
+footer a {
+  color: #757575;
+}
+
+footer .copyright-text {
+  padding-top: 42px;
+  margin-bottom: -90px;
+  text-align: center;
+}
+
+
+/*---------------------------------------
+  SOCIAL ICON             
+-----------------------------------------*/
+
+.social-icon {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.social-icon li {
+  display: inline-block;
+  list-style: none;
+}
+
+.social-icon li a {
+  border-radius: 100%;
+  color: #292929;
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  text-align: center;
+  position: relative;
+  margin: 4px 8px 0 8px;
+}
+
+.social-icon li a:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+
+/*---------------------------------------
+  MOBILE RESPONSIVE              
+-----------------------------------------*/
+
+
+@media (max-width: 992px) {
+ 
+}
+
+@media (max-width: 980px) {
+
+
+  footer  {
+    text-align: center;
+  }
+  footer .social-icon {
+    margin-top: 32px;
+  }
+
+  
+}
+
+@media (max-width: 770px) {
+ 
+  
+}
+
+@media (max-width: 767px) {
+  
+  .footer-info {
+    padding: 22px 0 22px 0;
+  }
+ 
+}
+
+
+@media (max-width: 580px) {
+  h1 {
+    font-size: 26px;
+  }
+
+}

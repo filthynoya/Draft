@@ -4,6 +4,43 @@
     margin: 0;
     padding: 0;
 }
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 300;
+}
+  
+
+.slider h1{
+    margin-top: 70px;
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 50px;
+}
+h2 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 0;
+}
+  
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 32px;
+}
+  
+h4 {
+    color: #505050;
+    font-size: 18px;
+    line-height: 28px;
+}
+  
+p {
+    color: #757575;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 29px;
+    letter-spacing: 0.5px;
+}
+  
 
 body {
     font-family: 'Poppins', sans-serif; 
@@ -59,7 +96,25 @@ header a:hover {
     margin-bottom: 2em;
    
 }
+.slider-author-name span a {
+    text-decoration: none;
+    color: black;
+}
 
+.slider-author-name span a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.post-author-name span a {
+    text-decoration: none;
+    color: black;
+}
+
+.post-author-name span a:hover {
+    text-decoration: underline;
+    color: black;
+}
 .slider-item-img {
     margin-right: 1em;
 }
@@ -67,7 +122,6 @@ header a:hover {
 .slider-item-img img {
     width: 350px;
     border-radius: 10px;
-    height: 250px;
 }
 
 .slider-author-img img {
@@ -98,11 +152,19 @@ header a:hover {
 .posts {
     margin-top: 5em;
 }
+.post-title {
+    text-decoration: none;
+    color: #000;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+    color: #000;
+}
 
 .post-item-img img {
     width: 100%;
     border-radius: 10px;
-    height: 200px;
 }
 
 .post-item-content span {
@@ -133,166 +195,99 @@ header a:hover {
     position: relative;
     margin-top: 2em;
 }
-
-.post-title {
-    text-decoration: none;
-    color: #000;
-}
-
-.post-title:hover {
-    text-decoration: underline;
-    color: #000;
-}
-
-.slider-author-name span a {
-    text-decoration: none;
-    color: black;
-}
-
-.slider-author-name span a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-.post-author-name span a {
-    text-decoration: none;
-    color: black;
-}
-
-.post-author-name span a:hover {
-    text-decoration: underline;
-    color: black;
-}
-
 /*--------------------------------footer-------------------------------*/
-body{
-    background: #eef8ff;
+
+
+
+.section-btn {
+    margin: 30px 0 0 0;
+    padding: 0;
 }
+  
+.section-btn a,
+.section-btn button {
+    line-height: 45px;
+    border: none;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    color: #ffffff;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+  
+  
+
+
+/*---------------------------------------
+  FOOTER              
+-----------------------------------------*/
+
 footer {
-    height: 80%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    height: 50%;
     width: 100%;
     position:relative;
     bottom: 0;
-    background: linear-gradient(302deg, rgba(75,28,64,1) 0%, rgba(120,91,109,1) 73%);
-    color: #fff;
-    padding: 50px 0 20px;
-    border-top-left-radius: 125px;
+    background: linear-gradient(302deg, rgb(163, 159, 162) 0%, rgb(221, 219, 220) 73%);
+    
+    
+   
     font-size: 13px;
     line-height: 20px;
-
-}
-.row{
-    width: 85%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-   
-}
-.col{
-    flex-basis: 25%;
-    padding: 10px;
-}
-.col:nth-child(2), .col:nth-child(3){
-    flex-basis: 15%;
-}
-.logof{
-    width: 80px;
-    margin-bottom:30px ;
-}
-.col h3{
-    width: fit-content;
-    margin-bottom: 40px;
-    position: relative;
-}
-.email-id{
-    width:  fit-content;
-    border-bottom: 1px solid #ccc;
-    margin: 20px 0;
-}
-.col ul li{
-   
-    list-style: none;
-    margin-bottom: 12px;
-    margin-left: -30px;
-}
-.col ul li a{
-    text-decoration: none;
-    color: #fff;
-}
-.btn1{
-    width: 200px;
-    background-color: #291e28b1; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+  }
+  
+  footer h4 {
+    padding-top: 12px;
+  }
+  
+  footer a {
+    color: #757575;
+  }
+  
+  footer .copyright-text {
+    padding-top: 42px;
+    margin-bottom: -90px;
     text-align: center;
-    text-decoration: none;
+  }
+  
+  
+  /*---------------------------------------
+    SOCIAL ICON             
+  -----------------------------------------*/
+  
+  .social-icon {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .social-icon li {
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    margin-bottom: 40px;
+    list-style: none;
+  }
+  
+  .social-icon li a {
+    border-radius: 100%;
+    color: #292929;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-.btn1:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    font-size: 18px;
+    text-decoration: none;
+    -webkit-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+    text-align: center;
+    position: relative;
+    margin: 4px 8px 0 8px;
+  }
+  
+  .social-icon li a:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
   }
 
-.social-icons .fab{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    color: #000;
-    background: #fff;
-    margin-right: 15px;
-    cursor: pointer;
 
-}
-hr{
-    width:90% ;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    margin: 20px auto;
-}
-.copyright{
-    text-align: center;
-}
-.underline{
-    width: 100%;
-    height: 3px;
-    background: #767676;
-    border-radius: 3px;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    overflow: hidden;
-}
-.underline span{
-
-    width: 15px;
-    height: 100%;
-    background: #fff;
-    border-radius: 3px;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    animation: moving 2s linear infinite;
-
-}
-@keyframes moving{
-    0%{
-        left: -20px;
-    }
-    100%{
-        left: 100%;
-    }
-}
 @media(max-width: 700px){
     footer{
         bottom: unset;

@@ -12,268 +12,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/index.css">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draft</title>
-
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scenic HTML Template</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<link rel="stylesheet" href="css/index/bootstrap.min.css">
+<link rel="stylesheet" href="css/index/font-awesome.min.css">
+<link rel="stylesheet" href="css/index/magnific-popup.css">
+
+<link rel="stylesheet" href="css/index/owl.theme.css">
+<link rel="stylesheet" href="css/index/owl.carousel.css">
+<script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="css/index/tooplate-style.css">
 
 </head>
 <body>
-    <img class="feature-img" src="./img/landing2.jpeg">
-    <header>
-        <nav class="fixed-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="logo text-lg-start text-center">
-                            <span><a href=""><img src="img/logo.png" alt=""> Draft</a></span>
-                        </div>
+
+<!-- PRE LOADER -->
+<div class="preloader">
+     <div class="spinner">
+          <span class="sk-inner-circle"></span>
+     </div>
+</div>
+
+
+<!-- MENU -->
+<div class="navbar custom-navbar navbar-fixed-top" role="navigation">
+     <div class="container">
+
+          <!-- NAVBAR HEADER -->
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <!-- lOGO -->
+               <a href="index.html" class="navbar-brand">Draft</a>
+          </div>
+
+          <!-- MENU LINKS -->
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home" class="smoothScroll">Home</a></li>
+                    <li><a href="#about" class="smoothScroll">Studio</a></li>
+                    <li><a href="#team" class="smoothScroll">Our People</a></li>  
+                    <li><a href="#contact" class="smoothScroll">Let's talk</a></li>
+                    <li><a href="login.php" class="smoothScroll">Login</a></li>
+               </ul>
+          </div>
+
+     </div>
+</div>
+
+
+<!-- HOME -->
+<section id="home" class="parallax-section">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-8 col-sm-12">
+                    <div class="home-text">
+                         <h1>Your Website has a video background!</h1>
+                         <p>Feel free to download and use HTML templates from Tooplate</p>
+                         <ul class="section-btn">
+                              <a href="#about" class="smoothScroll"><span data-hover="Discover More">Discover More</span></a>
+                         </ul>
                     </div>
-                    <div class="col-lg-6">
-                        
-                            <ul>
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="">Contact</a></li>
-                                <li><a href="login.php">Log in</a></li>
-                            </ul>
+               </div>
+
+          </div>
+     </div>
+
+     <!-- Video -->
+     <video controls autoplay loop muted>
+          <source src="videos/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+     </video>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="about-info">
+                         <h3>Introducing Draft</h3>
+                         <h1>This template is designed for you. Sed ornare, tortor nec placerat lacinia, leo quam rutrum leo, eget posuere ipsum sem eu justo. Integer nunc libero.</h1>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+<!-- PROJECT -->
+<section id="project" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-6 col-sm-6">
+                    <!-- PROJECT ITEM -->
+                    <div class="project-item">
+                         <a href="img/project-image1.jpg" class="image-popup">
+                              <img src="img/project-image1.jpg" class="img-responsive" alt="">
+                         
+                              <div class="project-overlay">
+                                   <div class="project-info">
+                                        <h1>Beautiful Women</h1>
+                                        <h3>Click to pop up!</h3>
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <!-- PROJECT ITEM -->
+                    <div class="project-item">
+                         <a href="img/project-image2.jpg" class="image-popup">
+                              <img src="img/project-image2.jpg" class="img-responsive" alt="">
+                         
+                              <div class="project-overlay">
+                                   <div class="project-info">
+                                        <h1>Nulla efficitur quam</h1>
+                                        <h3>Sed ligula accumsan</h3>
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <!-- PROJECT ITEM -->
+                    <div class="project-item">
+                         <a href="img/project-image3.jpg" class="image-popup">
+                              <img src="img/project-image3.jpg" class="img-responsive" alt="">
+                         
+                              <div class="project-overlay">
+                                   <div class="project-info">
+                                        <h1>Large Sea Wave</h1>
+                                        <h3>Nam feugiat dui in nisi</h3>
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <!-- PROJECT ITEM -->
+                    <div class="project-item">
+                         <a href="img/project-image4.jpg" class="image-popup">
+                              <img src="img/project-image4.jpg" class="img-responsive" alt="">
+                         
+                              <div class="project-overlay">
+                                   <div class="project-info">
+                                        <h1>Lorem ipsum dolor</h1>
+                                        <h3>Mollis aliquam faucibus urna</h3>
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>               
+
+          </div>
+     </div>
+</section>
+
+
+<!-- TEAM -->
+<section id="team" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-2 col-md-8 col-sm-12">
                     
+                    <div class="section-title">
+                         <h1>Meet Our People</h1>
                     </div>
-                </div>
-            </div>
-            
-        </nav>
-    <!--
-        
-    <nav>
-        
-            <div class="logo text-lg-start text-center">
-               <span><a href="">Draft</a></span>
-            </div>
-     
-            <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Log in</a></li>
-            </ul>
-        
-    </nav>
+               </div>
 
+               <div class="clearfix"></div>
 
+               <div id="owl-team" class="owl-carousel">
 
-     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="logo text-lg-start text-center">
-                        <span><a href="">Draft</a></span>
-                    </div>
-                </div>
-                <div class="col-lg-5">
                     
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Log in</a></li>
-                        </ul>
+                    <div class="item col-6  d-flex flex-row justify-content-center">
+                         <div class="admin-img">
+                              
+                              <div class="team-item">
+                                   <img src="img/team-image1.jpg" class="img-responsive" alt="">
+                                   <div class="team-overlay">
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-instagram"></a></li>
+                                             <li><a href="#" class="fa fa-github"></a></li>
+                                             <li><a href="#" class="fa fa-facebook"></a></li> 
+                                             <li><a href="#" class="fa fa-linkedin"></a></li>
+                                        </ul>
+                                   </div>
+                              </div>
+                              <p>Catherine Jann</p>
+                              <h3>Head Designer</h3>
+                         </div >
+                         <div class="admin-bio text-lg-start text-center mb-lg-0">
+                              <p>Catherine Jann</p>
+                         </div>
+                    </div>
+
+                    <div class="item col-6  d-flex flex-column justify-content-cente">
+                         <div class="admin-img">
+                              
+                              <div class="team-item">
+                                   <img src="img/team-image1.jpg" class="img-responsive" alt="">
+                                   <div class="team-overlay">
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-instagram"></a></li>
+                                             <li><a href="#" class="fa fa-github"></a></li>
+                                             <li><a href="#" class="fa fa-facebook"></a></li> 
+                                             <li><a href="#" class="fa fa-linkedin"></a></li>
+                                        </ul>
+                                   </div>
+                              </div>
+                              <p>Catherine Jann</p>
+                              <h3>Head Designer</h3>
+                         </div>
+                         <div class="admin-bio">
+                              <p>Catherine Jann</p>
+                         </div>
+                    </div>
+
                    
-                </div>
-            </div>
-        </div>
-        
-    </nav>
-    -->
-    </header>
-    
-    <div class="container  h-100">
-        <div class="msg-container">
-            <div id="slider">
-                <div class="msg-col logo text-lg-start text-center">
-                    <div class="slider">
-                        <div>
-                            <h1>Do you have a great idea?</h1>
-                            <p>Draft is a new ........Now let's explore all it's amazing features.</p>
-                            <a href="regisration.html">
-                                <button type="button"class="btn1 gradient-custom-2 mb-2 mt-0">Join Now 
+               </div>
 
-                                </button>
-                            </a>
-                        </div>
+          </div>
+     </div>
+</section>
+
+<!--<section id="team" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-2 col-md-8 col-sm-12">
                     
+                    <div class="section-title">
+                         <h1>Meet Our People</h1>
                     </div>
-                </div>
-                <div class="msg-col text-lg-start text-center">
-                    <h1>Let's create it together</h1>
-                    <p>Draft is a new ........Now let's explore all it's amazing features.</p>
-                  
-                    <a href="regisration.html">
-                        <button type="button"class="btn1 gradient-custom-2 mb-2 mt-0">Join Now 
+               </div>
 
-                        </button>
-                    </a>
-                    <!--<div class="msg-col">
-                        <p class="text-muted  mb-2 fw-bold text-body">Already Member? <a href="login.html"
-                            class="fw-bold text-body"><u>Sign in here</u></a></p>
-                    </div>-->
-                
+               <div class="clearfix"></div>
+
+               <div id="owl-team" class="owl-carousel">
+
                     
-                </div>
-                
+                    <div class="item col-6  d-flex flex-row justify-content-center">
+                         <div class="admin-img">
+                              
+                              <div class="team-item">
+                                   <img src="images/team-image1.jpg" class="img-responsive" alt="">
+                                   <div class="team-overlay">
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-instagram"></a></li>
+                                             <li><a href="#" class="fa fa-github"></a></li>
+                                             <li><a href="#" class="fa fa-facebook"></a></li> 
+                                             <li><a href="#" class="fa fa-linkedin"></a></li>
+                                        </ul>
+                                   </div>
+                              </div>
+                              <p>Catherine Jann</p>
+                              <h3>Head Designer</h3>
+                         </div >
+                         <div class="admin-bio text-lg-start text-center mb-lg-0">
+                              <p>Catherine Jann</p>
+                         </div>
+                    </div>
+
+                    <div class="item col-6  d-flex flex-column justify-content-cente">
+                         <div class="admin-img">
+                              
+                              <div class="team-item">
+                                   <img src="images/team-image1.jpg" class="img-responsive" alt="">
+                                   <div class="team-overlay">
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-instagram"></a></li>
+                                             <li><a href="#" class="fa fa-github"></a></li>
+                                             <li><a href="#" class="fa fa-facebook"></a></li> 
+                                             <li><a href="#" class="fa fa-linkedin"></a></li>
+                                        </ul>
+                                   </div>
+                              </div>
+                              <p>Catherine Jann</p>
+                              <h3>Head Designer</h3>
+                         </div>
+                         <div class="admin-bio">
+                              <p>Catherine Jann</p>
+                         </div>
+                    </div>
+
+                   
+               </div>
+
+          </div>
+     </div>
+</section>-->
+
+
+<!-- CONTACT -->
+<section id="contact" class="parallax-section">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-3 col-md-6 col-sm-12">
+                    <div class="section-title">
+                         <h1>Talk to us!</h1>
+                    </div>
+               </div>
+
+               <div class="clearfix"></div>
+
+               <div class="col-md-offset-2 col-md-8 col-sm-12">
+                    <!-- CONTACT FORM HERE -->
+                    <form id="contact-form" action="#" method="get" role="form">
+
+                         <!-- IF MAIL SENT SUCCESSFULLY -->
+                         <h6 class="text-success">Your message has been sent successfully. </h6>
+                         
+                         <!-- IF MAIL SENDING UNSUCCESSFULL -->
+                         <h6 class="text-danger">E-mail must be valid and message must be longer than 1 character.</h6>
+
+                         <div class="col-md-6 col-sm-6">
+                              <input type="text" class="form-control" id="cf-name" name="cf-name" placeholder="Name">
+                         </div>
+
+                         <div class="col-md-6 col-sm-6">
+                              <input type="email" class="form-control" id="cf-email" name="cf-email" placeholder="Email Address">
+                         </div>
+
+                         <div class="col-md-12 col-sm-12">
+                              <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject">
+                              <textarea class="form-control" rows="5" id="cf-message" name="cf-message" placeholder="Message"></textarea>
+                         </div>
+
+                         <div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+                              <div class="section-btn">
+                                   <button type="submit" class="form-control" id="cf-submit" name="submit"><span data-hover="Send Message">Send Message</span></button>
+                              </div>
+                         </div>
+                    </form>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+     <div class="container">
+          <div class="row">
+
                
-            </div>
-        </div>
-        <!--<img src="image/landing2.jpeg" class="feature-img">-->
 
-       
-       
-        <div class="controller">
-            <div id="line1"></div>
-            <div id="line2"></div>
-          
-            <div id="active"></div>
-        </div>
-       
-    </div>
-
-    <section class="post-slider">
-        <div class="container">
-            <div class="trending-title text-center">
-                <h1>Posts you will be missed..</h1>
-            </div>
-            <div class="slider">
-                <div id="carouselExampleSlidesOnly" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                    </div>
-                                                <div class="slider-author-name">
-                                                   <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span><b>Catelog Name</b> - 26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+               <div class="col-md-6 col-sm-12">
+                    <div class="footer-info">
+                    	<h2>Keep in touch</h2>
+                         <p><a href="tel:010-090-0780">010-090-0780</a></p>
+                         <p><a href="mailto:info@company.com">info@company.com</a></p>
+                         <p><a href="#">Our Location</a></p>
                     </div>
-                    <div class="carousel-indicators c-slider-btn-div">
-                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"></button>
+               </div>
+
+               <div class="col-md-6 col-sm-12">
+               		
+                    <h2>About Us</h2>
+                    <p>Sed vestibulum posuere ante, eget blandit metus. Morbi sodales feugiat erat, et placerat sapien suscipit ut.</p>
+                    <ul class="social-icon">
+                         <li><a href="#" class="fa fa-twitter"></a></li>
+                         <li><a href="#" class="fa fa-facebook"></a></li>
+                         <li><a href="#" class="fa fa-instagram"></a></li>
+                         <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                    
+               </div>
+
+               <div class="clearfix"></div>
+
+               <div class="col-md-12 col-sm-12">
+                    <div class="copyright-text">
+                         <p>Copyright © 2018 Company Name 
+                         
+                         | Design: Tooplate</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+               </div>
+               
+          </div>
+     </div>
+</footer>
 
-
-    <script>
-        var slider= document.getElementById('slider');
-        var active= document.getElementById('active');
-        var line1= document.getElementById('line1');
-        var line2= document.getElementById('line2');
-        
-       
-        function selectUpper () {
-            slider.style.transform='translateX(0)';
-            active.style.top='0px';
-        }
-
-        function selectLower () {
-            slider.style.transform='translateX(-50%)';
-            active.style.top='50px';
-        }
-
-        setInterval (selectLower, 5000);
-
-        setInterval (selectUpper, 10000);
-
-        line1.onclick=function(){
-            selectUpper ();
-        }
-        line2.onclick=function(){
-            selectLower ();
-        }
-    </script>
-
-    <footer>
-        <div class="container">
-            <span>Copyright ©2022 All rights reserved</span>
-        </div>
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-      
+<!-- SCRIPTS -->
+<script src="js/indexjquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/custom.js"></script>
 
 </body>
 </html>

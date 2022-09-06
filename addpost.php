@@ -50,7 +50,7 @@
     
 
     <link rel="stylesheet" href="css/addpost.css">
-
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
     <script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
     
     <!--b5-->
@@ -67,11 +67,11 @@
         <div class="container">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <div class="create">
-                    <h2 class="lead pb-md-0 mb-md-5 px-md-2">Create Post</h2>
-                    <div class=" d-md-flex justify-content-md-end">
-                        <button class="btn1 gradient-custom-2" type="submit">Post</button>
-                    
-                    </div>
+                <div class="d-flex flex-lg-row flex-column justify-content-center section-btn">
+                    <h2 class="lead pb-md-0 mb-md-5">Create Post</h2>
+                       <!-- <button class="section-btn" id="cf-submit"  name="submit"><span data-hover="Post">Post</span></button>-->
+                       <a href="#about" class="smoothScroll my-lg-0 my-5"><span data-hover="Post">Post</span></a>
+                 </div>
                 </div>
             
                 <div class="row100">
@@ -127,104 +127,7 @@
             </form>
         </div>
     </section>
-    <!--
-    <section class="h-100 h-custom" style="background-color: #000000;">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-lg-8 justify-content-center align-items-cente ">
-                    <div class="card rounded-3">
-                
-                        <div class="card-body p-2 p-md-5">
-                            <div>
-                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Create Post</h3>
-                                <div class="d-md-flex justify-content-md-end">
-                                    <button class="btn1 gradient-custom-2" type="button">Post</button>
-                                
-                                </div>
-                            </div>
-                            <div class="msg col-lg-12  mb-4">
-                                <input type="text" name="first_name" placeholder="Title" required>
-                               
-                            </div>
-                            <div class="msg col-lg-12">
-                                <textarea  placeholder="Wright someting here...." required></textarea>
-      
-                            </div>
-                            <form class="wrapper px-md-2 text-center">
-                                
-                                <div class="image">
-                                    <img class="img-fluid" src=" " alt="">
-                                </div>
-                                <div class="conten">
-                                    <div class="icon">
-                                        <i class="fa fa-cloud-upload"></i>
-                                    </div>
-                                    <div class="text">No file chosen,yet!</div>
-                                </div>
-                                <div id="cancel-btn"><i class="fa fa-times"></i></div>
-                                <div class="file-name">File name here</div>
-                
-                               <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
-                
-                           <!-- </form>
-                           
-                            <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
-                            <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
-                        </div>
-                        <script>
-
-                            const textarea= document.querySelector("textarea");
-
-                            const wrapper= document.querySelector(".wrapper");
-                            const fileName= document.querySelector(".file-name");
-                            const cancelBtn= document.querySelector("#cancel-btn");
-                            const defaultBtn= document.querySelector("#default-btn");
-                            const customBtn= document.querySelector("#custom-btn");
-                            const img= document.querySelector("img");
-
-
-
-                            let regExp=/[0-9a-zA-Z\^\&\'\@\{\}\[\]\, \$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
-
-                            textarea.addEventListener("keyup", e =>{
-                                textarea.style.height="55px";
-                                let scHeight = e.target.scrollHeight;
-                                textarea.style.height=`${scHeight}px`;
-                            });
-
-                            function defaultBtnActive(){
-                                defaultBtn.click();
-                            }
-                            defaultBtn.addEventListener("change",function(){
-                                const file=this.files[0];
-                                if(file){
-                                    const reader= new FileReader();
-                                    reader.onload=function(){
-                                        const result=reader.result;
-                                        img.src=result;
-                                        wrapper.classList.add("active");
-                                    }
-                                    cancelBtn.addEventListener("click",function(){
-                                        img.src=" ";
-                                        wrapper.classList.remove("active");
-                                    });
-                                    reader.readAsDataURL(file);
-                                }
-                                if(this.value){
-                                    let valueStore=this.value.match(regExp);
-                                    fileName.textContent=valueStore;
-                                }
-
-                            });
-
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      -->
+    
 
       <script>
 
@@ -282,6 +185,10 @@
                 });
 
             </script>
+             <script src="js/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/modernizr.custom.js"></script>
+      <script src="js/smoothscroll.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
