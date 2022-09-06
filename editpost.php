@@ -97,22 +97,32 @@
             
             <div class="row100">
                 <div class="col">
-                    <input type="text" name="first_name" placeholder="Title" required>
+                    <input type="text" name="title" placeholder="Title" required value="<?php echo $title ?>">
                 </div>
             </div>
             <div class="row100">
                 <div class="col">
-                    <select class="form-select selectpicker show-tick" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                    <select name="catalogs" class="form-select selectpicker show-tick" aria-label="Default select example">
+                            <?php
+                                while ($rows = $result->fetch_assoc ()) {
+                                    $id = $rows['catalogid'];
+                                    $name = $rows['catalogname'];
+
+                                    //echo '<option value="'.$id.'">'.$name.'</option>';
+
+                                    if ($id == $cata) {
+                                        echo '<option selected value="'.$id.'">'.$name.'</option>';
+                                    } else {
+                                        echo '<option value="'.$id.'">'.$name.'</option>';
+                                    }
+                                }
+                            ?>
+                        </select>
                 </div>
             </div>
             <div class="row100">
                 <div class="col">
-                    <textarea  placeholder="Wright someting here...." required></textarea>
+                    <textarea name="body" placeholder="Write someting here...." required><?php echo $body ?></textarea>
                 </div>
             </div>
            
@@ -121,7 +131,7 @@
                     <form class="wrapper text-center">
                                 
                         <div class="image">
-                            <img class="img-fluid" src=" " alt="">
+                            <img class="img-fluid" src="<?php echo $img ?>" alt="">
                         </div>
                         <div class="conten">
                             <div class="icon">
@@ -138,7 +148,7 @@
                     <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
                     <button onclick="defaultBtnActive()" class="align-items-center justify-content-center" id="custom-btn">Choose a file</button>
                     <div class=" d-md-flex justify-content-md-end">
-                        <a href="home.php"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+                    <a href="post.php?postid=<?php echo $postid; ?>"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>
                 
                 </div>
 

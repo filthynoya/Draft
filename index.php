@@ -1,11 +1,43 @@
 <?php
-    session_start();
+     session_start();
     
-    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-        header("location: home.php");
-        exit;
-    }
+     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+          header("location: home.php");
+          exit;
+     }
 
+     include './server/db.php';
+
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          $name = trim_data ($_POST['name']);
+          $email = trim_data ($_POST['email']);
+          $subject = trim_data ($_POST['subject']);
+          $body = trim_data ($_POST['message']);
+
+          $error = 0;
+          $errormsg = "";
+          $succ = 0;
+
+          if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+               $errormsg = "Only White Space and Alphabets Allowed.";
+               $error++;
+          }
+
+          if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+               $errormsg = "Incorrect Email";
+               $error++;
+          }
+
+          if ($error == 0) {
+               $sql = "insert into contact (contactname, contactemail, contactsub, contactmsg) values ('$name','$email','$subject','$body')";
+
+               $conn->query ($sql);
+
+               $succ = 1;
+          }
+
+
+     }
 
 ?>
 
@@ -346,25 +378,19 @@
 
                <div class="col-md-offset-2 col-md-8 col-sm-12">
                     <!-- CONTACT FORM HERE -->
-                    <form id="contact-form" action="#" method="get" role="form">
-
-                         <!-- IF MAIL SENT SUCCESSFULLY -->
-                         <h6 class="text-success">Your message has been sent successfully. </h6>
-                         
-                         <!-- IF MAIL SENDING UNSUCCESSFULL -->
-                         <h6 class="text-danger">E-mail must be valid and message must be longer than 1 character.</h6>
+                    <form id="contact-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" role="form">
 
                          <div class="col-md-6 col-sm-6">
-                              <input type="text" class="form-control" id="cf-name" name="cf-name" placeholder="Name">
+                              <input type="text" class="form-control" id="cf-name" name="name" placeholder="Name" required>
                          </div>
 
                          <div class="col-md-6 col-sm-6">
-                              <input type="email" class="form-control" id="cf-email" name="cf-email" placeholder="Email Address">
+                              <input type="email" class="form-control" id="cf-email" name="email" placeholder="Email Address" required>
                          </div>
 
                          <div class="col-md-12 col-sm-12">
-                              <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject">
-                              <textarea class="form-control" rows="5" id="cf-message" name="cf-message" placeholder="Message"></textarea>
+                              <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject" required>
+                              <textarea class="form-control" rows="5" id="cf-message" name="message" placeholder="Message" ></textarea>
                          </div>
 
                          <div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
@@ -422,8 +448,21 @@
      </div>
 </footer>
 
+<script>
+     <?php
+          if ($error != 0) {
+               echo 'alert ("'.$errormsg.'")';
+          }
+
+          if ($succ != 0) {
+               echo 'alert ("Success")';
+          }
+     ?>
+</script>
+
 <!-- SCRIPTS -->
 <script src="js/indexjquery.js"></script>
+<script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.parallax.js"></script>
 <script src="js/owl.carousel.min.js"></script>

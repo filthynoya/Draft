@@ -126,12 +126,3 @@ header a:hover {
     font-weight: bolder;
     margin-bottom: 3em;
 }
-
-footer {
-    margin-top: 2em;
-    padding-top: 2em;
-    text-align: center;
-    padding-bottom: 2em;
-    color: aliceblue;
-    background-color: rgba(84, 52, 76, 0.621)  ;
-}

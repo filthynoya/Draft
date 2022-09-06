@@ -129,6 +129,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
         <link rel="stylesheet" href="css/editprofile.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/footer.css">
 
         <script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
 
@@ -208,7 +210,7 @@
                                 </div>
                                 <div class="form-field d-flex flex-column">
                                     <label for="">About Yourself</label>
-                                    <textarea name="about" id="" maxlength="250" require><?php if ($about != NULL) { echo ($about); } ?></textarea>
+                                    <textarea name="about" id="about-text" maxlength="250" require><?php if ($about != NULL) { echo ($about); } ?></textarea>
                                 </div>
                                 <div class="form-field d-flex flex-column">
                                     <label for="">Avater</label>
@@ -266,13 +268,6 @@
             </div>
         </main>
 
-        <footer>
-            <div class="container">
-                <span>Copyright ©2022 All rights reserved</span>
-            </div>
-        </footer>
+        <script src="./js/editprofile.js"></script>
 
-        <script src="js/editprofile.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </body>
-</html>
+        <?php include './footer.php' ?>
