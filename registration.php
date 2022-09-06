@@ -31,7 +31,15 @@
             $error++;
         }
 
-        $username = trim_data ($_POST["username"]);
+        $sql = "select * from users where email='$email'";
+
+        $res = $conn->query ($sql);
+
+        if ($res->num_rows > 0) {
+            $error++;
+            $error_msg = "Email already Exists.";
+        }
+
         $pass = trim_data ($_POST["passkey"]);
         $conpass = trim_data ($_POST["conpasskey"]);
 
@@ -49,7 +57,7 @@
             $sql = "INSERT INTO users (fullname, email, dateofreg, passkey, dateofbirth, activated, about, vkey) VALUES ('$fullname', '$email', CURDATE(), '$pass', NULL, 0, NULL, '$vkey')";
             
             if ($conn->query($sql) === TRUE) {
-                $sql = "INSERT INTO users_pic (userid, location) values ((SELECT MAX(userid) FROM users), NULL)";
+                $sql = "INSERT INTO users_pic (userid, location) values ((SELECT MAX(userid) FROM users), './img/sample-avatar.jpg')";
                 $conn->query($sql);
                 header("location: login.php");
             } else {
@@ -95,19 +103,13 @@
                             <div class="form-row">
                                 <div class="col-lg-10 d-flex flex-row boxes">
                                     <i class="fa fa-user-o icon"></i>
-                                    <input name="fullname" type="text" placeholder="Your Name" class="form-control my-2 p-4 " required>
+                                    <input name="fullname" type="text" placeholder="Your Name" class="form-control my-2 p-4" value="<?php echo $fullname; ?>" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-10 d-flex flex-row boxes">
                                     <i class="fa fa-envelope icon"></i>
-                                    <input name="email" type="email" placeholder="Email address" class="form-control my-2 p-4 " required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-lg-10 d-flex flex-row boxes">
-                                    <i class="fa fa-user icon"></i>
-                                    <input name="username" type="text" placeholder="Username" class="form-control my-2 p-4 " required>
+                                    <input name="email" type="email" placeholder="Email address" class="form-control my-2 p-4" value="<?php echo $email; ?>" required>
                                 </div>
                             </div>
                             <div class="form-row">

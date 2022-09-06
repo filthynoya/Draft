@@ -106,7 +106,7 @@
                 <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                 <label class="form-check-label" for="form1Example3"> Remember me </label>
               </div>
-              <a href="#!" class="text-muted  mb-2" style="margin-top:12px; margin-left: 100px;">Forgot password?</a>
+              <a href="passform.php" class="text-muted  mb-2" style="margin-top:12px; margin-left: 100px;">Forgot password?</a>
             </div>
             <div class="form-row">
               <div class="col-lg-8">
