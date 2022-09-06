@@ -219,3 +219,92 @@ footer .copyright-text {
   }
 
 }
+
+/*-----------------popup---------------*/
+
+.modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+    margin-top: -18px;
+}
+
+.row .contact {
+    width: 100%;
+    
+}
+.modal-content{
+    color: rgb(255, 250, 250);
+}
+.modal-header .cancel{
+   
+    color: white;
+}
+.contact .col{
+    background:rgba(0, 0, 0, 0.89); ;
+}
+.box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.750);
+	border-radius:3px;
+	padding: 18px 18px;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+    pointer-events:none;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+.input-container textarea{ 
+    border:0;
+    border-bottom:1px solid rgb(120, 117, 117);  
+    background:transparent;
+    width:100%;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color:rgb(255, 255, 255);
+    margin-top: 15px;
+}
+.input-container textarea:focus{ 
+   border:none;	
+   outline:none;
+   border-bottom:1px solid #e74c3c;	
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label,
+.input-container textarea:focus ~ label,
+.input-container textarea:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+
