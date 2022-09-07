@@ -73,6 +73,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/logregstyle.css">
 
 
@@ -103,25 +104,25 @@
                             <div class="form-row">
                                 <div class="col-lg-10 d-flex flex-row boxes">
                                     <i class="fa fa-user-o icon"></i>
-                                    <input name="fullname" type="text" placeholder="Your Name" class="form-control my-2 p-4" value="<?php echo $fullname; ?>" required>
+                                    <input name="fullname" type="text" placeholder="Your Name" class="form-control my-2 " value="<?php echo $fullname; ?>" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-10 d-flex flex-row boxes">
                                     <i class="fa fa-envelope icon"></i>
-                                    <input name="email" type="email" placeholder="Email address" class="form-control my-2 p-4" value="<?php echo $email; ?>" required>
+                                    <input name="email" type="email" placeholder="Email address" class="form-control my-2 " value="<?php echo $email; ?>" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-10 d-flex flex-row boxes">
                                     <i class="fa fa-key icon"></i>
-                                    <input name="passkey" type="password" placeholder="Password" class="form-control my-2 p-4" required>
+                                    <input name="passkey" type="password" placeholder="Password" class="form-control my-2 " required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-10 d-flex flex-row boxes">
                                     <i class="fa fa-lock icon"></i>
-                                    <input name="conpasskey" type="password" placeholder="Repeat your password" class="form-control my-2 p-4" required>
+                                    <input name="conpasskey" type="password" placeholder="Repeat your password" class="form-control my-2 " required>
                                 </div>
                             </div>
                 
@@ -136,13 +137,15 @@
                             <div class="form-row">
                                 <div class="col-lg-10">
                                     <div class="d-flex flex-row align-items-center justify-content-center">
-                                    <button type="submit" class="btn1 gradient-custom-2 mb-2 mt-0">Register</button>
+                                    <div class="section-btn">
+                                        <button type="submit" id="cf-submit" name="submit"><span data-hover="Sign in">Sign up</span></button>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
                         
                             <div class="col-lg-10">
-                                <p class="text-center text-muted  mb-2">Have already an account? 
+                                <p class="text-center text-muted  mb-4">Have already an account? 
                                     <a href="login.php" class="fw-bold text-body"><u>Sign in here</u></a>
                                 </p>
                             </div>
@@ -156,6 +159,10 @@
             </div>
        </section>
     </section>
+    <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/modernizr.custom.js"></script>
+     <script src="js/smoothscroll.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

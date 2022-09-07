@@ -86,12 +86,12 @@
 <body>
     <section>
         <div class="container">
-                
+        <form method="post" id="myform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?postid=$postid";?>" enctype="multipart/form-data">
         <div class="create">
                 <div class="d-flex flex-lg-row flex-column justify-content-center section-btn">
                     <h2 class="lead pb-md-0 mb-md-5">Edit Post</h2>
                        <!-- <button class="section-btn" id="cf-submit"  name="submit"><span data-hover="Post">Post</span></button>-->
-                       <a href="#about" class="smoothScroll my-lg-0 my-5"><span data-hover="Save">Save</span></a>
+                       <a onclick="document.getElementById('myform').submit()" class="smoothScroll my-lg-0 my-5"><span data-hover="Save">Save</span></a>
                  </div>
             </div>
             
@@ -128,7 +128,7 @@
            
             <div class="row100">
                 <div class="col">
-                    <form class="wrapper text-center">
+                    <div class="wrapper text-center">
                                 
                         <div class="image">
                             <img class="img-fluid" src="<?php echo $img ?>" alt="">
@@ -144,16 +144,15 @@
         
                        <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
         
-                    </form> 
-                    <input class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
+                            </div> 
+                    <input name="post_img" class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
                     <button onclick="defaultBtnActive()" class="align-items-center justify-content-center" id="custom-btn">Choose a file</button>
                     <div class=" d-md-flex justify-content-md-end">
                     <a href="post.php?postid=<?php echo $postid; ?>"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>
                 
                 </div>
-
-
                 </div>
+                            </form>
             </div>
                 <script>
                     

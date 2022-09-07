@@ -31,7 +31,7 @@ background: rgb(141, 180, 162);
   width: 20%;
 }
 
-  
+
 @media (min-width: 768px) {
   .gradient-form {
   height: 100vh !important;
@@ -70,9 +70,12 @@ background: rgb(141, 180, 162);
 }
 
 .boxes input{
-  border-width: 0 0 2px;
-  border-color: black;  
-  border-radius: 0;
+  
+    border-width: 0 0 2px;
+    border-color: black;
+    border-radius: 0;
+    padding-top: 16px;
+    padding-bottom: 17px;
 }
 
 .form-row>.col, .form-row>[class*=col-] {
@@ -99,3 +102,29 @@ background: rgb(141, 180, 162);
     opacity: 0.6;
   }
  
+  .section-btn {
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+  
+.section-btn a {
+    border: none;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    color: #ffffff;
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding: 1em;
+}
+.section-btn button {
+    line-height: 45px;
+    border: none;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    color: #ffffff;
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding: 0;
+}

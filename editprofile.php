@@ -217,7 +217,10 @@
                                     <input id="imgupload" onchange="update_img()" accept="image/*" type="file" name="propic">
                                     <img id="propicimg" src="<?php if ($location == NULL) {echo 'img/sample-avatar.jpg';} else { echo $location; } ?>" alt="">
                                 </div>
-                                <input type="submit" value="Submit">
+                                <!--<input type="submit" value="Submit">-->
+                                <div class="section-btn">
+                                   <button type="submit" id="cf-submit" name="submit"><span data-hover="Submit">Submit</span></button>
+                              </div>
                             </form>
                         </div>
                         <div class="change-pass" id="b2">
@@ -235,7 +238,9 @@
                                     <label for="">Confirm Password</label>
                                     <input type="password" name="nnpass" id="">
                                 </div>
-                                <input type="submit" value="Submit">
+                                <div class="section-btn">
+                                        <button type="submit" id="cf-submit" name="submit"><span data-hover="Submit">Submit</span></button>
+                                        </div>
                                 <div class="d-lg-block d-none hhh"></div>
                             </form>
                         </div>
@@ -245,7 +250,9 @@
                                     <div class="form-field d-flex flex-column">
                                         <span>Your email is not verified. Click submit to send a verification mail.</span>
                                         <input type="hidden" name="page_form" value="3">
-                                        <input type="submit" value="Submit" class="c-btn">
+                                        <div class="section-btn">
+                                        <button type="submit" id="cf-submit" name="submit"><span data-hover="Submit">Submit</span></button>
+                                        </div>
                                     </div>
                                 </form>
                                 <div class="d-lg-block d-none hhh"></div>

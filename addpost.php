@@ -65,12 +65,12 @@
 <body>
     <section>
         <div class="container">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+            <form method="post" id="myform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
                 <div class="create">
                 <div class="d-flex flex-lg-row flex-column justify-content-center section-btn">
                     <h2 class="lead pb-md-0 mb-md-5">Create Post</h2>
                        <!-- <button class="section-btn" id="cf-submit"  name="submit"><span data-hover="Post">Post</span></button>-->
-                       <a href="#about" class="smoothScroll my-lg-0 my-5"><span data-hover="Post">Post</span></a>
+                       <a onclick="document.getElementById('myform').submit()" class="smoothScroll my-lg-0 my-5"><span data-hover="Post">Post</span></a>
                  </div>
                 </div>
             

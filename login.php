@@ -53,9 +53,12 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/logregstyle.css">
 
+    <link rel="stylesheet" href="css/logregstyle.css">
+    
+   
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/footer.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,13 +93,13 @@
               <div class="col-lg-8 d-flex flex-row boxes">
 
                 <i class="fa fa-user icon"></i>
-                <input name="email" type="email" placeholder="Email address or Username" class="form-control my-2 p-4 " required>
+                <input name="email" type="email" placeholder="Email address or Username" class="form-control my-2 " required>
               </div>
             </div>
             <div class="form-row">
               <div class="col-lg-8 d-flex flex-row boxes">
                 <i class="fa fa-lock icon"></i>
-                <input name="passkey" type="password" placeholder="******" class="form-control my-2 p-4" required>
+                <input name="passkey" type="password" placeholder="******" class="form-control my-2" required>
               </div>
             </div>
 
@@ -111,7 +114,10 @@
             <div class="form-row">
               <div class="col-lg-8">
                 <div class="d-flex flex-row align-items-center justify-content-center">
-                  <button type="submit"class="btn1 gradient-custom-2 mt-3 mb-4">Sign in</button>
+                  <!--<button type="submit"class="btn1 gradient-custom-2 mt-3 mb-4">Sign in</button>-->
+                  <div class="section-btn">
+                    <button type="submit" id="cf-submit" name="submit"><span data-hover="Sign in">Sign in</span></button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -156,9 +162,11 @@
    </section>
  
 
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+   <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/modernizr.custom.js"></script>
+     <script src="js/smoothscroll.js"></script>
+  
     
 </body>
 </html>
