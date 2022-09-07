@@ -150,11 +150,15 @@
               
                   <a class="text-muted fw-bold text-body" href="registration.php">Create an account</a>
                   
+                  <a href="index.php"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>    
+                
                 </div>
             </div>
+            
           </div>
-           
+          
           </form>
+          
           
         </div>
       </div>

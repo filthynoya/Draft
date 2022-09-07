@@ -128,3 +128,25 @@ background: rgb(141, 180, 162);
     margin-bottom: 20px;
     padding: 0;
 }
+
+.col-lg-6.icon-back{
+  margin-top: -80px;
+  border: none;
+  outline: none;
+  
+  font-weight: bold;
+
+  margin-bottom: -54px;
+  font-size: 20px;
+}
+
+.col-lg-6 .icon-back a {
+
+color: white;
+text-decoration: none;
+}
+
+.icon-back a:hover {
+color: white;
+text-decoration: none;
+}

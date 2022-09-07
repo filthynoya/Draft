@@ -45,7 +45,7 @@
 <html lang="en">
 <head>
     
-<title>Scenic HTML Template</title>
+<title>Draft</title>
 
 
 
@@ -91,7 +91,9 @@
                     <span class="icon icon-bar"></span>
                </button>
                <!-- lOGO -->
-               <a href="index.html" class="navbar-brand">Draft</a>
+               
+               <div class="unga" style="float:left; font-size: 33px;"><img src="img/logo.png" alt=""><a href="index.php" style="text-decoration: none; margin: 10px;" class="">Draft</a></div>
+               
           </div>
 
           <!-- MENU LINKS -->
@@ -117,10 +119,10 @@
 
                <div class="col-md-8 col-sm-12">
                     <div class="home-text">
-                         <h1>Your Website has a video background!</h1>
-                         <p>Feel free to download and use HTML templates from Tooplate</p>
+                         <h1>Publish your passions, your way!</h1>
+                         <p>Feel free to create a unique and beautiful blog easily.</p>
                          <ul class="section-btn">
-                              <a href="#about" class="smoothScroll"><span data-hover="Discover More">Discover More</span></a>
+                              <a href="registration.php" class="smoothScroll"><span data-hover="Discover More">Discover More</span></a>
                          </ul>
                     </div>
                </div>
@@ -144,7 +146,9 @@
                <div class="col-md-offset-1 col-md-10 col-sm-12">
                     <div class="about-info">
                          <h3>Introducing Draft</h3>
-                         <h1>This template is designed for you. Sed ornare, tortor nec placerat lacinia, leo quam rutrum leo, eget posuere ipsum sem eu justo. Integer nunc libero.</h1>
+                         <h4>Just like a regular blogging platform, it provides multiple post formats for different types of content. 
+                              The thing with Draft is that it is purely for personal use and wouldn’t put up a great solution if you have business-oriented plans. 
+                              It is simplistic, offers basic customization options and, like I said earlier, has more of a social media vibe.</h4>
                     </div>
                </div>
 
@@ -161,18 +165,19 @@
                <div class="col-md-6 col-sm-6">
                     <!-- PROJECT ITEM -->
                     <div class="project-item">
-                         <a href="img/project-image1.jpg" class="image-popup">
-                              <img src="img/project-image1.jpg" class="img-responsive" alt="">
+                         <a href="img/project-image3.jpg" class="image-popup">
+                              <img src="img/project-image3.jpg" class="img-responsive" alt="">
                          
                               <div class="project-overlay">
                                    <div class="project-info">
-                                        <h1>Beautiful Women</h1>
-                                        <h3>Click to pop up!</h3>
+                                        <h1>Large Sea Wave</h1>
+                                        <h3>Nam feugiat dui in nisi</h3>
                                    </div>
                               </div>
                          </a>
                     </div>
                </div>
+               
 
                <div class="col-md-6 col-sm-6">
                     <!-- PROJECT ITEM -->
@@ -190,37 +195,38 @@
                     </div>
                </div>
 
-               <div class="col-md-6 col-sm-6">
-                    <!-- PROJECT ITEM -->
-                    <div class="project-item">
-                         <a href="img/project-image3.jpg" class="image-popup">
-                              <img src="img/project-image3.jpg" class="img-responsive" alt="">
-                         
-                              <div class="project-overlay">
-                                   <div class="project-info">
-                                        <h1>Large Sea Wave</h1>
-                                        <h3>Nam feugiat dui in nisi</h3>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-               </div>
+               
 
                <div class="col-md-6 col-sm-6">
                     <!-- PROJECT ITEM -->
                     <div class="project-item">
-                         <a href="img/project-image4.jpg" class="image-popup">
-                              <img src="img/project-image4.jpg" class="img-responsive" alt="">
+                         <a href="img/painting1.jpeg" class="image-popup">
+                              <img src="img/painting1.jpeg" class="img-responsive" alt="">
                          
                               <div class="project-overlay">
                                    <div class="project-info">
-                                        <h1>Lorem ipsum dolor</h1>
-                                        <h3>Mollis aliquam faucibus urna</h3>
+                                        <h1>MU's Painting</h1>
+                                        <h3>And into the forest i go to lose my mind and find my soul.</h3>
                                    </div>
                               </div>
                          </a>
                     </div>
-               </div>               
+               </div> 
+               <div class="col-md-6 col-sm-6">
+                    <!-- PROJECT ITEM -->
+                    <div class="project-item">
+                         <a href="img/pexels-lumn-167699.jpg" class="image-popup">
+                              <img src="img/pexels-lumn-167699.jpg" class="img-responsive" alt="">
+                         
+                              <div class="project-overlay">
+                                   <div class="project-info">
+                                        <h1>Beautiful Women</h1>
+                                        <h3>Click to pop up!</h3>
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>              
 
           </div>
      </div>
@@ -414,23 +420,26 @@
 
                <div class="col-md-6 col-sm-12">
                     <div class="footer-info">
-                    	<h2>Keep in touch</h2>
-                         <p><a href="tel:010-090-0780">010-090-0780</a></p>
-                         <p><a href="mailto:info@company.com">info@company.com</a></p>
-                         <p><a href="#">Our Location</a></p>
-                    </div>
+                    <h2>Keep in touch</h2>
+                                <p><a href="tel:+8801715395032">+8801715395032</a></p>
+                                <p><a href="mailto:drafted8080@outlook.com">drafted8080@outlook.com</a></p>
+                                <p><a href="http://maps.google.com/?q=Ahsanullah University of Science and Technology, Love Road, Dacca">Our Location</a></p>
+                           </div>
                </div>
 
                <div class="col-md-6 col-sm-12">
                		
                     <h2>About Us</h2>
-                    <p>Sed vestibulum posuere ante, eget blandit metus. Morbi sodales feugiat erat, et placerat sapien suscipit ut.</p>
-                    <ul class="social-icon">
-                         <li><a href="#" class="fa fa-twitter"></a></li>
-                         <li><a href="#" class="fa fa-facebook"></a></li>
-                         <li><a href="#" class="fa fa-instagram"></a></li>
-                         <li><a href="#" class="fa fa-linkedin"></a></li>
-                    </ul>
+                    <p><span id="W_Name2">Draft</span> is a Professional <span id="W_Type1">Blog Post</span> Platform. Here we will provide you only interesting content, which you will like very much. We're dedicated to providing you the best of <span id="W_Type2">Blog Post</span>, with a focus on dependability and <span id="W_Spec">Blog </span>.</p>
+                            <p>Please give your support and love.</p>
+                            <p style="font-weight: bold; text-align: center;">Thanks For Visiting Our Site<br><br>
+                            <span style="font-size: 16px; font-weight: bold; text-align: center;">Have a nice day!</span></p>
+                           <ul class="social-icon">
+                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-facebook"></a></li>
+                                <li><a href="#" class="fa fa-instagram"></a></li>
+                                <li><a href="#" class="fa fa-linkedin"></a></li>
+                           </ul>
                     
                </div>
 
@@ -438,9 +447,7 @@
 
                <div class="col-md-12 col-sm-12">
                     <div class="copyright-text">
-                         <p>Copyright © 2018 Company Name 
-                         
-                         | Design: Tooplate</p>
+                    <p>Copyright © 2022 Drafted</p>
                     </div>
                </div>
                
