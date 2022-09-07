@@ -12,4 +12,4 @@ features if the user does forget about the password. There is an admin panel
 where admins can observe about the users, post, mail etc. They can add or
 remove categories at their will.
 
-YouTube Link -> 
+YouTube Link -> https://youtu.be/5izcWrpkwMc
