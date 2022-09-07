@@ -147,6 +147,7 @@
                             <div class="col-lg-10">
                                 <p class="text-center text-muted  mb-4">Have already an account? 
                                     <a href="login.php" class="fw-bold text-body"><u>Sign in here</u></a>
+                                    <a href="index.php"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>    
                                 </p>
                             </div>
                     </form>

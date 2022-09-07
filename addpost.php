@@ -121,9 +121,9 @@
                         <input name="post_img" class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden require>
                         <button onclick="defaultBtnActive()" class="align-items-center justify-content-center" id="custom-btn" type="button">Choose a file</button>
                         <div class=" d-md-flex justify-content-md-end">
-                        <a href="home.php"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>    
+                           <a href="home.php"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>    
+                        </div>
                     </div>
-                </div>
             </form>
         </div>
     </section>
