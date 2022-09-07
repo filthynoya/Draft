@@ -107,6 +107,14 @@
                 $errorMsg = "Error.";
             }
         } else if ($_POST["page_form"] == 4) {
+            $sql = "DELETE FROM comments WHERE userid=$id";
+
+            $conn->query($sql);
+
+            $sql = "DELETE FROM post WHERE userid=$id";
+
+            $conn->query($sql);
+
             $sql = "DELETE FROM users_pic WHERE userid=$id";
 
             $conn->query($sql);

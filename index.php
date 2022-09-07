@@ -63,6 +63,40 @@
 
 <link rel="stylesheet" href="css/index/owl.theme.css">
 <link rel="stylesheet" href="css/index/owl.carousel.css">
+
+<style>
+     .flex-row {
+          display: flex!important;
+          flex-flow: row;
+          width: 100%!important;
+     }
+
+     .flex-col {
+          display: flex;
+          flex-flow: column;
+     }
+
+     .text-start {
+          text-align: left;
+          margin-left: 1em;
+          margin-top: 1em;
+     }
+
+     .cspan {
+          font-size: 20px;
+          margin-bottom: 1em;
+     }
+
+     .ca {
+          font-size: 20px;
+          margin-top: 1em;
+     }
+
+     .slider-img {
+          width: 400px;
+     }
+</style>
+
 <script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
 
 <!-- MAIN CSS -->
@@ -171,7 +205,7 @@
                               <div class="project-overlay">
                                    <div class="project-info">
                                         <h1>Large Sea Wave</h1>
-                                        <h3>Nam feugiat dui in nisi</h3>
+                                        <h3>There is no new wave, only the sea.</h3>
                                    </div>
                               </div>
                          </a>
@@ -187,8 +221,8 @@
                          
                               <div class="project-overlay">
                                    <div class="project-info">
-                                        <h1>Nulla efficitur quam</h1>
-                                        <h3>Sed ligula accumsan</h3>
+                                        <h1>Photography</h1>
+                                        <h3>One Shot</h3>
                                    </div>
                               </div>
                          </a>
@@ -220,8 +254,8 @@
                          
                               <div class="project-overlay">
                                    <div class="project-info">
-                                        <h1>Beautiful Women</h1>
-                                        <h3>Click to pop up!</h3>
+                                        <h1>Mountain Mist</h1>
+                                        <h3>Remember Your Breath</h3>
                                    </div>
                               </div>
                          </a>
@@ -248,126 +282,51 @@
                <div class="clearfix"></div>
 
                <div id="owl-team" class="owl-carousel">
-
-                    
-                    <div class="item col-6  d-flex flex-row justify-content-center">
+                    <div class="item flex-row">
                          <div class="admin-img">
-                              
                               <div class="team-item">
-                                   <img src="img/team-image1.jpg" class="img-responsive" alt="">
+                                   <img src="img/mumu.jpg" class="img-responsive slider-img" alt="">
                                    <div class="team-overlay">
                                         <ul class="social-icon">
-                                             <li><a href="#" class="fa fa-instagram"></a></li>
-                                             <li><a href="#" class="fa fa-github"></a></li>
-                                             <li><a href="#" class="fa fa-facebook"></a></li> 
-                                             <li><a href="#" class="fa fa-linkedin"></a></li>
+                                             <li><a href="https://www.instagram.com/_siddiqua__0_0/" class="fa fa-instagram"></a></li>
+                                             <li><a href="https://github.com/siddiqua14/" class="fa fa-github"></a></li>
+                                             <li><a href="https://www.facebook.com/profile.php?id=100010429688620" class="fa fa-facebook"></a></li> 
                                         </ul>
                                    </div>
                               </div>
-                              <p>Catherine Jann</p>
-                              <h3>Head Designer</h3>
-                         </div >
-                         <div class="admin-bio text-lg-start text-center mb-lg-0">
-                              <p>Catherine Jann</p>
+                         </div>
+                         <div class="admin-info flex-col text-start">
+                              <h1>Sumaiya Siddiqua Mumu</h1>
+                              <span class="cspan">Developer</span>
+                              <p>I am Sumaiya Siddiqua Mumu. I am an undergraduate student studying in Ahsanullah University of Science and Technology. My Major is Computer Science And Engineering. I am in a learning process.</p>
+                              <a class="ca" href="https://siddiqua14.github.io/">Portfolio</a>
                          </div>
                     </div>
 
-                    <div class="item col-6  d-flex flex-column justify-content-cente">
+                    <div class="item flex-row">
                          <div class="admin-img">
-                              
                               <div class="team-item">
-                                   <img src="img/team-image1.jpg" class="img-responsive" alt="">
+                                   <img src="img/ayon.jpg" class="img-responsive slider-img" alt="">
                                    <div class="team-overlay">
                                         <ul class="social-icon">
-                                             <li><a href="#" class="fa fa-instagram"></a></li>
-                                             <li><a href="#" class="fa fa-github"></a></li>
-                                             <li><a href="#" class="fa fa-facebook"></a></li> 
-                                             <li><a href="#" class="fa fa-linkedin"></a></li>
+                                             <li><a href="https://www.instagram.com/filthynoya/" class="fa fa-instagram"></a></li>
+                                             <li><a href="https://github.com/filthynoya" class="fa fa-github"></a></li>
+                                             <li><a href="https://www.facebook.com/filthynoya/" class="fa fa-facebook"></a></li> 
                                         </ul>
                                    </div>
                               </div>
-                              <p>Catherine Jann</p>
-                              <h3>Head Designer</h3>
                          </div>
-                         <div class="admin-bio">
-                              <p>Catherine Jann</p>
+                         <div class="admin-info flex-col text-start">
+                              <h1>Ayon Raihan</h1>
+                              <span class="cspan">Developer</span>
+                              <p>I have unwavering passion and energy for computers. As a result of that, I can be a valuable asset to any development team. During my college life, I've developed multiple websites for my mate's projects.</p>
+                              <a class="ca" href="http://filthynoya.github.io">Portfolio</a>
                          </div>
                     </div>
-
-                   
                </div>
-
           </div>
      </div>
 </section>
-
-<!--<section id="team" class="parallax-section">
-     <div class="container">
-          <div class="row">
-
-               <div class="col-md-offset-2 col-md-8 col-sm-12">
-                    
-                    <div class="section-title">
-                         <h1>Meet Our People</h1>
-                    </div>
-               </div>
-
-               <div class="clearfix"></div>
-
-               <div id="owl-team" class="owl-carousel">
-
-                    
-                    <div class="item col-6  d-flex flex-row justify-content-center">
-                         <div class="admin-img">
-                              
-                              <div class="team-item">
-                                   <img src="images/team-image1.jpg" class="img-responsive" alt="">
-                                   <div class="team-overlay">
-                                        <ul class="social-icon">
-                                             <li><a href="#" class="fa fa-instagram"></a></li>
-                                             <li><a href="#" class="fa fa-github"></a></li>
-                                             <li><a href="#" class="fa fa-facebook"></a></li> 
-                                             <li><a href="#" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                   </div>
-                              </div>
-                              <p>Catherine Jann</p>
-                              <h3>Head Designer</h3>
-                         </div >
-                         <div class="admin-bio text-lg-start text-center mb-lg-0">
-                              <p>Catherine Jann</p>
-                         </div>
-                    </div>
-
-                    <div class="item col-6  d-flex flex-column justify-content-cente">
-                         <div class="admin-img">
-                              
-                              <div class="team-item">
-                                   <img src="images/team-image1.jpg" class="img-responsive" alt="">
-                                   <div class="team-overlay">
-                                        <ul class="social-icon">
-                                             <li><a href="#" class="fa fa-instagram"></a></li>
-                                             <li><a href="#" class="fa fa-github"></a></li>
-                                             <li><a href="#" class="fa fa-facebook"></a></li> 
-                                             <li><a href="#" class="fa fa-linkedin"></a></li>
-                                        </ul>
-                                   </div>
-                              </div>
-                              <p>Catherine Jann</p>
-                              <h3>Head Designer</h3>
-                         </div>
-                         <div class="admin-bio">
-                              <p>Catherine Jann</p>
-                         </div>
-                    </div>
-
-                   
-               </div>
-
-          </div>
-     </div>
-</section>-->
-
 
 <!-- CONTACT -->
 <section id="contact" class="parallax-section">
