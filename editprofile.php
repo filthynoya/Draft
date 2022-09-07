@@ -240,7 +240,7 @@
                                 </div>
                                 <div class="section-btn">
                                         <button type="submit" id="cf-submit" name="submit"><span data-hover="Submit">Submit</span></button>
-                                        </div>
+                                </div>
                                 <div class="d-lg-block d-none hhh"></div>
                             </form>
                         </div>
@@ -251,7 +251,7 @@
                                         <span>Your email is not verified. Click submit to send a verification mail.</span>
                                         <input type="hidden" name="page_form" value="3">
                                         <div class="section-btn">
-                                        <button type="submit" id="cf-submit" name="submit"><span data-hover="Submit">Submit</span></button>
+                                            <button type="submit" id="cf-submit" name="submit"><span data-hover="Submit">Submit</span></button>
                                         </div>
                                     </div>
                                 </form>

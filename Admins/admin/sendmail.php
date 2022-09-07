@@ -20,8 +20,6 @@
 
         if (mail ($to, $subject, $msg, $header)) {
             $sent_email = 1;
-
-            header ("location: dashboard.php");
             exit;
         }
     }

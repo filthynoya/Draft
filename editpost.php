@@ -86,23 +86,23 @@
 <body>
     <section>
         <div class="container">
-        <form method="post" id="myform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?postid=$postid";?>" enctype="multipart/form-data">
-        <div class="create">
-                <div class="d-flex flex-lg-row flex-column justify-content-center section-btn">
-                    <h2 class="lead pb-md-0 mb-md-5">Edit Post</h2>
+            <form method="post" id="myform" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?postid=$postid";?>" enctype="multipart/form-data">
+                <div class="create">
+                    <div class="d-flex flex-lg-row flex-column justify-content-center section-btn">
+                        <h2 class="lead pb-md-0 mb-md-5">Edit Post</h2>
                        <!-- <button class="section-btn" id="cf-submit"  name="submit"><span data-hover="Post">Post</span></button>-->
                        <a onclick="document.getElementById('myform').submit()" class="smoothScroll my-lg-0 my-5"><span data-hover="Save">Save</span></a>
-                 </div>
-            </div>
-            
-            <div class="row100">
-                <div class="col">
-                    <input type="text" name="title" placeholder="Title" required value="<?php echo $title ?>">
+                    </div>
                 </div>
-            </div>
-            <div class="row100">
-                <div class="col">
-                    <select name="catalogs" class="form-select selectpicker show-tick" aria-label="Default select example">
+            
+                <div class="row100">
+                    <div class="col">
+                        <input type="text" name="title" placeholder="Title" required value="<?php echo $title ?>">
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="col">
+                        <select name="catalogs" class="form-select selectpicker show-tick" aria-label="Default select example">
                             <?php
                                 while ($rows = $result->fetch_assoc ()) {
                                     $id = $rows['catalogid'];
@@ -118,43 +118,48 @@
                                 }
                             ?>
                         </select>
+                    </div>
                 </div>
-            </div>
-            <div class="row100">
-                <div class="col">
-                    <textarea name="body" placeholder="Write someting here...." required><?php echo $body ?></textarea>
+                <div class="row100">
+                    <div class="col">
+                        <textarea name="body" placeholder="Write someting here...." required><?php echo $body ?></textarea>
+                    </div>
                 </div>
-            </div>
            
-            <div class="row100">
-                <div class="col">
-                    <div class="wrapper text-center">
+                <div class="row100">
+                    <div class="col">
+                        <div class="wrapper text-center">
                                 
-                        <div class="image">
-                            <img class="img-fluid" src="<?php echo $img ?>" alt="">
-                        </div>
-                        <div class="conten">
-                            <div class="icon">
-                                <i class="fa fa-cloud-upload"></i>
+                            <div class="image">
+                                <img class="img-fluid" src="<?php echo $img ?>" alt="">
                             </div>
-                            <div class="text">No file chosen,yet!</div>
-                        </div>
-                        <div id="cancel-btn"><i class="fa fa-times"></i></div>
-                        <div class="file-name">File name here</div>
+                            <div class="conten">
+                                <div class="icon">
+                                    <i class="fa fa-cloud-upload"></i>
+                                </div>
+                                <div class="text">No file chosen,yet!</div>
+                            </div>
+                            <div id="cancel-btn"><i class="fa fa-times"></i></div>
+                            <div class="file-name">File name here</div>
         
-                       <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
+                            <!-- <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>  -->
         
-                            </div> 
-                    <input name="post_img" class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
-                    <button onclick="defaultBtnActive()" class="align-items-center justify-content-center" id="custom-btn">Choose a file</button>
-                    <div class=" d-md-flex justify-content-md-end">
-                    <a href="post.php?postid=<?php echo $postid; ?>"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+                        </div> 
+                        <input name="post_img" class="flex-row align-items-center justify-content-center" id="default-btn" type="file" hidden>
+                        <button type="button" onclick="defaultBtnActive()" class="align-items-center justify-content-center" id="custom-btn">Choose a file</button>
+                        <div class=" d-md-flex justify-content-md-end">
+                        <a href="post.php?postid=<?php echo $postid; ?>"><i class="icon-back fa fa-chevron-circle-left" aria-hidden="true"></i></a>
                 
+                    </div>
                 </div>
-                </div>
-                            </form>
-            </div>
+            </form>
+        </div>
                 <script>
+                    <?php 
+                        if ($success == 1) {
+                            echo 'alert("Edited")';
+                        }
+                    ?>
                     
                     const textarea= document.querySelector("textarea");
 

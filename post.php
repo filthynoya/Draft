@@ -185,7 +185,7 @@
                     <?php
                         if ($postuserid != $id) {
                             echo '
-                                <div class="d-flex flex-row justify-content-center report edit-btn">
+                                <div class="d-flex flex-row justify-content-center report edit-btn my-4">
                                     <a class="btn1" href="report.php?postid='.$postid.'">Report</a>
                                 </div>
                             ';
