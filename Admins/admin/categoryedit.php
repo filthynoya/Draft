@@ -30,7 +30,7 @@ if(isset($_POST['category_add']))
             <div class="card">
                 <div class="card-header">
                     <h4>Edit Category
-                        <a href="dashboard.php" class="btn btn-danger justify-content-md-end float-end">Back</a>
+                        <a href="index.php" class="btn btn-danger justify-content-md-end float-end">Back</a>
 
                     </h4> 
                 </div>
@@ -39,7 +39,6 @@ if(isset($_POST['category_add']))
                     if(isset($_GET['catalogid']))
                     {
                         $id=$_GET['catalogid'];
-                        echo $id;
                         $sql="SELECT * FROM catalog WHERE catalogid= $id LIMIT 1";
                         $sql_run=mysqli_query($conn,$sql);
 

@@ -28,7 +28,7 @@ if(isset($_POST['category_add']))
             <div class="card">
                 <div class="card-header">
                     <h4>Add Category
-                        <a href="dashboard.php" class="btn btn-danger justify-content-md-end float-end">Back</a>
+                        <a href="index.php" class="btn btn-danger justify-content-md-end float-end">Back</a>
 
                     </h4> 
                 </div>
