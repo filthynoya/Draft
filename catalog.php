@@ -1,3 +1,17 @@
+<?php 
+    session_start();
+
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
+
+    include './server/db.php';
+
+    $sql = "select catalogname from catalog";
+
+    $res = $conn->query ($sql);
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -15,7 +29,7 @@
 
        
 
-        <title>Draft | Catalog</title>
+<title>Draft | Catalog</title>
 </head>
 <body>
         <header class="fixed-top">
@@ -47,250 +61,20 @@
                     <p id="selectText">Catalog</p>
                     <i class="fa fa-sort-desc" aria-hidden="true"></i>
                     <ul id="list">
-                        <li class="options">Default</li>
-                        <li class="options">1</li>
-                        <li class="options">2</li>
-                        <li class="options">sd</li>
-                        <li class="options">sumaiya</li>
-                        <li class="options">3</li>
-                        <li class="options">14</li>
-                        <li class="options">mumu</li>
-                        <li class="options">24</li>
-                        <li class="options">ayon</li>
+                        <?php 
+                            while ($row = $res->fetch_assoc ()) {
+                                echo '<li class="options">'.$row['catalogname'].'</li>.';
+                            }
+                        ?>
                     </ul>
                 </div>
                 <form action="">
-                <input type="text" id="inputfield" placeholder="Search in catalog" onkeyup="filterFunction()">
+                    <input type="text" id="inputfield" placeholder="Search in catalog" onkeyup="filterFunction()">
                 </form>
             </div>
         </div>
 
-        <section class="slider">
-            <div class="c-container">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <div class="slider-title text-Start">
-                                <h1>#Catalog 1</h1>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <div class="slider-title text-Start">
-                                <h1>#Catalog 2</h1>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="slider-title text-Start">
-                                <h1>#Catalog 3</h1>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="d-flex flex-lg-row flex-column">
-                                    <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
-                                        <img src="img/sample_post_pic_sq.jpg" alt="">
-                                    </div>
-                                    <div class="slider-item-content">
-                                        <div class="d-flex flex-column">
-                                            <span>26 September, 2022</span>
-                                            <h1>Your most unhappy customers are your greatest source of learning.</h1>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <div class="d-flex flex-row justify-content-lg-start justify-content-center">
-                                                <div class="slider-author-img">
-                                                    <img src="img/sample-avatar.jpg" class="rounded-circle" alt="">
-                                                </div>
-                                                <div class="slider-author-name">
-                                                    <span>Ayon Raihan</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-indicators c-slider-btn-div">
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
       
         <script>
             let select= document.getElementById("select");
