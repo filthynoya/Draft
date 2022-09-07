@@ -8,24 +8,30 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
 
-        $pkey = md5 ($email);
+        $sql = "select * from users where email='$email'";
+        $res = $conn->query ($sql);
 
-        $sql = "insert into passkey_reset (pkey) values ('$pkey')";
-
-        $conn->query ($sql);
-
-        $to = $email;
-        $subject = "Change Password";
-        $msg = "<a href='http://localhost/Draft/changepass.php?pkey=$pkey&email=$email'>Change your password.</a>";
-        $header = "From: drafted8080@outlook.com \r\n";
-        $header .= "MIME-Version: 1.0" . "\r\n";
-        $header .= "Content-type:text/html;charset=UTF-8"."\r\n";
-
-        if (mail ($to, $subject, $msg, $header)) {
-            $sent_email = 1;
-        } else {
+        if ($res->num_rows == 0) {
             $error = 1;
-            $errorMsg = "Error.";
+            $errorMsg = "Email dont exists.";
+        } else {
+            $pkey = md5 ($email);
+
+            $to = $email;
+            $subject = "Change Password";
+            $msg = "<a href='http://localhost/Draft/changepass.php?pkey=$pkey&email=$email'>Change your password.</a>";
+            $header = "From: drafted8080@outlook.com \r\n";
+            $header .= "MIME-Version: 1.0" . "\r\n";
+            $header .= "Content-type:text/html;charset=UTF-8"."\r\n";
+
+            if (mail ($to, $subject, $msg, $header)) {
+                $sent = 1;
+                $sql = "insert into passkey_reset (pkey) values ('$pkey')";
+                $conn->query ($sql);
+            } else {
+                $error = 1;
+                $errorMsg = "Error.";
+            }
         }
     }
 ?>
@@ -40,43 +46,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--social icon-->
 
+    <link rel="stylesheet" href="Admins/asset/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="Admins/asset/css/custom.css">
+    <link rel="stylesheet" href="Admins/asset/css/sb-admin-2.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
 
-    <style>
-        .boxx {
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .boxx input {
-            width: 100%;
-        }
-    </style>
-
     <title>Change Password</title>
 </head>
 <body>
     <section>
-        <div class="container">
-            <div class="d-row flex-row justify-content-center my-5 boxx">
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
-                    <div class="report-form mb-3">
-                        <label class="form-label">Enter Email</label><br>
-                        <input type="email" name="email" id="" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>    
-            </div>
+        <div class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
 
-            <?php 
-                if ($sent == 1) {
-                    echo 'Sent Email.';
-                }
-            ?>
+                    <div class="col-xl-7 col-lg-6 col-md-6">
+
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row justify-content-center">
+                                
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Enter Your Email</h1>
+                                            </div>
+                                            <form class="user" id="ei_obelay" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control form-control-user"
+                                                        id="exampleInputEmail" aria-describedby="emailHelp"
+                                                        placeholder="Enter Email Address..." name="email" required>
+                                                </div>
+
+                                                <a href="#" onclick="document.getElementById('ei_obelay').submit()" class="btn btn-primary btn-user btn-block">
+                                                    Sent
+                                                </a>
+                                                
+                                            </form>
+
+                                            <?php if ($error == 1 || $sent == 1) {?>
+                                                <hr>
+                                                <div class="text-center">
+                                                    <p class="small">
+                                                        <?php if ($error == 1) {echo $errorMsg;} else {echo 'Email sent.';} ?> 
+                                                    </p>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

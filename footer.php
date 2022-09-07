@@ -31,15 +31,12 @@
      <footer>
             <div class="container">
                  <div class="row">
-       
-                      
-       
                       <div class="col-md-6 col-sm-12">
                            <div class="footer-info">
-                               <h2>Keep in touch</h2>
-                                <p><a href="tel:010-090-0780">010-090-0780</a></p>
-                                <p><a href="mailto:info@company.com">info@company.com</a></p>
-                                <p><a href="#">Our Location</a></p>
+                                <h2>Keep in touch</h2>
+                                <p><a href="tel:+8801715395032">+8801715395032</a></p>
+                                <p><a href="mailto:drafted8080@outlook.com">drafted8080@outlook.com</a></p>
+                                <p><a href="http://maps.google.com/?q=Ahsanullah University of Science and Technology, Love Road, Dacca">Our Location</a></p>
 
                                 <div class="button1 d-md-flex justify-content-md-start section-btn">
                                     <button class="smoothScroll" type="submit" id="cf-submit" name="submit" data-bs-toggle="modal"
@@ -53,58 +50,28 @@
                                              <button type="button" class="btn-close cancel" data-bs-dismiss="modal" aria-label="Close"></button>
                                            </div>
                                            <div class="modal-body">
-                                              <!--<form>
-                                               <div class="mb-3">
-                                                 <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                                 <input type="text" class="form-control" id="recipient-name">
-                                               </div>
-                                               <div class="mb-3">
-                                                 <label for="message-text" class="col-form-label">Message:</label>
-                                                 <textarea class="form-control" id="message-text"></textarea>
-                                               </div>
-           
-           
-                                             </form>-->
-           
-                                             <!--Section: Contact v.2-->
                                                <section class="mb-3">
-           
-                                                  
-                                                   <!--Section description-->
                                                    <p class="text-center w-responsive mx-auto mb-5 d-md-block d-none">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
                                                        a matter of hours to help you.</p>
            
                                                    <div class="row contact">
-           
-                                                       <!--Grid column-->
                                                        <div class="col-md-9 mb-md-0 mb-5">
                                                            <form id="contact-form" name="contact-form" action="" method="POST">
-           
-                                                               <!--Grid row-->
                                                                <div class="row">
-           
-                                                                   <!--Grid column-->
                                                                    <div class="col-md-6 input-container">
                                                                        <div class="md-form mb-0">
                                                                            <input type="text" id="name" name="cname" required>
                                                                            <label for="name" class="">Your name</label>
                                                                        </div>
                                                                    </div>
-                                                                   <!--Grid column-->
-           
-                                                                   <!--Grid column-->
                                                                    <div class="input-container col-md-6">
                                                                        <div class="md-form mb-0">
                                                                            <input type="text" id="email" name="cemail" required >
                                                                            <label for="email" class="">Your email</label>
                                                                        </div>
                                                                    </div>
-                                                                   <!--Grid column-->
            
                                                                </div>
-                                                               <!--Grid row-->
-           
-                                                               <!--Grid row-->
                                                                <div class="input-container row">
                                                                    <div class="col-md-12">
                                                                        <div class="md-form mb-0">
@@ -113,12 +80,8 @@
                                                                        </div>
                                                                    </div>
                                                                </div>
-                                                               <!--Grid row-->
-           
-                                                               <!--Grid row-->
                                                                <div class="input-container row">
            
-                                                                   <!--Grid column-->
                                                                    <div class="col-md-12">
            
                                                                        <div class="md-form mb-0">
@@ -128,11 +91,8 @@
            
                                                                    </div>
                                                                </div>
-                                                               <!--Grid row-->
                                                                <div class="text-center text-md-left">
-                                                               <!--<a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>-->
                                                                <a class="btn btn-primary" onclick="validateForm();">Send</a>
-                                                               <!--<input type="submit" class="form-control submit" value="SEND" onclick="validateForm();">-->
            
                                                            </div>
            
@@ -141,33 +101,25 @@
                                                            
                                                            <div class="status"></div>
                                                        </div>
-                                                       <!--Grid column-->
-           
-                                                       <!--Grid column-->
                                                        <div class="col-md-3 text-center  d-md-block d-none">
                                                            <ul class="list-unstyled mb-0">
                                                                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                                                                   <p>San Francisco, CA 94126, USA</p>
+                                                                   <p>Dhaka, Bangladesh</p>
                                                                </li>
            
                                                                <li><i class="fas fa-phone mt-3 fa-2x"></i>
-                                                                   <p>+ 01 234 567 89</p>
+                                                                   <p>+8801715395032</p>
                                                                </li>
            
                                                                <li><i class="fas fa-envelope mt-3 fa-2x"></i>
-                                                                   <p>contact@mdbootstrap.com</p>
+                                                                   <p>drafted8080@outlook.com</p>
                                                                </li>
                                                            </ul>
                                                        </div>
-                                                       <!--Grid column-->
            
                                                    </div>
            
                                                </section>
-                                               <!--Section: Contact v.2-->
-           
-                                             
-           
            
                                            </div>
                                            <div class="modal-footer">
@@ -184,8 +136,11 @@
        
                       <div class="col-md-6 col-sm-12">
                               
-                           <h2>About Us</h2>
-                           <p>Sed vestibulum posuere ante, eget blandit metus. Morbi sodales feugiat erat, et placerat sapien suscipit ut.</p>
+                            <h2>About Us</h2>
+                            <p><span id="W_Name2">Draft</span> is a Professional <span id="W_Type1">Blog Post</span> Platform. Here we will provide you only interesting content, which you will like very much. We're dedicated to providing you the best of <span id="W_Type2">Blog Post</span>, with a focus on dependability and <span id="W_Spec">Blog </span>.</p>
+                            <p>Please give your support and love.</p>
+                            <p style="font-weight: bold; text-align: center;">Thanks For Visiting Our Site<br><br>
+                            <span style="font-size: 16px; font-weight: bold; text-align: center;">Have a nice day!</span></p>
                            <ul class="social-icon">
                                 <li><a href="#" class="fa fa-twitter"></a></li>
                                 <li><a href="#" class="fa fa-facebook"></a></li>
@@ -199,9 +154,7 @@
        
                       <div class="col-md-12 col-sm-12">
                            <div class="copyright-text">
-                                <p>Copyright © 2018 Company Name 
-                                
-                                | Design: Tooplate</p>
+                                <p>Copyright © 2022 Drafted</p>
                            </div>
                       </div>
                       

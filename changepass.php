@@ -19,12 +19,12 @@
         $cpasskey = $_POST['conpasskey'];
 
         if (strcmp ($passkey, $cpasskey) != 0) {
-            $error++;
+            $error = 1;
             $error_msg = "Does not match";
         }
 
         if (strlen ($passkey) < 6) {
-            $error++;
+            $error = 1;
             $error_msg = "Too short";
         }
 
@@ -58,45 +58,67 @@
 
     <script src="https://kit.fontawesome.com/16d805dc1a.js" crossorigin="anonymous"></script>
 
-    <style>
-        .boxx {
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .boxx input {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="Admins/asset/css/bootstrap5.min.css">
+    <link rel="stylesheet" href="Admins/asset/css/custom.css">
+    <link rel="stylesheet" href="Admins/asset/css/sb-admin-2.min.css">
 
     <title>Change Password</title>
 </head>
 <body>
     <section>
-        <div class="container">
-            <div class="d-row flex-row justify-content-center my-5 boxx">
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?pkey=$pkey" . "&email=$email"?>">
-                    <div class="report-form mb-3">
-                        <label class="form-label">New Password</label><br>
-                        <input type="password" name="passkey" id="" required>
+        <div class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-xl-7 col-lg-6 col-md-6">
+
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row justify-content-center">
+                                
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                            <div class="text-center">
+                                                <h1 class="h4 text-gray-900 mb-4">Enter Your New Password</h1>
+                                            </div>
+                                            <form class="user" id="ei_obelay" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?pkey=$pkey" . "&email=$email"?>">
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control form-control-user"
+                                                        id="exampleInputEmail" aria-describedby="emailHelp"
+                                                        placeholder="Enter New Passoword..." name="passkey" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control form-control-user"
+                                                        id="exampleInputEmail" aria-describedby="emailHelp"
+                                                        placeholder="Confirm New Passoword..." name="conpasskey" required>
+                                                </div>
+
+                                                <a href="#" onclick="document.getElementById('ei_obelay').submit()" class="btn btn-primary btn-user btn-block">
+                                                    Submit
+                                                </a>
+                                                
+                                            </form>
+
+                                            <?php if ($error == 1) {?>
+                                                <hr>
+                                                <div class="text-center">
+                                                    <p class="small">
+                                                        <?php echo $error_msg; ?> 
+                                                    </p>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="report-form mb-3">
-                        <label class="form-label">Confirm Password</label><br>
-                        <input type="password" name="conpasskey" id="" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>    
+                </div>
             </div>
         </div>
     </section>
-
-    <script>
-        <?php
-            if ($error != 0) {
-                echo 'alert ("'. $error_msg .'")';
-            }
-        ?>
-    </script>
 </body>
 </html>
