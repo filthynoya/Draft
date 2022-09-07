@@ -11,6 +11,32 @@
     $sql = "select catalogname from catalog";
 
     $res = $conn->query ($sql);
+
+    $searched = 0;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $catalogname = $_POST['catalogname'];
+        $searchtag = $_POST['searchtag'];
+
+        if (strcmp ($catalogname, "Catalog") == 0) {
+            $sql = "select * from post inner join users on post.userid=users.userid inner join users_pic on users_pic.userid=post.userid inner join catalog on catalog.catalogid=post.catalogid where posttitle like '%$searchtag%' limit 20";
+        } else {
+            $sql = "select * from post inner join users on post.userid=users.userid inner join users_pic on users_pic.userid=post.userid inner join catalog on catalog.catalogid=post.catalogid where catalogname='$catalogname' and posttitle like '%$searchtag%' limit 20";
+        }
+
+        $posts = $conn->query ($sql);
+
+        $post_row = array();
+
+        while ($row = $posts->fetch_assoc()) {
+            array_push ($post_row, $row);
+        }
+
+        $post_cnt = count ($post_row);
+        $itr = 0;
+
+        $searched = 1;
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -58,7 +84,7 @@
         <div class="s-container">
             <div class="search-bar" id="myDropdown">
                 <div id="select">
-                    <p id="selectText">Catalog</p>
+                    <p id="selectText" onchange="copy_data()">Catalog</p>
                     <i class="fa fa-sort-desc" aria-hidden="true"></i>
                     <ul id="list">
                         <?php 
@@ -68,15 +94,57 @@
                         ?>
                     </ul>
                 </div>
-                <form action="">
-                    <input type="text" id="inputfield" placeholder="Search in catalog" onkeyup="filterFunction()">
+                <form action="" method="POST" id="send_help">
+                    <input type="hidden" id="okk" name="catalogname" value="">
+                    <input type="text" name="searchtag" id="inputfield" placeholder="Search in catalog" onkeyup="filterFunction()">
                 </form>
             </div>
         </div>
 
-        
+
+        <section class="posts">
+            <div class="container">
+                <?php if ($searched == 1) {while ($itr < $post_cnt) { $postid=$post_row[$itr]['postid'];$userid=$post_row[$itr]['userid']?>
+                    <div class="slider-item">
+                        <div class="d-flex flex-lg-row flex-column">
+                            <div class="slider-item-img text-lg-start text-center mb-lg-0 mb-3">
+                                <img src="<?php echo $post_row[$itr]['postimg'] ?>" alt="">
+                            </div>
+                            <div class="slider-item-content">
+                                <div class="d-flex flex-column">
+                                    <span><b><?=$post_row[$itr]['catalogname']?></b> - <?=$post_row[$itr]['uploaddate']?></span>
+                                    <h1><a href="post.php?postid=<?=$postid?>" ><?=$post_row[$itr]['posttitle']?></a></h1>
+                                    <p><?=substr ($post_row[$itr]['postbody'], 0, 200)?></p>
+                                    <div class="d-flex flex-row justify-content-lg-start justify-content-center">
+                                        <div class="slider-author-img">
+                                            <img src="<?=$post_row[$itr]['location']?>" class="rounded-circle" alt="">
+                                        </div>
+                                        <div class="slider-author-name">
+                                            <span><a href="profile.php?userid=<?=$userid?>" ><?=$post_row[$itr]['fullname']?></a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php $itr++;}} ?>
+            </div>
+        </section>
       
         <script>
+            function copy_data () {
+                var b = document.getElementById('selectText');
+                var c = document.getElementById('okk');
+
+                c.value = b.innerHTML;
+            }
+
+            var ele = document.getElementById('send_help');
+            if (ele.addEventListener){
+                ele.addEventListener("submit", copy_data, false);  //Modern browsers
+            }
+
+
             let select= document.getElementById("select");
             let list= document.getElementById("list");
             let selectText= document.getElementById("selectText");

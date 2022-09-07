@@ -87,6 +87,27 @@ header a:hover {
     color: black;
 }
 
+.slider-author-name span a {
+  text-decoration: none;
+  color: black;
+}
+
+.slider-author-name span a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.slider-item-content h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.slider-item-content h1 a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+
 .c-slider-btn-div {
     position: relative;
 }
@@ -98,6 +119,7 @@ header a:hover {
 .slider-item-img img {
     width: 350px;
     border-radius: 10px;
+    height: 100%;
 }
 
 .slider-author-img img {
