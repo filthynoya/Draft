@@ -59,7 +59,9 @@
                         <li class="options">ayon</li>
                     </ul>
                 </div>
+                <form action="">
                 <input type="text" id="inputfield" placeholder="Search in catalog" onkeyup="filterFunction()">
+                </form>
             </div>
         </div>
 
